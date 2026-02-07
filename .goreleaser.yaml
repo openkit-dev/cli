@@ -72,7 +72,6 @@ brews:
     repository:
       owner: openkit-dev
       name: homebrew-tap
-    folder: Formula
     homepage: https://openkit.dev
     description: Universal Spec-Driven Development toolkit for AI coding agents
     license: MIT
