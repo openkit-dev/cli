@@ -1,26 +1,66 @@
+---
+description: Create a feature specification focused on what and why.
+subtask: false
+---
+
 # /specify - Feature Specification
 
-Create a complete feature specification following SDD methodology.
+$ARGUMENTS
 
-## Usage
+## Purpose
 
+Create a feature specification that captures user intent, scenarios, and acceptance criteria.
+This command MUST focus on what and why. No implementation details.
+
+## If $ARGUMENTS is empty
+
+Use the question tool to ask for a feature description.
+
+```javascript
+question({
+  questions: [{
+      question: "Describe the feature you want to build (what and why, no tech stack).",
+      header: "Feature Description"
+    }]
+})
 ```
-/specify <feature-name>
-```
 
-## Output
+## Outputs (required)
 
-Creates in `docs/requirements/<feature>/`:
-- PROBLEM_STATEMENT.md
-- USER_STORIES.md
-- ACCEPTANCE_CRITERIA.md
-- DATA_CONTRACTS.md
-- RISKS.md
+Create or update:
 
-## Process
+- `docs/requirements/<feature>/PROBLEM_STATEMENT.md`
+- `docs/requirements/<feature>/USER_STORIES.md`
+- `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
+- `docs/requirements/<feature>/RISKS.md`
 
-1. Gather requirements from user
-2. Define problem scope
-3. Write user stories with acceptance criteria
-4. Identify data contracts
-5. Document risks and mitigations
+Ensure `docs/requirements/<feature>/` exists before writing.
+
+## Templates
+
+- `.opencode/templates/SDD-ProblemStatement.md`
+- `.opencode/templates/SDD-UserStories.md`
+- `.opencode/templates/SDD-AcceptanceCriteria.md`
+- `.opencode/templates/SDD-Risks.md`
+
+## Workflow
+
+1. Confirm feature name and scope.
+2. Create `docs/requirements/<feature>/` if missing.
+3. Fill templates for Problem Statement, User Stories, Acceptance Criteria, and Risks.
+4. Write prioritized user stories with independent acceptance scenarios.
+5. Capture functional requirements and edge cases.
+6. Record measurable success criteria (tech-agnostic).
+7. Note risks and assumptions.
+
+## Rules
+
+- Do not include tech stack, APIs, or file structure.
+- If ambiguity is critical, mark it as `NEEDS CLARIFICATION` and defer to `/clarify`.
+- Use the question tool for any multi-option decision.
+
+## STOP POINT
+
+After writing the spec:
+
+> Use the question tool to ask "Specification recorded in docs/requirements/. Proceed to /clarify or /plan?"

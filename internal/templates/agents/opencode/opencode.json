@@ -1,0 +1,9 @@
+{
+  "$schema": "https://opencode.ai/schema/config.json",
+  "version": "1.0",
+  "agent": "opencode",
+  "commands": "./commands",
+  "prompts": "./prompts",
+  "rules": "./rules",
+  "skills": "./skills"
+}
