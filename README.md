@@ -14,13 +14,29 @@ Universal Spec-Driven Development toolkit for AI coding agents.
 ### macOS / Linux / WSL
 
 ```bash
-curl -fsSL https://openkit.dev/install | bash
+curl -fsSL https://raw.githubusercontent.com/openkit-dev/cli/main/scripts/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-irm https://openkit.dev/install.ps1 | iex
+irm https://raw.githubusercontent.com/openkit-dev/cli/main/scripts/install.ps1 | iex
+```
+
+### Manual Download
+
+Download the binary for your platform from the [latest release](https://github.com/openkit-dev/cli/releases/latest):
+
+- **macOS (Intel):** `cli_Darwin_x86_64.tar.gz`
+- **macOS (Apple Silicon):** `cli_Darwin_arm64.tar.gz`
+- **Linux (x64):** `cli_Linux_x86_64.tar.gz`
+- **Linux (ARM64):** `cli_Linux_arm64.tar.gz`
+- **Windows:** `cli_Windows_x86_64.zip`
+
+Extract and move to your PATH:
+```bash
+tar -xzf cli_*.tar.gz
+sudo mv openkit /usr/local/bin/
 ```
 
 ### From Source
