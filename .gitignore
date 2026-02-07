@@ -1,0 +1,22 @@
+# Binaries (only at root level)
+/openkit
+/openkit.exe
+/dist/
+
+# Test artifacts
+coverage.out
+coverage.html
+test-project/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go
+vendor/
