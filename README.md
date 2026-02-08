@@ -40,17 +40,15 @@ irm https://raw.githubusercontent.com/openkit-devtools/openkit/main/scripts/inst
 
 Download the binary for your platform from the [latest release](https://github.com/openkit-devtools/openkit/releases/latest):
 
-- **macOS (Intel):** `cli_Darwin_x86_64.tar.gz`
-- **macOS (Apple Silicon):** `cli_Darwin_arm64.tar.gz`
-- **Linux (x64):** `cli_Linux_x86_64.tar.gz`
-- **Linux (ARM64):** `cli_Linux_arm64.tar.gz`
-- **Windows:** `cli_Windows_x86_64.zip`
-
-Note: current releases use `openkit_*` filenames.
+- **macOS (Intel):** `openkit_Darwin_x86_64.tar.gz`
+- **macOS (Apple Silicon):** `openkit_Darwin_arm64.tar.gz`
+- **Linux (x64):** `openkit_Linux_x86_64.tar.gz`
+- **Linux (ARM64):** `openkit_Linux_arm64.tar.gz`
+- **Windows:** `openkit_Windows_x86_64.zip`
 
 Extract and move to your PATH:
 ```bash
-tar -xzf cli_*.tar.gz
+tar -xzf openkit_*.tar.gz
 sudo mv openkit /usr/local/bin/
 ```
 
@@ -467,6 +465,21 @@ Each agent has different configuration formats:
 
 ## Upgrade & Migration
 
+### CLI Self-Upgrade
+
+```bash
+# Check latest version and artifact URLs (no install)
+openkit upgrade --check
+
+# (alias)
+openkit upgrade --dry-run
+
+# Download + verify checksums + install
+openkit upgrade
+```
+
+Note: `openkit upgrade --dry-run` checks the CLI binary update; `openkit <agent> upgrade --dry-run` previews config changes.
+
 ### Safe Upgrade
 
 ```bash
@@ -488,6 +501,16 @@ openkit opencode uninstall
 
 # Preview what would be removed
 openkit opencode uninstall --dry-run
+```
+
+### Uninstall CLI Binary
+
+```bash
+# Interactive (asks for confirmation)
+curl -fsSL https://raw.githubusercontent.com/openkit-devtools/openkit/main/scripts/uninstall.sh | bash
+
+# Non-interactive
+curl -fsSL https://raw.githubusercontent.com/openkit-devtools/openkit/main/scripts/uninstall.sh | bash -s -- -y
 ```
 
 ### Migration Between Agents

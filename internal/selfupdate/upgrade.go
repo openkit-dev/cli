@@ -101,6 +101,10 @@ func artifactFilename(goos, goarch string) (string, error) {
 	return fmt.Sprintf("openkit_%s_%s.%s", osName, archName, ext), nil
 }
 
+func ArtifactFilename(goos, goarch string) (string, error) {
+	return artifactFilename(goos, goarch)
+}
+
 func platformArtifact(goos, goarch string) (osName string, archName string, ext string, err error) {
 	switch goos {
 	case "darwin":
