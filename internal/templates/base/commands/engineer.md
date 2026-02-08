@@ -136,12 +136,12 @@ question({
          status: "pending",
          priority: "medium"
        },
-       {
-         id: "phase3-verification",
-         content: "Phase 3: Final verification (Phase X)",
-         status: "pending",
-         priority: "high"
-       }
+        {
+          id: "phase3-verification",
+          content: "Phase 3: Final verification",
+          status: "pending",
+          priority: "high"
+        }
      ]
    })
    ```
@@ -239,15 +239,15 @@ Run in parallel:
 > - P2: UI/UX 
 > - P3: Polish 
 >
-> **Run final verification (Phase X) with all scripts?**
->
-> Reply:
-> - 'yes' → Run full Phase X
-> - 'later' → Wait for manual `/test`"
+ > **Run final verification (Phase 3) with all scripts?**
+ >
+ > Reply:
+ > - 'yes' → Run full Phase 3
+ > - 'later' → Wait for manual `/test`"
 
 ---
 
-## PHASE 3: VERIFICATION (Phase X)
+## PHASE 3: VERIFICATION
 
 **Before running verification:**
 - Update todolist: Ensure "phase3-verification" is `in_progress`
@@ -278,7 +278,7 @@ npx tsc --noEmit
 
 ### FINAL STOP POINT
 
-> **STOP:** Use the question tool to ask "PHASE X COMPLETE!
+ > **STOP:** Use the question tool to ask "PHASE 3 COMPLETE!
 >
 > Results:
 > - Lint: [PASS/FAIL]
@@ -320,10 +320,10 @@ npx tsc --noEmit
 
 After successful completion:
 
-1. **Update** `docs/sprint/Sprint-XX/TASKS.md` with:
-   -  All tasks marked complete
-   -  Phase X completion date
-   -  Verification results
+ 1. **Update** `docs/sprint/Sprint-XX/TASKS.md` with:
+    -  All tasks marked complete
+    -  Phase 3 completion date
+    -  Verification results
 
 2. **Create** a user summary:
    ```markdown
@@ -352,7 +352,7 @@ After successful completion:
 1.  **Minimum 3 agents:** fewer than that is not orchestration
 2.  **Strict phases:** Planning → STOP → Implementation → STOP → Verification
 3.  **Documentation:** always update the docs plan
-4.  **Quality:** Phase X is mandatory
+ 4.  **Quality:** Phase 3 is mandatory
 5.  **Communication:** keep the user informed at each phase
 
 ---

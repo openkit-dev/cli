@@ -160,10 +160,10 @@ Mark each task in `docs/sprint/Sprint-XX/TASKS.md` as completed:
 
 After implementation:
 - Final todolist update: Verify all tasks marked as `completed`
-> **STOP:** Use the question tool to ask "Implementation complete!  Run final verification (Phase X) with all validation scripts?"
+ > **STOP:** Use the question tool to ask "Implementation complete!  Run final verification (Phase 3) with all validation scripts?"
 
 **User options:**
-- "yes" → Run Phase X (add verification tasks to todolist)
+- "yes" → Run Phase 3 (add verification tasks to todolist)
 - "no" → Wait for manual `/test`
 
 ---

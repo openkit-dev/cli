@@ -208,11 +208,11 @@ cp -r .opencode/commands/* ~/.config/opencode/commands/
 # Orchestrate everything
 /engineer build e-commerce with Stripe
 → Phase 1: Planning (project-planner)
-→ STOP: "Proceed?"
+ → STOP: "Proceed?"
 → Phase 2: Implementation (multiple agents)
 → STOP: "Verify?"
-→ Phase 3: Verification (Phase X)
-→ Project complete! 
+→ Phase 3: Verification
+→ Project complete!
 ```
 
 ### Example 3: Debug

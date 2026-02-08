@@ -27,7 +27,7 @@ This skill provides a framework for breaking down work into clear, actionable ta
 - Dependencies identified
 - Parallel work where possible
 - Critical path highlighted
-- **Phase X: Verification is always LAST**
+ - **Phase 3: Verification is always LAST**
 
 ### 4. Planning Lives in docs/
 

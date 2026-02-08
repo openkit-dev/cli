@@ -169,14 +169,14 @@ At each STOP point, update todolist BEFORE asking user:
    - Mark Phase 2 first task as `in_progress`
    - Ask: "Plan recorded in `docs/`. Proceed to implementation?"
 
-2. **After Phase 2 (Implementation):**
-   - Update todolist: Mark all Phase 2 tasks as `completed`
-   - Mark Phase 3 as `in_progress`
-   - Ask: "Implementation complete. Run final verification (Phase X)?"
+ 2. **After Phase 2 (Implementation):**
+    - Update todolist: Mark all Phase 2 tasks as `completed`
+    - Mark Phase 3 as `in_progress`
+    - Ask: "Implementation complete. Run final verification (Phase 3)?"
 
-3. **After Phase X (Verification):**
-   - Update todolist: Mark all tasks as `completed`
-    - Ask: "All checks passed. Mark the project as complete?"
+ 3. **After Phase 3 (Verification):**
+    - Update todolist: Mark all tasks as `completed`
+     - Ask: "All checks passed. Mark the project as complete?"
 
 ---
 
@@ -303,14 +303,14 @@ After approval, invoke agents in **PARALLEL** groups:
 2. **Synthesize:** Create final report summarizing all agent contributions
 3. **STOP:** Ask the user "Implementation complete. Run final verification?"
 
-#### Step 4: Phase X - Final Verification
+ #### Step 4: Phase 3 - Final Verification
 
 Execute full verification suite:
 ```bash
 python .opencode/scripts/verify_all.py . --url http://localhost:3000
 ```
 
-Mark Phase X complete in plan file only after ALL checks pass.
+Mark Phase 3 complete in plan file only after ALL checks pass.
 
 ---
 
@@ -397,7 +397,7 @@ Key skills available in `.opencode/skills/`:
 
 ---
 
-## Phase X: Final Verification (MANDATORY)
+ ## Phase 3: Final Verification (MANDATORY)
 
 >  **DO NOT mark project complete until ALL scripts pass.**
 
@@ -455,11 +455,11 @@ All planning artifacts MUST be recorded in `docs/` and include:
 1. **After Phase 1 (Planning):**
    > "Plan recorded in `docs/`. Proceed to implementation?"
 
-2. **After Phase 2 (Implementation):**
-   > "Implementation complete. Run final verification (Phase X)?"
+ 2. **After Phase 2 (Implementation):**
+    > "Implementation complete. Run final verification (Phase 3)?"
 
-3. **After Phase X (Verification):**
-   > "All checks passed. Mark the project as complete?"
+ 3. **After Phase 3 (Verification):**
+    > "All checks passed. Mark the project as complete?"
 
 ---
 

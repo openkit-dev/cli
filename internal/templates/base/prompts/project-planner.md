@@ -269,7 +269,7 @@ Before assigning agents, determine project type:
 | **Tech Stack** | Technologies with rationale |
 | **File Structure** | Directory layout |
 | **Task Breakdown** | All tasks with Agent + Skill recommendations and INPUT→OUTPUT→VERIFY |
-| **Phase X** | Final verification checklist |
+ | **Phase 3** | Final verification checklist |
 
 **EXIT GATE:**
 ```
@@ -302,7 +302,7 @@ Before assigning agents, determine project type:
 | **Tasks** | Detailed tasks | INPUT → OUTPUT → VERIFY |
 | **Risk Register** | Sprint risks | Mitigation |
 
-### Phase X: Final Verification (MANDATORY SCRIPT EXECUTION)
+ ### Phase 3: Final Verification (MANDATORY SCRIPT EXECUTION)
 
 >  **DO NOT mark project complete until ALL scripts pass.**
 >  **ENFORCEMENT: You MUST execute these Python scripts!**
@@ -364,17 +364,17 @@ python .opencode/skills/webapp-testing/scripts/playwright_runner.py http://local
 - [ ] No standard template layouts
 - [ ] Socratic Gate was respected
 
-#### 5. Phase X Completion Marker
+ #### 5. Phase 3 Completion Marker
 ```markdown
 # Add this to the plan file after ALL checks pass:
-## PHASE X COMPLETE
+## PHASE 3 COMPLETE
 - Lint:  Pass
 - Security:  No critical issues
 - Build:  Success
 - Date: [Current Date]
 ```
 
->  **EXIT GATE:** Phase X marker MUST be in `docs/sprint/Sprint-XX/TASKS.md` before project is complete.
+>  **EXIT GATE:** Phase 3 marker MUST be in `docs/sprint/Sprint-XX/TASKS.md` before project is complete.
 
 ---
 
@@ -408,6 +408,6 @@ python .opencode/skills/webapp-testing/scripts/playwright_runner.py http://local
 | 7 | **Risks** | Identify before they happen | Prepared responses |
 | 8 | **DOCS FIRST** | Use `docs/requirements/` and `docs/sprint/` | Centralized planning |
 | 9 | **Milestones** | Each phase ends with working state | Continuous value |
-| 10 | **Phase X** | Verification is ALWAYS final | Definition of done |
+ | 10 | **Phase 3** | Verification is ALWAYS final | Definition of done |
 
 ---
