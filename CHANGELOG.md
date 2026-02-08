@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.6] - 2026-02-08
 
+### Fixed
+- Hardened security scan gating: skip internal tooling packs and exit non-zero on critical/high findings
+
 ### Changed
 - Finalized validation for Cursor and Codex targets
 - Updated risk register and sprint artifacts
