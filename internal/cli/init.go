@@ -6,16 +6,16 @@ import (
 	"path/filepath"
 
 	"github.com/fatih/color"
-	"github.com/openkit-dev/cli/internal/agents"
-	"github.com/openkit-dev/cli/internal/templates"
+	"github.com/openkit-devtools/openkit/internal/agents"
+	"github.com/openkit-devtools/openkit/internal/templates"
 	"github.com/spf13/cobra"
 )
 
 var (
-	flagAgent    string
-	flagHere     bool
-	flagForce    bool
-	flagNoGit    bool
+	flagAgent string
+	flagHere  bool
+	flagForce bool
+	flagNoGit bool
 )
 
 var initCmd = &cobra.Command{

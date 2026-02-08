@@ -8,14 +8,24 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/openkit-dev/cli/internal/agents"
+	"github.com/openkit-devtools/openkit/internal/agents"
 )
 
 //go:embed base/*
 var baseTemplates embed.FS
 
-//go:embed agents/*
-var agentTemplates embed.FS
+//go:embed root/*
+var rootTemplates embed.FS
+
+// BaseFS exposes the embedded base template filesystem.
+func BaseFS() fs.FS {
+	return baseTemplates
+}
+
+// RootFS exposes the embedded root template filesystem.
+func RootFS() fs.FS {
+	return rootTemplates
+}
 
 // Extract copies templates to the target directory for the specified agent
 func Extract(targetDir string, agent *agents.Agent) error {
@@ -30,13 +40,9 @@ func Extract(targetDir string, agent *agents.Agent) error {
 		return fmt.Errorf("failed to extract base templates: %w", err)
 	}
 
-	// Extract agent-specific templates (if they exist)
-	agentTemplatePath := filepath.Join("agents", agent.ID)
-	if err := extractFS(agentTemplates, agentTemplatePath, agentDir); err != nil {
-		// Not an error if agent-specific templates don't exist
-		if !os.IsNotExist(err) {
-			// Log but don't fail - agent templates are optional
-		}
+	// Create agent-specific config files in project root
+	if err := createAgentConfig(targetDir, agent); err != nil {
+		return fmt.Errorf("failed to create agent config: %w", err)
 	}
 
 	// Create extra files for the agent
@@ -59,6 +65,11 @@ func Extract(targetDir string, agent *agents.Agent) error {
 	}
 
 	return nil
+}
+
+func embeddedExists(efs embed.FS, path string) bool {
+	_, err := fs.Stat(efs, path)
+	return err == nil
 }
 
 // extractFS extracts files from an embedded filesystem to a target directory
@@ -95,10 +106,54 @@ func extractFS(efs embed.FS, root, targetDir string) error {
 	})
 }
 
+// createAgentConfig creates agent-specific configuration files in project root
+func createAgentConfig(targetDir string, agent *agents.Agent) error {
+	switch agent.ID {
+	case "opencode":
+		// Create opencode.json in project root (project config)
+		if !embeddedExists(rootTemplates, "root/opencode.json") {
+			return fmt.Errorf("missing embedded template root/opencode.json")
+		}
+		content, err := rootTemplates.ReadFile("root/opencode.json")
+		if err != nil {
+			return err
+		}
+		configPath := filepath.Join(targetDir, "opencode.json")
+		return os.WriteFile(configPath, content, 0644)
+
+	case "claude":
+		// Create .claude/settings.local.json
+		settingsDir := filepath.Join(targetDir, ".claude")
+		if err := os.MkdirAll(settingsDir, 0755); err != nil {
+			return err
+		}
+		settingsPath := filepath.Join(settingsDir, "settings.local.json")
+		settings := `{
+  "permissions": {
+    "allow": ["Read", "Write", "Edit", "Bash", "WebFetch"]
+  },
+  "env": {}
+}
+`
+		return os.WriteFile(settingsPath, []byte(settings), 0644)
+
+	case "cursor":
+		// Cursor uses .cursorrules in root, handled by ExtraFiles
+		return nil
+
+	case "gemini":
+		// Gemini config (if needed)
+		return nil
+
+	default:
+		return nil
+	}
+}
+
 // createExtraFile creates agent-specific extra files
 func createExtraFile(path string, agent *agents.Agent) error {
 	filename := filepath.Base(path)
-	
+
 	var content string
 	switch filename {
 	case "AGENTS.md":
@@ -112,7 +167,7 @@ This project uses OpenKit with %s.
 
 Run %s to start your AI coding session.
 `, agent.Name, agent.CLICommand)
-	
+
 	case "CLAUDE.md":
 		content = `# Claude Code Instructions
 
@@ -228,13 +283,13 @@ See the skills/ folder in your agent configuration for available skills.
 // ListEmbedded returns a list of all embedded template files
 func ListEmbedded() []string {
 	var files []string
-	
+
 	fs.WalkDir(baseTemplates, "base", func(path string, d fs.DirEntry, err error) error {
 		if err == nil && !d.IsDir() {
 			files = append(files, strings.TrimPrefix(path, "base/"))
 		}
 		return nil
 	})
-	
+
 	return files
 }

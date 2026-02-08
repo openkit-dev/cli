@@ -3,9 +3,11 @@
 
 $ErrorActionPreference = 'Stop'
 
-$REPO = "openkit-dev/cli"
+$REPO = "openkit-devtools/openkit"
 $BINARY_NAME = "openkit"
-$INSTALL_DIR = "$env:LOCALAPPDATA\Programs\OpenKit"
+
+$OPENKIT_HOME = if ($env:OPENKIT_HOME) { $env:OPENKIT_HOME } else { Join-Path $HOME ".openkit" }
+$INSTALL_DIR = if ($env:OPENKIT_INSTALL_DIR) { $env:OPENKIT_INSTALL_DIR } else { Join-Path $OPENKIT_HOME "bin" }
 
 Write-Host ""
 Write-Host "   ___                   _  ___ _   " -ForegroundColor Cyan
@@ -16,6 +18,11 @@ Write-Host "  \___/| .__/ \___|_| |_|_|\_\_|\__|" -ForegroundColor Cyan
 Write-Host "       |_|                          " -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Universal Spec-Driven Development Toolkit" -ForegroundColor White
+Write-Host ""
+
+Write-Host "Install location..." -ForegroundColor Cyan
+Write-Host "  OPENKIT_HOME: $OPENKIT_HOME"
+Write-Host "  BIN_DIR:      $INSTALL_DIR"
 Write-Host ""
 
 # Detect architecture
@@ -38,9 +45,7 @@ try {
     exit 1
 }
 
-# Construct download URL
-# GoReleaser uses "cli" as the project name, not "openkit"
-$FILENAME = "cli_Windows_${ARCH}.zip"
+$FILENAME = "openkit_Windows_${ARCH}.zip"
 $DOWNLOAD_URL = "https://github.com/$REPO/releases/download/$LATEST_RELEASE/$FILENAME"
 
 Write-Host "Downloading OpenKit CLI..." -ForegroundColor Cyan

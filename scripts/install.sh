@@ -4,9 +4,48 @@ set -e
 # OpenKit CLI Installer for macOS/Linux/WSL
 # Usage: curl -fsSL https://openkit.dev/install | bash
 
-REPO="openkit-dev/cli"
+REPO="openkit-devtools/openkit"
 BINARY_NAME="openkit"
-INSTALL_DIR="/usr/local/bin"
+
+OPENKIT_HOME_DEFAULT="$HOME/.openkit"
+OPENKIT_HOME="${OPENKIT_HOME:-$OPENKIT_HOME_DEFAULT}"
+OPENKIT_BIN_DIR_DEFAULT="$OPENKIT_HOME/bin"
+OPENKIT_BIN_DIR="${OPENKIT_INSTALL_DIR:-$OPENKIT_BIN_DIR_DEFAULT}"
+
+is_in_path() {
+  case ":$PATH:" in
+    *":$1:"*) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+ensure_dir() {
+  mkdir -p "$1"
+}
+
+try_symlink_into_path() {
+  src="$1"
+
+  # Prefer a user-writable bin already in PATH.
+  candidates=""
+  if [ -n "${XDG_BIN_HOME:-}" ]; then
+    candidates="$candidates $XDG_BIN_HOME"
+  fi
+  candidates="$candidates $HOME/.local/bin"
+  candidates="$candidates $HOME/bin"
+
+  for d in $candidates; do
+    if is_in_path "$d"; then
+      ensure_dir "$d"
+      if [ -w "$d" ]; then
+        ln -sf "$src" "$d/$BINARY_NAME"
+        return 0
+      fi
+    fi
+  done
+
+  return 1
+}
 
 # Colors
 RED='\033[0;31m'
@@ -24,6 +63,11 @@ echo "  \___/| .__/ \___|_| |_|_|\_\_|\__|"
 echo "       |_|                          "
 echo -e "${NC}"
 echo "Universal Spec-Driven Development Toolkit"
+echo ""
+
+echo -e "${CYAN}Install location...${NC}"
+echo "  OPENKIT_HOME: $OPENKIT_HOME"
+echo "  BIN_DIR:      $OPENKIT_BIN_DIR"
 echo ""
 
 # Detect OS and architecture
@@ -73,11 +117,9 @@ fi
 echo "  Latest version: $LATEST_RELEASE"
 echo ""
 
-# Construct download URL
-# GoReleaser uses "cli" as the project name, not "openkit"
-FILENAME="cli_${OS}_${ARCH}.tar.gz"
+FILENAME="openkit_${OS}_${ARCH}.tar.gz"
 if [ "$OS" = "windows" ]; then
-  FILENAME="cli_${OS}_${ARCH}.zip"
+  FILENAME="openkit_${OS}_${ARCH}.zip"
 fi
 
 DOWNLOAD_URL="https://github.com/$REPO/releases/download/$LATEST_RELEASE/$FILENAME"
@@ -101,15 +143,18 @@ fi
 echo -e "${CYAN}Extracting...${NC}"
 tar -xzf "$FILENAME"
 
+INSTALL_DIR="$OPENKIT_BIN_DIR"
+
 # Install
 echo -e "${CYAN}Installing to $INSTALL_DIR...${NC}"
 
+ensure_dir "$INSTALL_DIR"
 if [ ! -w "$INSTALL_DIR" ]; then
-  echo -e "${YELLOW}Requesting sudo permissions...${NC}"
-  sudo install -m 755 "$BINARY_NAME" "$INSTALL_DIR/$BINARY_NAME"
-else
-  install -m 755 "$BINARY_NAME" "$INSTALL_DIR/$BINARY_NAME"
+  echo -e "${RED}Install dir is not writable: $INSTALL_DIR${NC}"
+  exit 1
 fi
+
+install -m 755 "$BINARY_NAME" "$INSTALL_DIR/$BINARY_NAME"
 
 # Verify installation
 if command -v "$BINARY_NAME" &> /dev/null; then
@@ -124,6 +169,24 @@ if command -v "$BINARY_NAME" &> /dev/null; then
   echo "  openkit init --ai claude   # Create project for Claude Code"
   echo ""
 else
-  echo -e "${RED}Installation failed. Binary not found in PATH${NC}"
-  exit 1
+  # Try to make it available without requiring PATH edits.
+  if try_symlink_into_path "$INSTALL_DIR/$BINARY_NAME" && command -v "$BINARY_NAME" &> /dev/null; then
+    echo ""
+    echo -e "${GREEN}✓ OpenKit CLI installed successfully!${NC}"
+    echo ""
+    echo "Run 'openkit --help' to get started"
+    echo ""
+    exit 0
+  fi
+
+  echo -e "${YELLOW}Installed, but '$BINARY_NAME' is not on PATH yet.${NC}"
+  echo ""
+  echo "Option A (recommended): add OpenKit bin dir to PATH"
+  echo "  echo 'export PATH=\"$INSTALL_DIR:\$PATH\"' >> ~/.zshrc"
+  echo "  source ~/.zshrc"
+  echo ""
+  echo "Option B: run it directly"
+  echo "  $INSTALL_DIR/$BINARY_NAME --help"
+  echo ""
+  exit 0
 fi

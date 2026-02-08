@@ -61,8 +61,8 @@ changelog:
 
 release:
   github:
-    owner: openkit-dev
-    name: cli
+    owner: openkit-devtools
+    name: openkit
   draft: false
   prerelease: auto
   name_template: "{{.Tag}}"
@@ -71,7 +71,7 @@ release:
 # brews:
 #   - name: openkit
 #     repository:
-#       owner: openkit-dev
+#       owner: openkit-devtools
 #       name: homebrew-tap
 #     homepage: https://openkit.dev
 #     description: Universal Spec-Driven Development toolkit for AI coding agents

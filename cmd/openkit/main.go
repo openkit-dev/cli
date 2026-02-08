@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/openkit-dev/cli/internal/cli"
+	"github.com/openkit-devtools/openkit/internal/cli"
 )
 
 // Version information (set by goreleaser)
@@ -15,7 +15,7 @@ var (
 
 func main() {
 	cli.SetVersionInfo(version, commit, date)
-	
+
 	if err := cli.Execute(); err != nil {
 		os.Exit(1)
 	}
