@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Documentation
 - Synced Sprint 04 backlog
 
+## [0.2.7] - 2026-02-08
+
+### Fixed
+- CI: build golangci-lint using the job Go toolchain and address lint findings
+- Release: align Go version with `go.mod` to keep GoReleaser builds consistent
+
 ## [0.2.4] - 2026-02-08
 
 ### Fixed
