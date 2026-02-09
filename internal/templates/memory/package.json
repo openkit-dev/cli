@@ -1,0 +1,14 @@
+{
+  "name": "semantic-memory",
+  "version": "0.1.0",
+  "description": "Semantic memory plugin for OpenCode - persists context across sessions",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@lancedb/lancedb": "^0.26.0",
+    "onnxruntime-node": "^1.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}

@@ -413,6 +413,79 @@ Key skills available in `.opencode/skills/`:
 
 ---
 
+## Semantic Memory Integration (If Enabled)
+
+> **Note:** This section applies only when the semantic memory plugin is installed.
+> Check if `.opencode/plugins/semantic-memory/` exists before using memory tools.
+
+### Memory Tools
+
+If semantic memory is enabled, use these tools to optimize context:
+
+| Tool | When to Use |
+|------|-------------|
+| `memory_context` | Before starting complex tasks - retrieves relevant past decisions |
+| `memory_save` | After making important decisions - persists knowledge for future sessions |
+| `memory_query` | When you need specific past context |
+| `memory_stats` | To check memory system health |
+
+### Orchestrator Memory Protocol
+
+1. **Before Planning Phase:**
+   ```
+   [Use memory_context with task="<mission description>"]
+   ```
+   Retrieve relevant past decisions before creating new plans.
+
+2. **After Implementation Phase:**
+   ```
+   [Use memory_save with type="decision" for each major architectural choice]
+   ```
+   Capture decisions made during the mission.
+
+3. **When Delegating to Sub-Agents:**
+   Include relevant memories in the Task prompt:
+   ```
+   Task(
+     subagent_type: "backend-specialist",
+     prompt: """
+     Implement user authentication API.
+     
+     Relevant context from project memory:
+     - We use JWT tokens (not sessions)
+     - PostgreSQL for user storage
+     - bcrypt for password hashing
+     
+     [Full task description...]
+     """
+   )
+   ```
+
+### What to Save
+
+**SAVE with `memory_save`:**
+- Architecture decisions (database, framework, patterns)
+- Error fixes with root cause analysis
+- Design patterns adopted for the project
+- Security decisions and rationale
+- Configuration choices and why
+
+**DO NOT SAVE:**
+- Trivial changes (typo fixes, formatting)
+- Temporary workarounds
+- Sensitive data (credentials, tokens)
+
+### Memory Check (Optional)
+
+Periodically verify memory health:
+```
+[Use memory_stats]
+```
+
+See `.opencode/rules/SEMANTIC_MEMORY.md` for complete protocol.
+
+---
+
 ## Execution Order Priority
 
 | Priority | Phase | Agents | When to Use |

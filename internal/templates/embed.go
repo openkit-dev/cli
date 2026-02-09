@@ -17,6 +17,9 @@ var baseTemplates embed.FS
 //go:embed root/*
 var rootTemplates embed.FS
 
+//go:embed memory/*
+var memoryTemplates embed.FS
+
 // BaseFS exposes the embedded base template filesystem.
 func BaseFS() fs.FS {
 	return baseTemplates
@@ -294,4 +297,91 @@ func ListEmbedded() []string {
 	}
 
 	return files
+}
+
+// ExtractMemoryPlugin extracts the semantic memory plugin to the target directory
+// OpenCode loads .ts/.js files directly from .opencode/plugins/, not from subdirectories
+// So we extract:
+//   - index.ts -> .opencode/plugins/semantic-memory.ts (with adjusted imports)
+//   - lib/* -> .opencode/plugins/semantic-memory/lib/*
+//   - scripts/* -> .opencode/plugins/semantic-memory/scripts/*
+func ExtractMemoryPlugin(targetDir string) error {
+	// targetDir is .opencode/plugins/semantic-memory/
+	// We need to also create the main plugin file one level up
+
+	// First, extract lib/ and scripts/ to the subdirectory
+	err := fs.WalkDir(memoryTemplates, "memory", func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+
+		relPath, err := filepath.Rel("memory", path)
+		if err != nil {
+			return err
+		}
+
+		// Skip root, rules, package.json, and index.ts (handled separately)
+		if relPath == "." || relPath == "index.ts" || relPath == "package.json" {
+			return nil
+		}
+		if strings.HasPrefix(relPath, "rules") {
+			return nil
+		}
+
+		targetPath := filepath.Join(targetDir, relPath)
+
+		if d.IsDir() {
+			return os.MkdirAll(targetPath, 0755)
+		}
+
+		content, err := memoryTemplates.ReadFile(path)
+		if err != nil {
+			return err
+		}
+
+		return os.WriteFile(targetPath, content, 0644)
+	})
+
+	if err != nil {
+		return err
+	}
+
+	// Now extract index.ts as semantic-memory.ts in the parent plugins/ directory
+	// with adjusted import path
+	indexContent, err := memoryTemplates.ReadFile("memory/index.ts")
+	if err != nil {
+		return fmt.Errorf("failed to read index.ts: %w", err)
+	}
+
+	// Adjust the import path from "./lib/memory.ts" to "./semantic-memory/lib/memory.ts"
+	adjustedContent := strings.Replace(
+		string(indexContent),
+		`from "./lib/memory.ts"`,
+		`from "./semantic-memory/lib/memory.ts"`,
+		1,
+	)
+
+	// Write to parent directory as semantic-memory.ts
+	parentDir := filepath.Dir(targetDir)
+	mainPluginPath := filepath.Join(parentDir, "semantic-memory.ts")
+	return os.WriteFile(mainPluginPath, []byte(adjustedContent), 0644)
+}
+
+// ExtractMemoryRules extracts the memory rules to the .opencode/rules/ directory
+// This should only be called for OpenCode projects with memory enabled
+func ExtractMemoryRules(rulesDir string) error {
+	// Create rules directory if needed
+	if err := os.MkdirAll(rulesDir, 0755); err != nil {
+		return err
+	}
+
+	// Extract SEMANTIC_MEMORY.md to rules directory
+	rulePath := "memory/rules/SEMANTIC_MEMORY.md"
+	content, err := memoryTemplates.ReadFile(rulePath)
+	if err != nil {
+		return fmt.Errorf("failed to read memory rule: %w", err)
+	}
+
+	targetPath := filepath.Join(rulesDir, "SEMANTIC_MEMORY.md")
+	return os.WriteFile(targetPath, content, 0644)
 }
