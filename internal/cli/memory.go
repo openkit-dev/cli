@@ -276,17 +276,6 @@ func formatTime(timestamp int64) string {
 	return t.Format("2006-01-02 15:04")
 }
 
-func formatDuration(ms int64) string {
-	d := time.Duration(ms) * time.Millisecond
-	if d < time.Hour {
-		return fmt.Sprintf("%d min", int(d.Minutes()))
-	}
-	if d < 24*time.Hour {
-		return fmt.Sprintf("%d hours", int(d.Hours()))
-	}
-	return fmt.Sprintf("%d days", int(d.Hours()/24))
-}
-
 // Bridge response types
 type BridgeListResponse struct {
 	Memories []Memory `json:"memories"`
@@ -660,8 +649,9 @@ func runMemoryStats() {
 	// Session stats
 	cyan.Println("Session History")
 	cyan.Println("---------------")
+	fmt.Println()
 
-	if metrics != nil && len(metrics) > 0 {
+	if len(metrics) > 0 {
 		totalInjected := 0
 		totalTokensInjected := 0
 		compactionCount := 0
@@ -804,7 +794,7 @@ func runMemoryPrune(cmd *cobra.Command) {
 	if !pruneForce {
 		yellow.Printf("  This will delete %d memories. Continue? [y/N] ", totalToDelete)
 		var response string
-		fmt.Scanln(&response)
+		_, _ = fmt.Scanln(&response)
 		if strings.ToLower(response) != "y" {
 			printInfo("Cancelled.")
 			return
