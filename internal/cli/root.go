@@ -57,16 +57,15 @@ func printBanner() {
 	cyan := color.New(color.FgCyan, color.Bold)
 	white := color.New(color.FgWhite)
 
-	banner := `
-   ___                   _  ___ _   
-  / _ \ _ __   ___ _ __ | |/ (_) |_ 
- | | | | '_ \ / _ \ '_ \| ' /| | __|
- | |_| | |_) |  __/ | | | . \| | |_ 
-  \___/| .__/ \___|_| |_|_|\_\_|\__|
-       |_|                          `
+	banner := `   ____                   __ __ _ __ 
+  / __ \____  ___  ____  / //_/(_) /_
+ / / / / __ \/ _ \/ __ \/ ,<  / / __/
+/ /_/ / /_/ /  __/ / / / /| |/ / /_  
+\____/ .___/\___/_/ /_/_/ |_/_/\__/  
+    /_/                              `
 
 	cyan.Println(banner)
-	white.Printf("  Universal Spec-Driven Development Toolkit v%s\n", version)
+	white.Printf("Universal Spec-Driven Development Toolkit v%s\n", version)
 }
 
 // Execute runs the root command
