@@ -271,7 +271,7 @@ At sprint end:
 
 ## Related
 
-- [[docs/sprint/Sprint-06/HUB-SPRINT-06.md]]
-- [[docs/sprint/Sprint-06/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-06/BACKLOG.md]]
-- [[docs/requirements/security-scan-hardening/RISKS.md]]
+- [[sprint/Sprint-06/HUB-SPRINT-06.md]]
+- [[sprint/Sprint-06/SPRINT_GOAL.md]]
+- [[sprint/Sprint-06/BACKLOG.md]]
+- [[requirements/security-scan-hardening/RISKS.md]]

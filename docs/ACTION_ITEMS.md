@@ -82,7 +82,7 @@
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/CONTEXT.md]]
-- [[docs/QUALITY_GATES.md]]
-- [[docs/SECURITY.md]]
+- [[HUB-DOCS.md]]
+- [[CONTEXT.md]]
+- [[QUALITY_GATES.md]]
+- [[SECURITY.md]]

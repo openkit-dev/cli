@@ -20,7 +20,7 @@
 
 ## Related
 
-- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
-- [[docs/requirements/gemini-sync/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/gemini-sync/USER_STORIES.md]]
-- [[docs/sprint/Sprint-02/TASKS.md]]
+- [[requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
+- [[requirements/gemini-sync/PROBLEM_STATEMENT.md]]
+- [[requirements/gemini-sync/USER_STORIES.md]]
+- [[sprint/Sprint-02/TASKS.md]]

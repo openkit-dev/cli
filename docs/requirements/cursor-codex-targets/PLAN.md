@@ -140,7 +140,7 @@ cat AGENTS.md
 
 ## Related
 
-- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
-- [[docs/requirements/cursor-codex-targets/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/cursor-codex-targets/USER_STORIES.md]]
-- [[docs/sprint/Sprint-04/TASKS.md]]
+- [[requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
+- [[requirements/cursor-codex-targets/PROBLEM_STATEMENT.md]]
+- [[requirements/cursor-codex-targets/USER_STORIES.md]]
+- [[sprint/Sprint-04/TASKS.md]]

@@ -44,7 +44,7 @@ Remove references and mentions of "blueprints" across the OpenKit CLI repository
 
 ## Related
 
-- [[docs/requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
-- [[docs/requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/remove-blueprints-references/USER_STORIES.md]]
-- [[docs/sprint/Sprint-06/TASKS.md]]
+- [[requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
+- [[requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]
+- [[requirements/remove-blueprints-references/USER_STORIES.md]]
+- [[sprint/Sprint-06/TASKS.md]]

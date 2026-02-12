@@ -47,7 +47,7 @@ The OpenKit CLI currently has minimal implementations for Cursor and Codex targe
 
 ## Related
 
-- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
-- [[docs/requirements/cursor-codex-targets/USER_STORIES.md]]
-- [[docs/requirements/cursor-codex-targets/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/cursor-codex-targets/PLAN.md]]
+- [[requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
+- [[requirements/cursor-codex-targets/USER_STORIES.md]]
+- [[requirements/cursor-codex-targets/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/cursor-codex-targets/PLAN.md]]

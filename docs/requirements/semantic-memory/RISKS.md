@@ -99,7 +99,7 @@
 
 ## Related
 
-- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
-- [[docs/requirements/semantic-memory/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/semantic-memory/ARCHITECTURE_ANALYSIS.md]]
-- [[docs/sprint/Sprint-05/RISK_REGISTER.md]]
+- [[requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
+- [[requirements/semantic-memory/PROBLEM_STATEMENT.md]]
+- [[requirements/semantic-memory/ARCHITECTURE_ANALYSIS.md]]
+- [[sprint/Sprint-05/RISK_REGISTER.md]]

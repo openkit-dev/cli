@@ -4,7 +4,7 @@ Ship the first safe-by-default sync implementation backed by `.openkit/managed.j
 
 ## Related
 
-- [[docs/sprint/Sprint-01/HUB-SPRINT-01.md]]
-- [[docs/sprint/Sprint-01/BACKLOG.md]]
-- [[docs/sprint/Sprint-01/TASKS.md]]
-- [[docs/sprint/Sprint-01/RISK_REGISTER.md]]
+- [[sprint/Sprint-01/HUB-SPRINT-01.md]]
+- [[sprint/Sprint-01/BACKLOG.md]]
+- [[sprint/Sprint-01/TASKS.md]]
+- [[sprint/Sprint-01/RISK_REGISTER.md]]

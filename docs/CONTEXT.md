@@ -67,7 +67,7 @@
 
 ## Terminology
 
-> For standard terminology definitions, see [[docs/GLOSSARY.md]].
+> For standard terminology definitions, see [[GLOSSARY.md]].
 
 | Term | Definition (project-specific) |
 |------|-------------------------------|
@@ -111,7 +111,7 @@
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/GLOSSARY.md]]
-- [[docs/SECURITY.md]]
-- [[docs/QUALITY_GATES.md]]
+- [[HUB-DOCS.md]]
+- [[GLOSSARY.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]

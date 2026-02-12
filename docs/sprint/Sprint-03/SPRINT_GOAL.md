@@ -4,7 +4,7 @@ Ship the missing `.opencode/scripts` utilities in the Go CLI templates and docum
 
 ## Related
 
-- [[docs/sprint/Sprint-03/HUB-SPRINT-03.md]]
-- [[docs/sprint/Sprint-03/BACKLOG.md]]
-- [[docs/sprint/Sprint-03/TASKS.md]]
-- [[docs/requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
+- [[sprint/Sprint-03/HUB-SPRINT-03.md]]
+- [[sprint/Sprint-03/BACKLOG.md]]
+- [[sprint/Sprint-03/TASKS.md]]
+- [[requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]

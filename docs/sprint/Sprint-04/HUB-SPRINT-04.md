@@ -2,12 +2,12 @@
 
 ## Artifacts
 
-- [[docs/sprint/Sprint-04/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-04/BACKLOG.md]]
-- [[docs/sprint/Sprint-04/TASKS.md]]
-- [[docs/sprint/Sprint-04/RISK_REGISTER.md]]
+- [[sprint/Sprint-04/SPRINT_GOAL.md]]
+- [[sprint/Sprint-04/BACKLOG.md]]
+- [[sprint/Sprint-04/TASKS.md]]
+- [[sprint/Sprint-04/RISK_REGISTER.md]]
 
 ## Related
 
-- [[docs/sprint/HUB-SPRINTS.md]]
-- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
+- [[sprint/HUB-SPRINTS.md]]
+- [[requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]

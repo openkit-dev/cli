@@ -310,11 +310,11 @@ func exitWithError(msg string) {
 - No input validation for template parameters
 - No audit logging for sensitive operations
 
-See [[docs/SECURITY.md]] for detailed security analysis.
+See [[SECURITY.md]] for detailed security analysis.
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/CONTEXT.md]]
-- [[docs/SECURITY.md]]
-- [[docs/QUALITY_GATES.md]]
+- [[HUB-DOCS.md]]
+- [[CONTEXT.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]

@@ -29,7 +29,7 @@ If users report conflicts:
 
 ## Related
 
-- [[docs/sprint/Sprint-04/HUB-SPRINT-04.md]]
-- [[docs/sprint/Sprint-04/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-04/BACKLOG.md]]
-- [[docs/requirements/cursor-codex-targets/RISKS.md]]
+- [[sprint/Sprint-04/HUB-SPRINT-04.md]]
+- [[sprint/Sprint-04/SPRINT_GOAL.md]]
+- [[sprint/Sprint-04/BACKLOG.md]]
+- [[requirements/cursor-codex-targets/RISKS.md]]

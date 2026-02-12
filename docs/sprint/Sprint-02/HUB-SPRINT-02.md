@@ -2,12 +2,12 @@
 
 ## Artifacts
 
-- [[docs/sprint/Sprint-02/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-02/BACKLOG.md]]
-- [[docs/sprint/Sprint-02/TASKS.md]]
-- [[docs/sprint/Sprint-02/RISK_REGISTER.md]]
+- [[sprint/Sprint-02/SPRINT_GOAL.md]]
+- [[sprint/Sprint-02/BACKLOG.md]]
+- [[sprint/Sprint-02/TASKS.md]]
+- [[sprint/Sprint-02/RISK_REGISTER.md]]
 
 ## Related
 
-- [[docs/sprint/HUB-SPRINTS.md]]
-- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
+- [[sprint/HUB-SPRINTS.md]]
+- [[requirements/gemini-sync/HUB-GEMINI-SYNC.md]]

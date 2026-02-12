@@ -87,7 +87,7 @@
 
 ## Related
 
-- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
-- [[docs/requirements/cursor-codex-targets/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/cursor-codex-targets/USER_STORIES.md]]
-- [[docs/requirements/cursor-codex-targets/PLAN.md]]
+- [[requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
+- [[requirements/cursor-codex-targets/PROBLEM_STATEMENT.md]]
+- [[requirements/cursor-codex-targets/USER_STORIES.md]]
+- [[requirements/cursor-codex-targets/PLAN.md]]

@@ -254,7 +254,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]
-- [[docs/sprint/Sprint-05/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-05/TASKS.md]]
-- [[docs/sprint/Sprint-05/RISK_REGISTER.md]]
+- [[sprint/Sprint-05/HUB-SPRINT-05.md]]
+- [[sprint/Sprint-05/SPRINT_GOAL.md]]
+- [[sprint/Sprint-05/TASKS.md]]
+- [[sprint/Sprint-05/RISK_REGISTER.md]]

@@ -8,7 +8,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-02/HUB-SPRINT-02.md]]
-- [[docs/sprint/Sprint-02/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-02/TASKS.md]]
-- [[docs/sprint/Sprint-02/RISK_REGISTER.md]]
+- [[sprint/Sprint-02/HUB-SPRINT-02.md]]
+- [[sprint/Sprint-02/SPRINT_GOAL.md]]
+- [[sprint/Sprint-02/TASKS.md]]
+- [[sprint/Sprint-02/RISK_REGISTER.md]]

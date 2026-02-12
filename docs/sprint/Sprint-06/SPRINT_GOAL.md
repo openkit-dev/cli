@@ -153,7 +153,7 @@ Implement **Option C** from brainstorming: A hybrid system combining explicit pr
 
 ## Related
 
-- [[docs/sprint/Sprint-06/HUB-SPRINT-06.md]]
-- [[docs/sprint/Sprint-06/BACKLOG.md]]
-- [[docs/sprint/Sprint-06/TASKS.md]]
-- [[docs/requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
+- [[sprint/Sprint-06/HUB-SPRINT-06.md]]
+- [[sprint/Sprint-06/BACKLOG.md]]
+- [[sprint/Sprint-06/TASKS.md]]
+- [[requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]

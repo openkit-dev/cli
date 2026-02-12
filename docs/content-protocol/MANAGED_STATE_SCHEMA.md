@@ -51,6 +51,6 @@ This document defines the JSON structure stored at `.openkit/managed.json` in a 
 
 ## Related
 
-- [[docs/content-protocol/README.md]]
-- [[docs/content-protocol/PROTOCOL.md]]
-- [[docs/content-protocol/SYNC_SEMANTICS.md]]
+- [[content-protocol/README.md]]
+- [[content-protocol/PROTOCOL.md]]
+- [[content-protocol/SYNC_SEMANTICS.md]]

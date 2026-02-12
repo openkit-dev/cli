@@ -562,7 +562,7 @@ npm test
 
 ## Related
 
-- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]
-- [[docs/sprint/Sprint-05/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-05/BACKLOG.md]]
-- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
+- [[sprint/Sprint-05/HUB-SPRINT-05.md]]
+- [[sprint/Sprint-05/SPRINT_GOAL.md]]
+- [[sprint/Sprint-05/BACKLOG.md]]
+- [[requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]

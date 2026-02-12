@@ -315,10 +315,10 @@ A sequence of phases and commands to accomplish a goal.
 
 ## Related Documents
 
-- [[.opencode/rules/MASTER.md]] - Master ruleset
-- [[.opencode/rules/TODOLIST_PROTOCOL.md]] - TodoList workflow
-- [[.opencode/rules/TOOL_USAGE.md]] - Correct tool selection
-- [[docs/CONFLICT_ANALYSIS_REPORT.md]] - Conflict resolution history
+- `.opencode/rules/MASTER.md` - Master ruleset
+- `.opencode/rules/TODOLIST_PROTOCOL.md` - TodoList workflow
+- `.opencode/rules/TOOL_USAGE.md` - Correct tool selection
+- [[CONFLICT_ANALYSIS_REPORT.md]] - Conflict resolution history
 
 ---
 
@@ -326,6 +326,6 @@ A sequence of phases and commands to accomplish a goal.
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/CONTEXT.md]]
-- [[docs/CONFLICT_ANALYSIS_REPORT.md]]
+- [[HUB-DOCS.md]]
+- [[CONTEXT.md]]
+- [[CONFLICT_ANALYSIS_REPORT.md]]

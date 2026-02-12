@@ -20,7 +20,7 @@
 
 ## Related
 
-- [[docs/requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
-- [[docs/requirements/opencode-scripts/PROBLEM_STATEMENT.md]]
-- [[docs/content-protocol/PROTOCOL.md]]
-- [[docs/sprint/Sprint-03/TASKS.md]]
+- [[requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
+- [[requirements/opencode-scripts/PROBLEM_STATEMENT.md]]
+- [[content-protocol/PROTOCOL.md]]
+- [[sprint/Sprint-03/TASKS.md]]

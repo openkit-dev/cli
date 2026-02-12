@@ -6,7 +6,7 @@
 
 ## Related
 
-- [[docs/requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
-- [[docs/requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/remove-blueprints-references/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/remove-blueprints-references/PLAN.md]]
+- [[requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
+- [[requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]
+- [[requirements/remove-blueprints-references/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/remove-blueprints-references/PLAN.md]]

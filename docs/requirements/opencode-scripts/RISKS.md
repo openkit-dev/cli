@@ -11,7 +11,7 @@
 
 ## Related
 
-- [[docs/requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
-- [[docs/requirements/opencode-scripts/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/opencode-scripts/PLAN.md]]
-- [[docs/sprint/Sprint-03/RISK_REGISTER.md]]
+- [[requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
+- [[requirements/opencode-scripts/PROBLEM_STATEMENT.md]]
+- [[requirements/opencode-scripts/PLAN.md]]
+- [[sprint/Sprint-03/RISK_REGISTER.md]]

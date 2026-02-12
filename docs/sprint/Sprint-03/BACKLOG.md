@@ -6,7 +6,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-03/HUB-SPRINT-03.md]]
-- [[docs/sprint/Sprint-03/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-03/TASKS.md]]
-- [[docs/sprint/Sprint-03/RISK_REGISTER.md]]
+- [[sprint/Sprint-03/HUB-SPRINT-03.md]]
+- [[sprint/Sprint-03/SPRINT_GOAL.md]]
+- [[sprint/Sprint-03/TASKS.md]]
+- [[sprint/Sprint-03/RISK_REGISTER.md]]

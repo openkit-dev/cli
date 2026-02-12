@@ -8,7 +8,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-02/HUB-SPRINT-02.md]]
-- [[docs/sprint/Sprint-02/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-02/BACKLOG.md]]
-- [[docs/requirements/gemini-sync/RISKS.md]]
+- [[sprint/Sprint-02/HUB-SPRINT-02.md]]
+- [[sprint/Sprint-02/SPRINT_GOAL.md]]
+- [[sprint/Sprint-02/BACKLOG.md]]
+- [[requirements/gemini-sync/RISKS.md]]

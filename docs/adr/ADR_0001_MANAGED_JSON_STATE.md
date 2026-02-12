@@ -27,6 +27,6 @@ The CLI SHOULD provide a one-time migration path from the legacy state file (if 
 
 ## Related
 
-- [[docs/adr/HUB-ADR.md]]
-- [[docs/content-protocol/MANAGED_STATE_SCHEMA.md]]
-- [[docs/requirements/openkit-sync/PLAN.md]]
+- [[adr/HUB-ADR.md]]
+- [[content-protocol/MANAGED_STATE_SCHEMA.md]]
+- [[requirements/openkit-sync/PLAN.md]]

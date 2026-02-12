@@ -7,7 +7,7 @@
 
 ## Related
 
-- [[docs/requirements/openkit-sync/HUB-OPENKIT-SYNC.md]]
-- [[docs/requirements/openkit-sync/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/openkit-sync/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/openkit-sync/PLAN.md]]
+- [[requirements/openkit-sync/HUB-OPENKIT-SYNC.md]]
+- [[requirements/openkit-sync/PROBLEM_STATEMENT.md]]
+- [[requirements/openkit-sync/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/openkit-sync/PLAN.md]]

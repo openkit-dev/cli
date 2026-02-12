@@ -59,8 +59,8 @@ Migration of `docs/` to OpenKit Obsidian-compatible standard.
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/requirements/HUB-REQUIREMENTS.md]]
-- [[docs/sprint/HUB-SPRINTS.md]]
-- [[.opencode/rules/OBSIDIAN_LINKING.md]]
-- [[.opencode/rules/DOCS_FILE_GLOSSARY.md]]
+- [[HUB-DOCS.md]]
+- [[requirements/HUB-REQUIREMENTS.md]]
+- [[sprint/HUB-SPRINTS.md]]
+- `.opencode/rules/OBSIDIAN_LINKING.md`
+- `.opencode/rules/DOCS_FILE_GLOSSARY.md`

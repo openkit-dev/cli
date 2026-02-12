@@ -383,7 +383,7 @@ O claude-mem oferece uma implementacao madura de memoria para agentes, mas com c
 
 ## Related
 
-- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
-- [[docs/requirements/semantic-memory/ARCHITECTURE_ANALYSIS.md]]
-- [[docs/requirements/semantic-memory/ALTERNATIVES_DISCARDED.md]]
-- [[docs/requirements/semantic-memory/RECOMMENDATIONS.md]]
+- [[requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
+- [[requirements/semantic-memory/ARCHITECTURE_ANALYSIS.md]]
+- [[requirements/semantic-memory/ALTERNATIVES_DISCARDED.md]]
+- [[requirements/semantic-memory/RECOMMENDATIONS.md]]

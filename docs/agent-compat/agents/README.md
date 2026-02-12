@@ -4,13 +4,13 @@ Compatibility notes per target agent.
 
 ## Profiles
 
-- [[docs/agent-compat/agents/OPENCODE.md]]
-- [[docs/agent-compat/agents/CLAUDE.md]]
-- [[docs/agent-compat/agents/GEMINI.md]]
-- [[docs/agent-compat/agents/CODEX.md]]
-- [[docs/agent-compat/agents/CURSOR.md]]
+- [[agent-compat/agents/OPENCODE.md]]
+- [[agent-compat/agents/CLAUDE.md]]
+- [[agent-compat/agents/GEMINI.md]]
+- [[agent-compat/agents/CODEX.md]]
+- [[agent-compat/agents/CURSOR.md]]
 
 ## Related
 
-- [[docs/agent-compat/README.md]]
-- [[docs/content-protocol/PROTOCOL.md]]
+- [[agent-compat/README.md]]
+- [[content-protocol/PROTOCOL.md]]

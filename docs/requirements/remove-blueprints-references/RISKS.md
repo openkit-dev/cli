@@ -7,7 +7,7 @@
 
 ## Related
 
-- [[docs/requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
-- [[docs/requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/remove-blueprints-references/PLAN.md]]
-- [[docs/sprint/Sprint-06/RISK_REGISTER.md]]
+- [[requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
+- [[requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]
+- [[requirements/remove-blueprints-references/PLAN.md]]
+- [[sprint/Sprint-06/RISK_REGISTER.md]]

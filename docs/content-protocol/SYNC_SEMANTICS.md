@@ -119,6 +119,6 @@ Doctor checks SHOULD include:
 
 ## Related
 
-- [[docs/content-protocol/README.md]]
-- [[docs/content-protocol/PROTOCOL.md]]
-- [[docs/content-protocol/MANAGED_STATE_SCHEMA.md]]
+- [[content-protocol/README.md]]
+- [[content-protocol/PROTOCOL.md]]
+- [[content-protocol/MANAGED_STATE_SCHEMA.md]]

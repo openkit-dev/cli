@@ -2,11 +2,11 @@
 
 ## Artifacts
 
-- [[docs/sprint/Sprint-01/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-01/BACKLOG.md]]
-- [[docs/sprint/Sprint-01/TASKS.md]]
-- [[docs/sprint/Sprint-01/RISK_REGISTER.md]]
+- [[sprint/Sprint-01/SPRINT_GOAL.md]]
+- [[sprint/Sprint-01/BACKLOG.md]]
+- [[sprint/Sprint-01/TASKS.md]]
+- [[sprint/Sprint-01/RISK_REGISTER.md]]
 
 ## Related
 
-- [[docs/sprint/HUB-SPRINTS.md]]
+- [[sprint/HUB-SPRINTS.md]]

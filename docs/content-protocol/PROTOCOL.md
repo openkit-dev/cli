@@ -79,7 +79,7 @@ Optional (recommended for supply-chain integrity):
 
 ## Related
 
-- [[docs/content-protocol/README.md]]
-- [[docs/content-protocol/MANIFEST_SCHEMA.md]]
-- [[docs/content-protocol/MANAGED_STATE_SCHEMA.md]]
-- [[docs/content-protocol/SYNC_SEMANTICS.md]]
+- [[content-protocol/README.md]]
+- [[content-protocol/MANIFEST_SCHEMA.md]]
+- [[content-protocol/MANAGED_STATE_SCHEMA.md]]
+- [[content-protocol/SYNC_SEMANTICS.md]]

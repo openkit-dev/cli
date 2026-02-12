@@ -176,7 +176,7 @@
 
 ## Related
 
-- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
-- [[docs/requirements/semantic-memory/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/semantic-memory/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/semantic-memory/RISKS.md]]
+- [[requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
+- [[requirements/semantic-memory/PROBLEM_STATEMENT.md]]
+- [[requirements/semantic-memory/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/semantic-memory/RISKS.md]]

@@ -100,7 +100,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-06/HUB-SPRINT-06.md]]
-- [[docs/sprint/Sprint-06/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-06/TASKS.md]]
-- [[docs/sprint/Sprint-06/RISK_REGISTER.md]]
+- [[sprint/Sprint-06/HUB-SPRINT-06.md]]
+- [[sprint/Sprint-06/SPRINT_GOAL.md]]
+- [[sprint/Sprint-06/TASKS.md]]
+- [[sprint/Sprint-06/RISK_REGISTER.md]]

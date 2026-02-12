@@ -37,7 +37,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-04/HUB-SPRINT-04.md]]
-- [[docs/sprint/Sprint-04/BACKLOG.md]]
-- [[docs/sprint/Sprint-04/TASKS.md]]
-- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
+- [[sprint/Sprint-04/HUB-SPRINT-04.md]]
+- [[sprint/Sprint-04/BACKLOG.md]]
+- [[sprint/Sprint-04/TASKS.md]]
+- [[requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]

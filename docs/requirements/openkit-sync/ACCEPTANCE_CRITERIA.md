@@ -8,7 +8,7 @@
 
 ## Related
 
-- [[docs/requirements/openkit-sync/HUB-OPENKIT-SYNC.md]]
-- [[docs/requirements/openkit-sync/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/openkit-sync/PLAN.md]]
-- [[docs/content-protocol/SYNC_SEMANTICS.md]]
+- [[requirements/openkit-sync/HUB-OPENKIT-SYNC.md]]
+- [[requirements/openkit-sync/PROBLEM_STATEMENT.md]]
+- [[requirements/openkit-sync/PLAN.md]]
+- [[content-protocol/SYNC_SEMANTICS.md]]

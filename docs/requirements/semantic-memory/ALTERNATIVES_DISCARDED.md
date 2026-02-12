@@ -134,7 +134,7 @@
 
 ## Related
 
-- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
-- [[docs/requirements/semantic-memory/REFERENCE_ANALYSIS.md]]
-- [[docs/requirements/semantic-memory/RECOMMENDATIONS.md]]
-- [[docs/requirements/semantic-memory/RISKS.md]]
+- [[requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
+- [[requirements/semantic-memory/REFERENCE_ANALYSIS.md]]
+- [[requirements/semantic-memory/RECOMMENDATIONS.md]]
+- [[requirements/semantic-memory/RISKS.md]]

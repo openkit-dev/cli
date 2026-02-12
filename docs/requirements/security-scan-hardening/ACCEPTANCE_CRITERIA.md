@@ -16,7 +16,7 @@
 
 ## Related
 
-- [[docs/requirements/security-scan-hardening/HUB-SECURITY-SCAN-HARDENING.md]]
-- [[docs/requirements/security-scan-hardening/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/security-scan-hardening/PLAN.md]]
-- [[docs/sprint/Sprint-06/TASKS.md]]
+- [[requirements/security-scan-hardening/HUB-SECURITY-SCAN-HARDENING.md]]
+- [[requirements/security-scan-hardening/PROBLEM_STATEMENT.md]]
+- [[requirements/security-scan-hardening/PLAN.md]]
+- [[sprint/Sprint-06/TASKS.md]]

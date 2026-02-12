@@ -25,7 +25,7 @@ Port the generic, standard-library Python scripts from the legacy NPX package in
 
 ## Related
 
-- [[docs/requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
-- [[docs/requirements/opencode-scripts/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/opencode-scripts/PLAN.md]]
-- [[docs/sprint/Sprint-03/HUB-SPRINT-03.md]]
+- [[requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]
+- [[requirements/opencode-scripts/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/opencode-scripts/PLAN.md]]
+- [[sprint/Sprint-03/HUB-SPRINT-03.md]]
