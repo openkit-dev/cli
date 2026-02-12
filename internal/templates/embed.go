@@ -224,6 +224,7 @@ func createDocsStructure(docsDir string) error {
 		"requirements",
 		"sprint",
 		"adr",
+		"runbooks",
 	}
 
 	for _, dir := range dirs {
@@ -235,9 +236,77 @@ func createDocsStructure(docsDir string) error {
 
 	// Create basic docs files
 	files := map[string]string{
+		"README.md": `# Documentation Index
+
+This file is the primary hub for project documentation.
+
+## Navigation
+
+- [[docs/CONTEXT.md]]
+- [[docs/SECURITY.md]]
+- [[docs/QUALITY_GATES.md]]
+- [[docs/ACTION_ITEMS.md]]
+- [[docs/ARCHITECTURE.md]]
+- [[docs/WORKFLOW.md]]
+- [[docs/COMMANDS.md]]
+- [[docs/SKILLS.md]]
+- [[docs/GLOSSARY.md]]
+- [[docs/requirements/README.md]]
+- [[docs/sprint/README.md]]
+- [[docs/adr/README.md]]
+- [[docs/runbooks/README.md]]
+
+## Related
+
+- [[docs/CONTEXT.md]]
+- [[docs/WORKFLOW.md]]
+`,
+		"GLOSSARY.md": `# Glossary
+
+Standard terminology used across this project.
+
+| Term | Definition |
+|---|---|
+| [TERM] | [Definition] |
+
+## Related
+
+- [[docs/README.md]]
+- [[docs/CONTEXT.md]]
+`,
+		"MIGRATION_CHECKLIST.md": `# Migration Checklist
+
+Use this file to migrate legacy documentation to the Obsidian-compatible standard.
+
+## Filename Standard
+
+- [ ] Rename docs files to canonical uppercase names from [[.opencode/rules/DOCS_FILE_GLOSSARY.md]]
+
+## Link Standard
+
+- [ ] Replace internal Markdown links with wikilinks [[docs/...]]
+- [ ] Keep external URLs as standard Markdown links
+
+## Hub Notes
+
+- [ ] Ensure [[docs/README.md]] exists and links major sections
+- [ ] Ensure [[docs/requirements/README.md]] exists
+- [ ] Ensure [[docs/sprint/README.md]] exists
+
+## Related
+
+- [[docs/README.md]]
+- [[docs/GLOSSARY.md]]
+`,
 		"ARCHITECTURE.md": `# Architecture
 
 Document your project architecture here.
+
+## Related
+
+- [[docs/WORKFLOW.md]]
+- [[docs/COMMANDS.md]]
+- [[docs/SKILLS.md]]
 `,
 		"COMMANDS.md": `# Commands Reference
 
@@ -253,12 +322,24 @@ OpenKit provides the following slash commands for SDD workflow:
 | /impl | Execute implementation |
 | /test | Generate or run tests |
 | /debug | Investigate complex errors |
+
+## Related
+
+- [[docs/WORKFLOW.md]]
+- [[docs/ARCHITECTURE.md]]
+- [[docs/SKILLS.md]]
 `,
 		"SKILLS.md": `# Skills Reference
 
 Skills provide domain-specific knowledge for specialized tasks.
 
 See the skills/ folder in your agent configuration for available skills.
+
+## Related
+
+- [[docs/COMMANDS.md]]
+- [[docs/WORKFLOW.md]]
+- [[docs/ARCHITECTURE.md]]
 `,
 		"WORKFLOW.md": `# Development Workflow
 
@@ -270,11 +351,75 @@ See the skills/ folder in your agent configuration for available skills.
 4. **Tasks**: Break down into executable tasks
 5. **Implement**: Execute with AI assistance
 6. **Verify**: Run tests and validation
+
+## Related
+
+- [[docs/COMMANDS.md]]
+- [[docs/ARCHITECTURE.md]]
+- [[docs/SKILLS.md]]
+`,
+		"requirements/README.md": `# Requirements Index
+
+This hub links feature-level requirements packs.
+
+## Structure
+
+- [[docs/requirements/<feature>/README.md]]
+- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[docs/requirements/<feature>/USER_STORIES.md]]
+- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[docs/requirements/<feature>/DATA_CONTRACTS.md]]
+- [[docs/requirements/<feature>/RISKS.md]]
+- [[docs/requirements/<feature>/PLAN.md]]
+
+## Related
+
+- [[docs/README.md]]
+- [[docs/WORKFLOW.md]]
+`,
+		"sprint/README.md": `# Sprint Index
+
+This hub links sprint folders and execution artifacts.
+
+## Structure
+
+- [[docs/sprint/Sprint-XX/README.md]]
+- [[docs/sprint/Sprint-XX/SPRINT_GOAL.md]]
+- [[docs/sprint/Sprint-XX/BACKLOG.md]]
+- [[docs/sprint/Sprint-XX/TASKS.md]]
+- [[docs/sprint/Sprint-XX/RISK_REGISTER.md]]
+
+## Related
+
+- [[docs/README.md]]
+- [[docs/WORKFLOW.md]]
+`,
+		"adr/README.md": `# ADR Index
+
+Architecture Decision Records index.
+
+## Related
+
+- [[docs/README.md]]
+- [[docs/ARCHITECTURE.md]]
+`,
+		"runbooks/README.md": `# Runbooks Index
+
+Operational playbooks and incident procedures.
+
+## Related
+
+- [[docs/README.md]]
+- [[docs/SECURITY.md]]
+- [[docs/QUALITY_GATES.md]]
 `,
 	}
 
 	for filename, content := range files {
 		path := filepath.Join(docsDir, filename)
+		if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
+			return err
+		}
 		if err := os.WriteFile(path, []byte(content), 0644); err != nil {
 			return err
 		}

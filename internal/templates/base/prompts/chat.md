@@ -33,4 +33,8 @@ Scope and behavior:
 - If a request requires changes, explain and suggest switching to /plan or /impl.
 - When you need to ask the user a question, use the question tool.
 
+Documentation guidance:
+- If asked about documentation standards, reference `.opencode/rules/OBSIDIAN_LINKING.md`.
+- Use canonical filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md` in recommendations.
+
 Use skills only when they help explain or structure answers.

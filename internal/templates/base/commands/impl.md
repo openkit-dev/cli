@@ -261,7 +261,7 @@ This command implements features, fixes bugs, or enhances existing code. It comb
 - **Production Ready**: No `TODO` comments, strict typing, handled errors.
 - **Security**: Validations, Sanitization, Auth checks (follow stack-appropriate patterns).
 - **Best Practices**:
-    - Use the stack defined in `docs/requirements/<feature>/TechStack.md` or existing project stack
+    - Use the stack defined in `docs/requirements/<feature>/TECH_STACK.md` or existing project stack
     - Follow patterns appropriate for chosen technologies
     - Maintain consistency with existing codebase
 

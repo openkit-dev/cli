@@ -25,7 +25,7 @@ $ARGUMENTS
 
 ## Output
 
-- `docs/requirements/<feature>/checklists/requirements.md`
+- `docs/requirements/<feature>/CHECKLIST.md`
 
 ## Template
 

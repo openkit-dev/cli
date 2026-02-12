@@ -5,6 +5,27 @@ All notable changes to OpenKit CLI will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2026-02-11
+
+### Added
+- Obsidian-compatible documentation standard with canonical file glossary and link protocol.
+- New `docs-migration-specialist` agent to migrate legacy docs to wikilinks, hubs, and canonical filenames.
+- New docs templates and hubs for `README`, glossary, migration checklist, requirements index, feature index, sprint index, and analysis.
+
+### Changed
+- `/engineer` now detects legacy docs drift and routes to docs migration before planning when needed.
+- Commands, prompts, rules, and templates were aligned to Obsidian graph-style documentation and uppercase canonical artifact naming.
+- CLI embedded docs scaffolding now creates connected index files and migration artifacts by default.
+
+### Fixed
+- Resolved command inconsistencies around ownership and naming of planning/task artifacts (`TASKS.md`, `DATA_CONTRACTS.md`, `TECH_STACK.md`, `ANALYSIS.md`, `CHECKLIST.md`).
+
+## [0.2.7] - 2026-02-08
+
+### Fixed
+- CI: build golangci-lint using the job Go toolchain and address lint findings
+- Release: align Go version with `go.mod` to keep GoReleaser builds consistent
+
 ## [0.2.6] - 2026-02-08
 
 ### Fixed
@@ -16,12 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Documentation
 - Synced Sprint 04 backlog
-
-## [0.2.7] - 2026-02-08
-
-### Fixed
-- CI: build golangci-lint using the job Go toolchain and address lint findings
-- Release: align Go version with `go.mod` to keep GoReleaser builds consistent
 
 ## [0.2.4] - 2026-02-08
 
@@ -108,6 +123,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Embedded templates for all agents
 - Cross-platform support (macOS, Linux, Windows)
 
+[0.3.2]: https://github.com/openkit-devtools/openkit/compare/v0.3.1...v0.3.2
+[0.2.7]: https://github.com/openkit-devtools/openkit/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/openkit-devtools/openkit/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/openkit-devtools/openkit/compare/v0.2.4...v0.2.5
 [0.2.4]: https://github.com/openkit-devtools/openkit/compare/v0.2.3...v0.2.4

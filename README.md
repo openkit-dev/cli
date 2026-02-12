@@ -342,6 +342,21 @@ OpenKit provides 18 commands for Spec-Driven Development:
 | `/checklist` | Readiness checks |
 | `/create` | Bootstrap new apps |
 
+### Context-Aware Detection
+
+`/context` now detects project shape and adapts outputs to the repository:
+
+- CLI tools -> generates CLI-focused docs (for example `CLI_ARCHITECTURE.md`)
+- Web full-stack -> keeps `BACKEND.md` and `FRONTEND.md`
+- Libraries/SDKs -> generates public API and versioning docs
+- Supports overlays (`testing`, `security`, `ci-cd`, `documentation`)
+
+For automation and CI usage:
+
+```bash
+openkit context --yes --type cli-tool --overlays testing-overlay,security-overlay
+```
+
 ### Standard Workflow (SDD)
 
 Use this for most feature work:

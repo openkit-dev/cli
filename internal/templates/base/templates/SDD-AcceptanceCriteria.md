@@ -19,3 +19,9 @@
 - SC-001: [Metric or measurable outcome]
 - SC-002: [Metric or measurable outcome]
 - SC-003: [Metric or measurable outcome]
+
+## Related
+
+- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[docs/requirements/<feature>/USER_STORIES.md]]
+- [[docs/requirements/<feature>/PLAN.md]]

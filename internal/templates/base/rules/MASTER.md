@@ -30,6 +30,20 @@ This rule defines:
 
 ---
 
+## Obsidian Documentation Protocol (MANDATORY)
+
+**All agents, commands, and skills MUST follow:** `.opencode/rules/OBSIDIAN_LINKING.md`
+**Canonical docs filenames MUST follow:** `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+
+Key principles:
+- Use wikilinks for internal documentation references (for example, `[[docs/CONTEXT.md]]`)
+- Build documentation as a graph with inbound and outbound links
+- Add a `## Related` section in docs artifacts when applicable
+- Keep links stable and explicit to improve retrieval and long-term memory
+- Use canonical uppercase docs filenames from the glossary
+
+---
+
 ## Context & Language
 
 - Respond in the user's language; keep code/comments in English.
@@ -197,6 +211,9 @@ Model selection is handled by runtime/user environment. Agents and prompts must 
    - Agent file read? → Open and review.
    - Skills loaded? → Read each relevant `SKILL.md`.
    - Announcement made? → Inform the user.
+6. For any documentation generation/update, enforce Obsidian and filename protocols:
+   - `.opencode/rules/OBSIDIAN_LINKING.md`
+   - `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 
 ### Socratic Gate
 Always ask clarifying questions before execution when there is significant ambiguity. Use `@[skills/brainstorming]` for discovery.
@@ -285,11 +302,11 @@ Before starting the SDD workflow, execute discovery commands:
 
 ## Sprint Documentation & Artifacts
 
-1. **Identification**: Locate `docs/sprint/Sprint-XX/` and review `SPRINT_GOAL.md`, `BACKLOG.md`, `TASKS.md`.
+1. **Identification**: Locate `docs/sprint/Sprint-XX/` and review `README.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `TASKS.md`.
 2. **Sprint Selection**: Ask the user whether to use the latest sprint or create a new one.
    - If no sprint exists, create `Sprint-01`.
    - If creating a new sprint, use the next sequential number.
-3. **Planning** (`/plan`): Create requirements in `docs/requirements/<feature>/` and update `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`.
+3. **Planning** (`/plan`): Create requirements in `docs/requirements/<feature>/` and update `README.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`.
 4. **Task Breakdown** (`/tasks`): Create detailed `TASKS.md` with INPUT->OUTPUT->VERIFY criteria.
 5. **Execution** (`/impl`): Mark progress in `TASKS.md`; update story status in `BACKLOG.md`.
 6. **Completion**: Mark tasks as `[x]`, register changes in `docs/CHANGELOG.md` when requested.
@@ -298,6 +315,11 @@ Before starting the SDD workflow, execute discovery commands:
 **Command Ownership:**
 | Artifact | Created By |
 |----------|------------|
+| docs/README.md | `/context` or `/plan` |
+| docs/requirements/README.md | `/context` or `/plan` |
+| docs/requirements/<feature>/README.md | `/plan` |
+| docs/sprint/README.md | `/context` or `/plan` |
+| docs/sprint/Sprint-XX/README.md | `/plan` |
 | SPRINT_GOAL.md | `/plan` |
 | BACKLOG.md | `/plan` |
 | RISK_REGISTER.md | `/plan` |
@@ -341,4 +363,6 @@ This file supersedes all previous rules (`CORE`, `ROUTING`, `CHECKLIST`, `SPRINT
 - **Glossary:** `docs/GLOSSARY.md` - Standard terminology definitions
 - **TodoList Protocol:** `.opencode/rules/TODOLIST_PROTOCOL.md` - Complete workflow
 - **Tool Usage:** `.opencode/rules/TOOL_USAGE.md` - Correct tool selection
+- **Obsidian Linking:** `.opencode/rules/OBSIDIAN_LINKING.md` - Documentation graph protocol
+- **Docs File Glossary:** `.opencode/rules/DOCS_FILE_GLOSSARY.md` - Canonical documentation filenames
 - **Conflict Analysis:** `docs/CONFLICT_ANALYSIS_REPORT.md` - Resolution history

@@ -301,6 +301,24 @@
         "edit": "ask",
         "bash": "ask"
       }
+    },
+    "docs-migration-specialist": {
+      "description": "Specialist in migrating project docs to OpenKit Obsidian standard (wikilinks, hubs, canonical filenames).",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/prompts/docs-migration-specialist.md}",
+      "tools": {
+        "read": true,
+        "grep": true,
+        "glob": true,
+        "edit": true,
+        "write": true,
+        "bash": true,
+        "question": true
+      },
+      "permission": {
+        "edit": "ask",
+        "bash": "ask"
+      }
     }
   }
 }

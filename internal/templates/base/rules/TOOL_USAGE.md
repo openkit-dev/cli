@@ -701,6 +701,8 @@ Before any tool invocation, verify:
 
 - **Official Docs**: https://opencode.ai/docs/tools/
 - **Master Rules**: `.opencode/rules/MASTER.md`
+- **Obsidian Linking**: `.opencode/rules/OBSIDIAN_LINKING.md`
+- **Docs File Glossary**: `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 - **Agent Prompts**: `.opencode/prompts/*.md`
 - **Command Files**: `.opencode/commands/*.md`
 - **Skill Files**: `.opencode/skills/*/SKILL.md`

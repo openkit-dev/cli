@@ -23,10 +23,10 @@ Read from (MANDATORY):
 - `docs/requirements/<feature>/USER_STORIES.md`
 - `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
 - `docs/requirements/<feature>/DATA_CONTRACTS.md` (required if data is involved)
-- `docs/requirements/<feature>/contracts/` (required if APIs/events are involved)
+
 
 If data is involved and `DATA_CONTRACTS.md` is missing, STOP and direct the user to update `/plan`.
-If APIs/events are involved and `contracts/` is missing, STOP and direct the user to create it using `.opencode/templates/SDD-Contracts.md`.
+If APIs/events are involved and `DATA_CONTRACTS.md` is missing, STOP and direct the user to create it using `.opencode/templates/SDD-Contracts.md`.
 
 ## Output
 
@@ -96,6 +96,7 @@ Before any task breakdown work:
 2. Organize tasks by user story with dependencies and parallel markers.
 3. Include exact file paths for each task.
 4. Add INPUT -> OUTPUT -> VERIFY for each task where applicable.
+5. Keep links to requirements and sprint docs in Obsidian format (`[[docs/...]]`).
 
 ## Rules
 

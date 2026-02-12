@@ -25,3 +25,9 @@
 - [ ] Tasks include file paths
 - [ ] Dependencies and parallel work marked
 - [ ] Verification steps defined
+
+## Related
+
+- [[docs/requirements/<feature>/PLAN.md]]
+- [[docs/requirements/<feature>/USER_STORIES.md]]
+- [[docs/sprint/Sprint-XX/TASKS.md]]

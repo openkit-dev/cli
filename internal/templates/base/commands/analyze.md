@@ -38,7 +38,11 @@ Read from:
 
 Write analysis to:
 
-- `docs/requirements/<feature>/analysis.md`
+- `docs/requirements/<feature>/ANALYSIS.md`
+
+## Template
+
+- `.opencode/templates/SDD-Analysis.md`
 
 ## Analysis Dimensions
 
@@ -55,10 +59,9 @@ Write analysis to:
 1. Trace each requirement to plan sections.
 2. Trace each user story to one or more tasks.
 3. Validate auxiliary artifacts when applicable:
-   - `research.md` when unknowns or dependencies exist
+   - `RESEARCH.md` when unknowns or dependencies exist
    - `DATA_CONTRACTS.md` when data entities exist
-   - `contracts/` when APIs/events/integrations exist
-   - `quickstart.md` when setup or verification steps are non-trivial
+   - `QUICKSTART.md` when setup or verification steps are non-trivial
 4. Identify missing tests, missing contracts, or unclear verification steps.
 5. **Produce remediation actions** with priority and responsible command.
 

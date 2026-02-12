@@ -26,8 +26,14 @@
 
 ## Glossary
 
-> For standard terminology, see `docs/GLOSSARY.md`
+> For standard terminology, see [[docs/GLOSSARY.md]]
 
 | Term | Definition |
 |------|------------|
 | [Domain-specific term] | [Definition] |
+
+## Related
+
+- [[docs/requirements/<feature>/USER_STORIES.md]]
+- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[docs/requirements/<feature>/PLAN.md]]

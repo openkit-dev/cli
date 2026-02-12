@@ -1,5 +1,5 @@
 ---
-description: Universal orchestrator for complex multi-agent missions with 15 specialist agents
+description: Universal orchestrator for complex multi-agent missions with 16 specialist agents
 subtask: false
 ---
 
@@ -26,6 +26,7 @@ question({
 - 'Refactor the auth system to OAuth2'
 - 'Add real-time chat with WebSockets'
 - 'Migrate MySQL to PostgreSQL'
+- 'Migrate docs to Obsidian wikilinks and canonical filenames'
 
 ---
 
@@ -36,6 +37,7 @@ question({
 ### Mode 1: Router (Specific Tasks)
 **Triggers:**
 - Specific keywords: "specify", "clarify", "plan", "tasks", "implement", "test", "debug", "design", "deploy", "analyze", "checklist"
+- Documentation migration keywords: "migrate docs", "obsidian", "wikilink", "normalize documentation"
 - Single-domain tasks
 - Simple direct actions
 
@@ -48,6 +50,7 @@ question({
 - "checklist..." → Trigger `/checklist`
 - "test..." → Trigger `/test`
 - "debug..." → Trigger `/debug`
+- "migrate docs..." / "obsidian..." → Invoke `docs-migration-specialist`
 
 ### Mode 2: Orchestrator (Complex Tasks)
 **Triggers:**
@@ -155,8 +158,15 @@ question({
          priority: "high"
        }
      ]
-   })
-   ```
+    })
+    ```
+
+3. **Documentation Migration Gate (MANDATORY when legacy docs are detected):**
+   - Inspect `docs/` structure for legacy patterns:
+     - non-canonical filenames (not in `.opencode/rules/DOCS_FILE_GLOSSARY.md`)
+     - internal markdown links instead of wikilinks
+     - missing hubs (`docs/README.md`, `docs/requirements/README.md`, `docs/sprint/README.md`)
+   - If drift exists, invoke `docs-migration-specialist` before continuing planning.
 
 **Tasks:**
 1. Deep requirement analysis
@@ -363,6 +373,7 @@ npx tsc --noEmit
 | `penetration-tester` | Offensive Sec | `.opencode/prompts/penetration-tester.md` |
 | `product-owner` | Requirements | `.opencode/prompts/product-owner.md` |
 | `documentation-writer` | Docs | `.opencode/prompts/documentation-writer.md` |
+| `docs-migration-specialist` | Docs migration | `.opencode/prompts/docs-migration-specialist.md` |
 
 ---
 
@@ -453,6 +464,7 @@ Use these sub-commands for focused tasks:
 /engineer plan feature login
 /engineer impl fix auth bug
 /engineer test user service
+/engineer migrate docs to obsidian standard
 ```
 
 ---
@@ -465,6 +477,7 @@ Use these sub-commands for focused tasks:
 
 ### Critical Rules
 - **Documentation**: All plans MUST follow `rules/MASTER.md` Documentation Integrity Protocol.
+- **Docs Migration Gate**: If `docs/` exists and is legacy/non-canonical, run `docs-migration-specialist` before `/specify` or `/plan`.
 - **Discovery Gate:** Always execute `/context` (MANDATORY) before authoring a new plan. Use `/brainstorm` additionally when scope is unclear.
 - **Planning Gate:** `/impl` or specialist agents cannot run until `/specify`, `/clarify`, `/plan`, and `/tasks` have produced the required docs.
 - **Minimum 3 Agents**: If you use fewer than 3, you are not orchestrating.
@@ -487,14 +500,15 @@ Use these sub-commands for focused tasks:
     - *Reasoning*: Explain why this is complex enough for orchestration.
 
 2.  **Identify Domains**: Security, Backend, Frontend, Database, etc.
-3.  **Agent**: Use `project-planner` to produce SDD artifacts:
+3.  **Pre-step (if needed)**: Use `docs-migration-specialist` to normalize legacy docs to Obsidian standard.
+4.  **Agent**: Use `project-planner` to produce SDD artifacts:
     - `docs/requirements/<feature>/PROBLEM_STATEMENT.md`
     - `docs/requirements/<feature>/USER_STORIES.md`
     - `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
     - `docs/requirements/<feature>/RISKS.md`
     - `docs/requirements/<feature>/PLAN.md`
     - `docs/sprint/Sprint-XX/TASKS.md`
-4.  **STOP**: Use the question tool to ask "Plan recorded in docs. Proceed to implementation?".
+5.  **STOP**: Use the question tool to ask "Plan recorded in docs. Proceed to implementation?".
 
 #### Step 2: Execute (Phase 2)
 After approval, invoke agents in **PARALLEL** groups:
@@ -521,6 +535,7 @@ After approval, invoke agents in **PARALLEL** groups:
 | `security-auditor` | Vulnerabilities, Auth |
 | `test-engineer` | Unit/E2E Testing |
 | `devops-engineer` | Kubernetes, Docker, Deploy |
+| `docs-migration-specialist` | Docs migration to Obsidian |
 
 ---
 
@@ -528,6 +543,8 @@ After approval, invoke agents in **PARALLEL** groups:
 
 **Router:**
 > "/engineer test coverage" -> Routes to `/test coverage`
+>
+> "/engineer migrate docs to obsidian standard" -> Invokes `docs-migration-specialist`
 
 **Orchestrator:**
 > "/engineer build a secure e-commerce checkout with stripe"

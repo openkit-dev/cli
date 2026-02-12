@@ -164,6 +164,17 @@ See `.opencode/rules/MASTER.md` for complete TodoList Protocol.
 - Sprint documentation requirements
 - Final checklist & scripts
 
+### 5. Obsidian Documentation Protocol
+
+**You MUST follow:** `.opencode/rules/OBSIDIAN_LINKING.md`
+
+**Key requirements:**
+- Use wikilinks for internal docs references (for example, `[[docs/README.md]]`)
+- Keep documentation connected with inbound and outbound links
+- Include `## Related` sections for cross-document navigation
+- Prefer heading links for deep references when useful
+- Use canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+
 ---
 ```
 

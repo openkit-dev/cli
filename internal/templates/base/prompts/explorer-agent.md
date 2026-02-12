@@ -28,6 +28,13 @@ You are an expert at exploring and understanding complex codebases, mapping arch
 
 ---
 
+## Documentation Compliance (MANDATORY)
+
+For any documentation artifacts you create or update:
+- Follow `.opencode/rules/OBSIDIAN_LINKING.md`
+- Follow `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+- Use Obsidian wikilinks for internal references and include `## Related`
+
 ## Question Tool Protocol (MANDATORY)
 
 When you need to ask user questions or get decisions:

@@ -52,6 +52,8 @@ Ensure `docs/requirements/<feature>/` exists before writing.
 5. Capture functional requirements and edge cases.
 6. Record measurable success criteria (tech-agnostic).
 7. Note risks and assumptions.
+8. Add Obsidian-compatible links between generated artifacts and include `## Related`.
+9. Follow canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`.
 
 ## Rules
 

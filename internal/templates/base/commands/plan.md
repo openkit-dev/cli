@@ -95,7 +95,7 @@ Before any planning work:
    })
    ```
 
-3. **Document stack decision** in `docs/requirements/<feature>/TechStack.md`:
+3. **Document stack decision** in `docs/requirements/<feature>/TECH_STACK.md`:
    - Frontend stack (framework, build tool, state management, UI library, styling)
    - Backend stack (runtime, framework, database, ORM)
    - Infrastructure (containerization, deployment)
@@ -150,7 +150,7 @@ Ensure `docs/` exists and follow the planning standard:
 1. **Discovery/Requirements (MANDATORY)**
     - Create/update `docs/requirements/<feature>/` with:
       `PROBLEM_STATEMENT.md`, `USER_STORIES.md`, `ACCEPTANCE_CRITERIA.md`,
-      `DATA_CONTRACTS.md`, `RISKS.md`, `PLAN.md`.
+      `DATA_CONTRACTS.md`, `RISKS.md`, `PLAN.md`, `README.md`.
 
 **Required artifacts (SDD Gate):**
 - `docs/requirements/<feature>/PLAN.md`
@@ -160,18 +160,21 @@ Ensure `docs/` exists and follow the planning standard:
 - `docs/requirements/<feature>/RISKS.md`
 
 **Auxiliary artifacts (create when applicable):**
-- `docs/requirements/<feature>/research.md`
-- `docs/requirements/<feature>/contracts/`
-- `docs/requirements/<feature>/quickstart.md`
+- `docs/requirements/<feature>/RESEARCH.md`
+- `docs/requirements/<feature>/QUICKSTART.md`
+- `docs/requirements/<feature>/ANALYSIS.md`
+- `docs/requirements/<feature>/TECH_STACK.md`
+- `docs/requirements/<feature>/CHECKLIST.md`
 
 **When to create auxiliary artifacts:**
-- Create `research.md` when there are unresolved unknowns or external dependencies.
+- Create `RESEARCH.md` when there are unresolved unknowns or external dependencies.
 - Update `DATA_CONTRACTS.md` when the feature introduces or changes data entities.
-- Create `contracts/` when the feature introduces APIs, events, or integrations.
-- Create `quickstart.md` when setup or verification needs explicit steps.
+- Create `QUICKSTART.md` when setup or verification needs explicit steps.
+- Create `ANALYSIS.md` for deep cross-artifact checks when needed.
+- Create `CHECKLIST.md` for feature-level readiness checks when needed.
 
 **Contracts template usage:**
-- When creating `docs/requirements/<feature>/contracts/`, use `.opencode/templates/SDD-Contracts.md` as the base content.
+- Use `.opencode/templates/SDD-Contracts.md` as the base content for `docs/requirements/<feature>/DATA_CONTRACTS.md`.
 
 **Templates (REQUIRED):**
 - `.opencode/templates/SDD-ProblemStatement.md`
@@ -179,9 +182,13 @@ Ensure `docs/` exists and follow the planning standard:
 - `.opencode/templates/SDD-AcceptanceCriteria.md`
 - `.opencode/templates/SDD-Risks.md`
 - `.opencode/templates/SDD-Plan.md`
-- `.opencode/templates/SDD-Research.md`
+- `.opencode/templates/SDD-RequirementsIndex.md` (for `docs/requirements/README.md`)
+- `.opencode/templates/SDD-FeatureIndex.md` (for `docs/requirements/<feature>/README.md`)
+- `.opencode/templates/SDD-Research.md` (if applicable)
 - `.opencode/templates/SDD-Contracts.md` (if applicable)
 - `.opencode/templates/SDD-Quickstart.md` (if applicable)
+- `.opencode/templates/TechStack.md` (for `TECH_STACK.md`, if applicable)
+- `.opencode/templates/SDD-SprintIndex.md` (for `docs/sprint/Sprint-XX/README.md`)
 
 **After requirements:**
 - Update todolist: Mark "plan-04-requirements" as `completed`
@@ -192,7 +199,7 @@ Ensure `docs/` exists and follow the planning standard:
       "Do you want to use the latest sprint or create a new sprint?"
     - If no sprint exists, create `docs/sprint/Sprint-01/`.
     - If creating a new sprint, use the next sequential number.
-    - Update `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`.
+    - Update `README.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`.
     - **NOTE:** DO NOT create `TASKS.md` here. Use `/tasks` command for detailed task breakdown.
 
 **After sprint creation:**
@@ -203,6 +210,8 @@ Ensure `docs/` exists and follow the planning standard:
 -  NEVER use generic names like `plan.md`
 -  ALWAYS use `docs/` as the source of truth
 -  ALWAYS create `docs/` if missing
+-  ALWAYS use Obsidian-compatible links (`[[docs/...]]`) across plan artifacts
+-  ALWAYS add `## Related` sections for cross-doc navigation
 
 ### MANDATORY STOP POINT
 
@@ -253,7 +262,8 @@ This command routes to the appropriate planning agent based on the scope:
 3. **Steps**:
     - Check current date/sprint context.
     - Use the question tool to ask minimal missing inputs (<=5).
-    - Produce `SPRINT_GOAL.md`, `BACKLOG.md`, `TASKS.md`, `RISK_REGISTER.md`.
+    - Produce `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`.
+    - Do not create `TASKS.md` here; `/tasks` owns that artifact.
 4. **Output**: Full set of sprint docs.
 
 ---
@@ -273,6 +283,7 @@ This command routes to the appropriate planning agent based on the scope:
 4. **Naming Rules**:
     - Feature folders use kebab-case (e.g., `auth-fix`, `cart-feature`).
     - Sprint folders use `Sprint-XX` with zero padding.
+    - Documentation files use uppercase snake case (`TUDO_MAIUSCULO.md`).
 
 ---
 

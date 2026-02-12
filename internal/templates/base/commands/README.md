@@ -104,6 +104,15 @@ All commands follow a hybrid behavior:
 2. **Ask (via question tool):** Mandatory STOP points for approval
 3. **Execute:** Only after user confirmation
 
+## Obsidian Documentation Standard
+
+All command-generated docs must use Obsidian-compatible internal links:
+
+- Prefer wikilinks for internal references: `[[docs/README.md]]`
+- Keep external references as regular Markdown links
+- Add `## Related` sections to connect artifacts across `docs/`
+- Follow canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+
 ---
 
 ## STOP Points

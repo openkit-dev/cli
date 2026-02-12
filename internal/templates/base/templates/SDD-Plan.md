@@ -46,7 +46,7 @@
 
 ## Glossary
 
-> For standard terminology, see `docs/GLOSSARY.md`
+> For standard terminology, see [[docs/GLOSSARY.md]]
 
 | Term | Definition |
 |------|------------|
@@ -54,7 +54,15 @@
 
 ## References
 
-- Problem Statement: `docs/requirements/<feature>/PROBLEM_STATEMENT.md`
-- User Stories: `docs/requirements/<feature>/USER_STORIES.md`
-- Acceptance Criteria: `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
-- Glossary: `docs/GLOSSARY.md`
+- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[docs/requirements/<feature>/USER_STORIES.md]]
+- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[docs/requirements/<feature>/RISKS.md]]
+- [[docs/sprint/Sprint-XX/BACKLOG.md]]
+- [[docs/GLOSSARY.md]]
+
+## Related
+
+- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[docs/requirements/<feature>/USER_STORIES.md]]
+- [[docs/sprint/Sprint-XX/TASKS.md]]

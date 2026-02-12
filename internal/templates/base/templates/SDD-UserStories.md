@@ -43,3 +43,9 @@ As a [role], I want [capability] so that [benefit].
 **Acceptance scenarios**:
 
 1. Given [context], when [action], then [outcome].
+
+## Related
+
+- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[docs/requirements/<feature>/PLAN.md]]

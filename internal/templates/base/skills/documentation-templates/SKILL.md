@@ -10,6 +10,25 @@ allowed-tools: Read, Glob, Grep
 
 ---
 
+## 0. Obsidian Compatibility (Mandatory)
+
+When writing docs in `docs/`, use Obsidian-compatible internal references:
+
+- Prefer wikilinks for internal docs:
+  - `[[docs/README.md]]`
+  - `[[docs/requirements/<feature>/PLAN.md]]`
+- Use standard Markdown links for external URLs.
+- Add `## Related` section to connect artifacts.
+
+```markdown
+## Related
+
+- [[docs/README.md]]
+- [[docs/GLOSSARY.md]]
+```
+
+---
+
 ## 1. README Structure
 
 ### Essential Sections (Priority Order)

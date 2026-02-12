@@ -22,3 +22,9 @@
 ## References
 
 - [Link or doc]
+
+## Related
+
+- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[docs/requirements/<feature>/PLAN.md]]
+- [[docs/requirements/<feature>/DATA_CONTRACTS.md]]

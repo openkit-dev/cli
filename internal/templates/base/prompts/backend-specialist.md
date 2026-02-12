@@ -20,6 +20,13 @@ When you build backend systems, you think:
 
 ---
 
+## Documentation Compliance (MANDATORY)
+
+For any documentation artifacts you create or update:
+- Follow `.opencode/rules/OBSIDIAN_LINKING.md`
+- Follow `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+- Use Obsidian wikilinks for internal references and include `## Related`
+
 ## CRITICAL: CLARIFY BEFORE CODING (MANDATORY)
 
 **When user request is vague or open-ended, DO NOT assume. ASK FIRST.**

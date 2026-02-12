@@ -66,12 +66,45 @@ This directory contains **system-wide rules** that enforce consistent behavior a
 
 ---
 
+### 3. **OBSIDIAN_LINKING.md** (Priority: P0)
+**Purpose:** Enforce Obsidian-compatible documentation with wikilinks and graph navigation.
+
+**Contains:**
+- Wikilink standards for internal docs
+- Heading and block reference patterns
+- Required `## Related` section conventions
+- Graph connectivity requirements (inbound/outbound links)
+
+**Applies to:** All agents, commands, skills
+
+**Trigger:** `always_on`
+
+---
+
+### 4. **DOCS_FILE_GLOSSARY.md** (Priority: P0)
+**Purpose:** Define canonical documentation filenames for all projects.
+
+**Contains:**
+- Global naming convention (`TUDO_MAIUSCULO.md`)
+- Required and optional docs artifacts by context
+- Sprint/requirements/ADR/runbook filename standards
+
+**Applies to:** All agents, commands, skills
+
+**Trigger:** `always_on`
+
+---
+
 ## Rule Hierarchy
 
 ```
 MASTER.md (Root)
     ↓
     ├─ TOOL_USAGE.md (Tool patterns)
+    │
+    ├─ OBSIDIAN_LINKING.md (Documentation graph patterns)
+    │
+    ├─ DOCS_FILE_GLOSSARY.md (Canonical doc filenames)
     │
     ├─ Agent Prompts (.opencode/prompts/*.md)
     │   └─ Reference MASTER.md + TOOL_USAGE.md
@@ -137,6 +170,8 @@ When a skill is loaded:
 Before any action, verify:
 - [ ] Have I read `MASTER.md`? (automatic)
 - [ ] Have I read `TOOL_USAGE.md`? (automatic)
+- [ ] Have I read `OBSIDIAN_LINKING.md`? (automatic)
+- [ ] Have I read `DOCS_FILE_GLOSSARY.md`? (automatic)
 - [ ] Am I using the correct tool? (check decision tree)
 - [ ] Have I loaded required skills? (check frontmatter)
 - [ ] Am I following todolist protocol? (for complex tasks)
@@ -146,6 +181,8 @@ Before any action, verify:
 Before execution, verify:
 - [ ] Have I read `MASTER.md`? (automatic)
 - [ ] Have I read `TOOL_USAGE.md`? (automatic)
+- [ ] Have I read `OBSIDIAN_LINKING.md`? (automatic)
+- [ ] Have I read `DOCS_FILE_GLOSSARY.md`? (automatic)
 - [ ] Am I using the correct tool? (check decision tree)
 - [ ] Am I following user interaction patterns? (question/todolist)
 
@@ -153,6 +190,8 @@ Before execution, verify:
 Before applying, verify:
 - [ ] Have I read `MASTER.md`? (automatic)
 - [ ] Have I read `TOOL_USAGE.md`? (automatic)
+- [ ] Have I read `OBSIDIAN_LINKING.md`? (automatic)
+- [ ] Have I read `DOCS_FILE_GLOSSARY.md`? (automatic)
 - [ ] Am I using the correct tool? (check decision tree)
 - [ ] Am I announcing skill usage? (`Applying knowledge of @[skill-name]...`)
 
@@ -258,6 +297,8 @@ bash("pytest tests", workdir="/backend")
 - **Agent Prompts**: `.opencode/prompts/`
 - **Command System**: `.opencode/commands/README.md`
 - **Skill System**: `docs/SKILLS.md`
+- **Obsidian Protocol**: `.opencode/rules/OBSIDIAN_LINKING.md`
+- **Docs File Glossary**: `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 - **Architecture**: `.opencode/ARCHITECTURE.md`
 
 ---

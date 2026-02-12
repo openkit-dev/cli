@@ -70,6 +70,7 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 7. **Create planning artifacts in `docs/` (MANDATORY for PLANNING mode)**
 8. **Verify `docs/requirements/` and `docs/sprint/Sprint-XX/` outputs exist**
 9. **Verify compliance with `rules/MASTER.md` Documentation Integrity Protocol**
+10. **Use Obsidian-compatible wikilinks across generated docs artifacts**
 
 ---
 
@@ -79,6 +80,8 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 
 ### Requirements Location
 
+- `docs/requirements/README.md`
+- `docs/requirements/<feature>/README.md`
 - `docs/requirements/<feature>/PROBLEM_STATEMENT.md`
 - `docs/requirements/<feature>/USER_STORIES.md`
 - `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
@@ -87,6 +90,8 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 
 ### Sprint Location
 
+- `docs/sprint/README.md`
+- `docs/sprint/Sprint-XX/README.md`
 - `docs/sprint/Sprint-XX/SPRINT_GOAL.md`
 - `docs/sprint/Sprint-XX/BACKLOG.md`
 - `docs/sprint/Sprint-XX/RISK_REGISTER.md`
@@ -99,6 +104,11 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 2. If no sprint exists, create `Sprint-01`.
 3. If new sprint, use next sequential number.
 4. After planning, direct user to run `/tasks` for detailed task breakdown.
+
+### Documentation Naming Rule
+
+- Documentation files must follow uppercase snake case (`TUDO_MAIUSCULO.md`).
+- Use canonical names from `.opencode/rules/DOCS_FILE_GLOSSARY.md`.
 
 ---
 
@@ -283,6 +293,11 @@ Before assigning agents, determine project type:
 | **File Structure** | Directory layout |
 | **Task Breakdown** | All tasks with Agent + Skill recommendations and INPUT→OUTPUT→VERIFY |
  | **Phase 3** | Final verification checklist |
+
+**Documentation linking requirement:**
+- Use wikilinks for internal references (for example, `[[docs/requirements/<feature>/PLAN.md]]`)
+- Add `## Related` sections for cross-artifact navigation
+- Use canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 
 **EXIT GATE:**
 ```
