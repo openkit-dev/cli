@@ -460,7 +460,9 @@ func generateWebFullstackCompatFiles(docsDir string) error {
 func confirm(prompt string) bool {
 	fmt.Printf("\n%s [y/N]: ", prompt)
 	var response string
-	fmt.Scanln(&response)
+	if _, err := fmt.Scanln(&response); err != nil {
+		return false
+	}
 	response = strings.ToLower(strings.TrimSpace(response))
 
 	return response == "y" || response == "yes"

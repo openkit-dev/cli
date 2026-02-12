@@ -295,11 +295,6 @@ func (reg *Registry) scoreType(config *ProjectTypeConfig) float64 {
 		}
 	}
 
-	// Apply confidence threshold
-	if config.Detection.ConfidenceThreshold > 0 && config.Detection.ConfidenceThreshold < 1.0 {
-		// No action - threshold is used for user confirmation
-	}
-
 	return score
 }
 
