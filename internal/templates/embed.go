@@ -240,6 +240,16 @@ func createDocsStructure(docsDir string) error {
 
 This file is the primary hub for project documentation.
 
+## Context
+
+Central hub for project documentation. Use this page to understand scope, find domain docs, and navigate to requirements and sprint execution artifacts.
+
+## Status Overview
+
+- Documentation graph: Active
+- Canonical hub naming: Enforced (HUB-*.md)
+- Last major migration: [YYYY-MM-DD]
+
 ## Navigation
 
 - [[CONTEXT.md]]
@@ -362,6 +372,16 @@ See the skills/ folder in your agent configuration for available skills.
 
 This hub links feature-level requirements packs.
 
+## Context
+
+Hub for all feature requirement packs. It organizes discovery-to-plan artifacts used as the source of truth before implementation.
+
+## Status Overview
+
+- Feature packs tracked: [N]
+- Ready for implementation (PLAN.md + TASKS.md): [N]
+- At-risk feature packs: [N]
+
 ## Structure
 
 - [[requirements/<feature>/HUB-<FEATURE>.md]]
@@ -381,6 +401,16 @@ This hub links feature-level requirements packs.
 
 This hub links sprint folders and execution artifacts.
 
+## Context
+
+Portfolio-level sprint hub used to navigate all sprint execution packs.
+
+## Status Overview
+
+- Active sprint: [Sprint-XX]
+- Completed sprints: [N]
+- Delivery health: On Track | At Risk
+
 ## Structure
 
 - [[sprint/Sprint-XX/HUB-SPRINT-XX.md]]
@@ -398,6 +428,16 @@ This hub links sprint folders and execution artifacts.
 
 Architecture Decision Records index.
 
+## Context
+
+Hub for architectural decisions and their rationale.
+
+## Status Overview
+
+- Accepted ADRs: [N]
+- Superseded ADRs: [N]
+- Pending decisions: [N]
+
 ## Related
 
 - [[HUB-DOCS.md]]
@@ -406,6 +446,16 @@ Architecture Decision Records index.
 		"runbooks/HUB-RUNBOOKS.md": `# Runbooks Index
 
 Operational playbooks and incident procedures.
+
+## Context
+
+Operational hub for runbooks used during incidents and routine operations.
+
+## Status Overview
+
+- Critical runbooks covered: [N]
+- Last review date: [YYYY-MM-DD]
+- Escalation readiness: Ready | Needs Review
 
 ## Related
 

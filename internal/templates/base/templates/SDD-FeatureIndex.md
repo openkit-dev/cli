@@ -2,6 +2,16 @@
 
 **Feature**: [Feature name]
 
+## Context
+
+Feature-level hub for requirements, constraints, and planning artifacts. It provides a single entry point for understanding intent, scope, and execution readiness.
+
+## Status Overview
+
+- Stage: Discovery | Specified | Planned | In Progress | Done
+- Sprint linkage: [Sprint-XX]
+- Risk level: Low | Medium | High
+
 ## Artifacts
 
 - [[requirements/<feature>/PROBLEM_STATEMENT.md]]

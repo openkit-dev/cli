@@ -2,6 +2,16 @@
 
 Feature specifications and planning artifacts.
 
+## Context
+
+Portfolio hub for feature requirement packs, linking specification artifacts to planning artifacts and sprint execution hubs.
+
+## Status Overview
+
+- Feature packs with hub notes: 7
+- Feature packs with `PLAN.md`: 6/7
+- Packs currently at risk: 3 (`semantic-memory`, `remove-blueprints-references`, `security-scan-hardening`)
+
 ## Features
 
 - [[requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]

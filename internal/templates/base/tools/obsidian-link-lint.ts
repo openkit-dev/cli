@@ -34,6 +34,49 @@ function extractTargets(content: string): string[] {
   return targets
 }
 
+async function pathExists(filePath: string): Promise<boolean> {
+  try {
+    await fs.access(filePath)
+    return true
+  } catch {
+    return false
+  }
+}
+
+async function hasAnyFileWithName(dir: string, name: string): Promise<boolean> {
+  const files = await listMarkdownFiles(dir)
+  return files.some((file) => path.basename(file) === name)
+}
+
+async function resolveTargetExists(
+  vaultRoot: string,
+  sourceFile: string,
+  target: string,
+): Promise<boolean> {
+  if (!target || target === "x") return true
+
+  const normalized = target.replace(/^\/+/, "")
+  const candidates = new Set<string>()
+
+  candidates.add(path.join(vaultRoot, normalized))
+  candidates.add(path.join(path.dirname(sourceFile), normalized))
+
+  if (!normalized.endsWith(".md")) {
+    candidates.add(path.join(vaultRoot, `${normalized}.md`))
+    candidates.add(path.join(path.dirname(sourceFile), `${normalized}.md`))
+  }
+
+  for (const candidate of candidates) {
+    if (await pathExists(candidate)) return true
+  }
+
+  const fallbackName = normalized.endsWith(".md")
+    ? path.basename(normalized)
+    : `${path.basename(normalized)}.md`
+
+  return hasAnyFileWithName(vaultRoot, fallbackName)
+}
+
 export default tool({
   description: "Validate Obsidian wikilinks in docs",
   args: {
@@ -43,8 +86,8 @@ export default tool({
       .describe("Relative docs root to scan"),
   },
   async execute(args, context) {
-    const root = path.join(context.worktree, args.root)
-    const files = await listMarkdownFiles(root)
+    const vaultRoot = path.join(context.worktree, args.root)
+    const files = await listMarkdownFiles(vaultRoot)
     const findings: LinkFinding[] = []
 
     for (const file of files) {
@@ -52,13 +95,7 @@ export default tool({
       const source = path.relative(context.worktree, file)
       const targets = extractTargets(content)
       for (const target of targets) {
-        const abs = path.join(context.worktree, target)
-        let exists = true
-        try {
-          await fs.access(abs)
-        } catch {
-          exists = false
-        }
+        const exists = await resolveTargetExists(vaultRoot, file, target)
         findings.push({ source, target, exists })
       }
     }

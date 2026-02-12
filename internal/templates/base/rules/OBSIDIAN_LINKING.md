@@ -46,6 +46,11 @@ Use index notes to improve graph navigation and context retrieval:
 - `requirements/<feature>/HUB-<FEATURE>.md` as feature hub.
 - `sprint/Sprint-XX/HUB-SPRINT-XX.md` as sprint execution hub.
 
+Each hub note MUST include:
+
+1. `## Context` describing scope and intended usage.
+2. `## Status Overview` summarizing the current state (phase, completion, blockers, readiness, or risk).
+
 ## Required Related Section
 
 Whenever applicable, include:

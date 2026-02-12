@@ -1,5 +1,15 @@
 # Sprint-05 Hub
 
+## Context
+
+Sprint-05 targets semantic memory integration (CLI flags, plugin templates, storage/embedding flow, and operational documentation).
+
+## Status Overview
+
+- Sprint phase: Execution (TASKS indicates core implementation progress; docs/E2E still pending)
+- Completion: 75.0% from `TASKS.md` checkbox markers (12 checked / 16 total)
+- Blockers: Not explicitly registered
+
 ## Artifacts
 
 - [[sprint/Sprint-05/SPRINT_GOAL.md]]

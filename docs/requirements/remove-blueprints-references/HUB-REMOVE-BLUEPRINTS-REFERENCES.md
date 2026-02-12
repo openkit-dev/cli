@@ -2,6 +2,16 @@
 
 Requirements for removing blueprint references.
 
+## Context
+
+Tracks removal of legacy "blueprints" terminology and related skip-list behavior to keep language and scanning behavior consistent.
+
+## Status Overview
+
+- Stage: In Progress (spec + plan exist; linked sprint is still active)
+- Sprint linkage: `Sprint-06`
+- Risk level: Medium (wording cleanup and scan-noise side effects remain possible)
+
 ## Artifacts
 
 - [[requirements/remove-blueprints-references/PROBLEM_STATEMENT.md]]

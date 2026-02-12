@@ -1,5 +1,15 @@
 # Documentation Index
 
+## Context
+
+Central hub for project documentation. Use this page to understand scope, find domain docs, and navigate to requirements and sprint execution artifacts.
+
+## Status Overview
+
+- Documentation graph: Active
+- Canonical hub naming: Enforced (`HUB-*.md`)
+- Last major migration: [YYYY-MM-DD]
+
 ## Navigation
 
 - [[CONTEXT.md]]

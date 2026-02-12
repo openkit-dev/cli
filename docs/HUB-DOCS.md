@@ -2,6 +2,16 @@
 
 This folder is the source of truth for OpenKit CLI planning and documentation.
 
+## Context
+
+Global navigation hub for OpenKit documentation, connecting core references, feature requirement packs, sprint execution artifacts, and ADR history.
+
+## Status Overview
+
+- Documentation graph: Connected across 17 hub notes (`docs`, `requirements`, `sprint`, `adr`)
+- Canonical hub naming: Enforced for hub files (`HUB-*.md`)
+- Last review date: 2026-02-11
+
 ## Sections
 
 - [[content-protocol/README.md|content-protocol]]: canonical pack format, schemas, and sync semantics

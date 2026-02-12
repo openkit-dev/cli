@@ -2,6 +2,16 @@
 
 **Sprint**: [Sprint-XX]
 
+## Context
+
+Sprint execution hub for goals, backlog, task tracking, and risk management.
+
+## Status Overview
+
+- Sprint phase: Planning | Execution | Verification | Completed
+- Completion: [0-100]%
+- Blockers: None | [Describe blocker]
+
 ## Artifacts
 
 - [[sprint/Sprint-XX/SPRINT_GOAL.md]]

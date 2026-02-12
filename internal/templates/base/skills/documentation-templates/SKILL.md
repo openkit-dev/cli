@@ -19,6 +19,9 @@ When writing docs in `docs/`, use Obsidian-compatible internal references:
   - `[[requirements/<feature>/PLAN.md]]`
 - Use standard Markdown links for external URLs.
 - Add `## Related` section to connect artifacts.
+- For hub docs (`HUB-*.md`), add:
+  - `## Context` (what the hub covers)
+  - `## Status Overview` (current phase, completion, blockers)
 
 ```markdown
 ## Related

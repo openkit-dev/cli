@@ -299,6 +299,7 @@ Before assigning agents, determine project type:
 - Use wikilinks for internal references (for example, `[[requirements/<feature>/PLAN.md]]`)
 - Add `## Related` sections for cross-artifact navigation
 - Use canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+- For every `HUB-*.md`, include `## Context` and `## Status Overview`
 
 **EXIT GATE:**
 ```

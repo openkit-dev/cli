@@ -22,6 +22,9 @@ Read the current `docs/` structure, detect inconsistencies, and update documenta
    - `docs/requirements/<feature>/HUB-<FEATURE>.md`
    - `docs/sprint/Sprint-XX/HUB-SPRINT-XX.md`
 6. Preserve external links as regular Markdown links.
+7. Ensure each hub (`HUB-*.md`) contains:
+   - `## Context` (scope and purpose)
+   - `## Status Overview` (phase/completion/blockers summary)
 
 ## Canonical Hub Rename Map (Mandatory)
 

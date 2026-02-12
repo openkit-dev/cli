@@ -27,6 +27,25 @@ Produce documentation that behaves like an Obsidian knowledge graph:
 4. Add `## Related` with meaningful connections.
 5. Keep naming and paths stable to avoid link churn.
 
+## Hub Sections (Mandatory)
+
+For every hub note (`HUB-*.md`), include both sections:
+
+1. `## Context`
+   - Briefly explain what the hub represents and when to use it.
+2. `## Status Overview`
+   - Provide a concise operational snapshot (phase, completion, blockers, readiness, or risk level).
+
+Suggested minimal status format:
+
+```markdown
+## Status Overview
+
+- Phase: [Planning | Execution | Verification | Done]
+- Completion: [0-100]%
+- Blockers: [None or short note]
+```
+
 ## Related Section Template
 
 ```markdown

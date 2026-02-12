@@ -2,6 +2,16 @@
 
 Requirements and analysis for semantic memory integration.
 
+## Context
+
+Tracks semantic memory integration for OpenKit/OpenCode, including architecture research, storage/embedding decisions, and implementation tracking.
+
+## Status Overview
+
+- Stage: In Progress (spec artifacts and analysis docs exist; implementation artifacts are active, but `PLAN.md` is missing)
+- Sprint linkage: `Sprint-05`
+- Risk level: High (risk register contains multiple high-probability/high-impact scenarios)
+
 ## Artifacts
 
 - [[requirements/semantic-memory/PROBLEM_STATEMENT.md]]

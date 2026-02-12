@@ -11,6 +11,7 @@ OpenKit is a **CLI toolkit** that configures **Spec-Driven Development** environ
 - **Multi-Agent Support**: OpenCode, Claude Code, Cursor, Gemini CLI, Codex, Windsurf
 - **33+ Domain Skills**: Frontend, backend, security, testing, architecture
 - **18 Commands**: Slash commands for orchestrated workflows
+- **Obsidian-Native Docs Graph**: Canonical `HUB-*.md` structure with wikilinks and connected planning artifacts
 - **Safe-by-Default Sync**: Managed state tracking with conflict detection
 - **Cross-Platform**: Single binary, runs on macOS, Linux, Windows
 - **No Dependencies**: No runtime required, no npm packages
@@ -85,6 +86,16 @@ openkit opencode sync
 # Start developing
 opencode
 ```
+
+### Obsidian Vault Setup (Recommended)
+
+OpenKit documentation is designed for Obsidian-compatible wikilinks and hub navigation.
+
+- Open your vault at `./docs` (the `docs` folder itself)
+- Do not open the repository root as vault if your docs links are normalized for `docs` root
+- Start from `HUB-DOCS.md`, then navigate to `requirements/HUB-REQUIREMENTS.md` and `sprint/HUB-SPRINTS.md`
+
+This avoids path mismatches like accidental `docs/docs/...` notes when creating links from Obsidian.
 
 ### Option 3: Check Available Agents
 

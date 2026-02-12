@@ -1,5 +1,15 @@
 # Requirements Index
 
+## Context
+
+Hub for all feature requirement packs. It organizes discovery-to-plan artifacts used as the source of truth before implementation.
+
+## Status Overview
+
+- Feature packs tracked: [N]
+- Ready for implementation (`PLAN.md` + `TASKS.md`): [N]
+- At-risk feature packs: [N]
+
 ## Structure
 
 - `docs/requirements/<feature>/HUB-<FEATURE>.md`
