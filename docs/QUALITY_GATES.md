@@ -1,7 +1,7 @@
 # QUALITY GATES
 
 **Created**: 2026-02-10
-**Last Updated**: 2026-02-10
+**Last Updated**: 2026-02-12
 
 ## Linters
 
@@ -38,8 +38,14 @@
 
 | Tool | Command | Coverage | Status | Notes |
 |------|---------|----------|--------|-------|
-| **Go Test** | `make test` | Not measured | Infrastructure exists | Unit tests exist for `internal/ui`, `internal/cli`, `internal/selfupdate`, `internal/targets`. |
-| **Go Test Coverage** | `make test-coverage` | HTML report | Infrastructure exists | Generates `coverage.out` and `coverage.html`. |
+| **Go Test** | `make test` | Not measured | Passing | Unit tests exist for `internal/ui`, `internal/cli`, `internal/selfupdate`, `internal/targets`. |
+| **Go Test Coverage** | `make test-coverage` | HTML report | Available | Generates `coverage.out` and `coverage.html`. |
+
+### Test Status (2026-02-12)
+
+- **Test Execution**: All tests passing
+- **Command**: `make test`
+- **Result**: PASS
 
 ### Test Files
 
@@ -63,7 +69,7 @@
 
 | Command | Artifacts | Platforms | Status |
 |---------|-----------|-----------|--------|
-| `make build` | `openkit` binary | Current platform only | Working |
+| `make build` | `openkit` binary | Current platform only | Working (v0.3.7) |
 | `make build-all` | Multi-platform binaries | Darwin, Linux, Windows (AMD64/ARM64) | Working |
 
 ### Build Details
@@ -73,6 +79,12 @@
 - `COMMIT`: Git short hash (or "none")
 - `DATE`: UTC timestamp
 - Embedded via LDFLAGS during build
+
+**Current Build** (2026-02-12):
+- Binary: `openkit`
+- Version: v0.3.7
+- Commit: e49bcbc
+- Built: 2026-02-12T23:17:43Z
 
 **Supported Platforms** (from `make build-all`):
 - Darwin (macOS): AMD64, ARM64

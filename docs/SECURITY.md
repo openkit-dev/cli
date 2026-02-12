@@ -1,7 +1,7 @@
 # SECURITY
 
 **Created**: 2026-02-10
-**Last Updated**: 2026-02-10
+**Last Updated**: 2026-02-12
 
 ## Threats & Risks
 
