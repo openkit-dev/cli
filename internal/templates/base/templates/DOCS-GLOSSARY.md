@@ -6,5 +6,5 @@
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/CONTEXT.md]]
+- [[HUB-DOCS.md]]
+- [[CONTEXT.md]]

@@ -16,5 +16,5 @@ Requirements and analysis for semantic memory integration.
 
 ## Related
 
-- [[docs/requirements/README.md]]
-- [[docs/sprint/Sprint-05/README.md]]
+- [[docs/requirements/HUB-REQUIREMENTS.md]]
+- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]

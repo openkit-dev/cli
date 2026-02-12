@@ -11,5 +11,5 @@ Canonical protocol and schemas for managed synchronization.
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/agent-compat/README.md]]

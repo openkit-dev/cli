@@ -75,7 +75,7 @@
 
 ## Related
 
-- [[docs/requirements/cursor-codex-targets/README.md]]
+- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
 - [[docs/requirements/cursor-codex-targets/PROBLEM_STATEMENT.md]]
 - [[docs/requirements/cursor-codex-targets/PLAN.md]]
-- [[docs/sprint/Sprint-04/README.md]]
+- [[docs/sprint/Sprint-04/HUB-SPRINT-04.md]]

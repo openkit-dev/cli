@@ -242,24 +242,24 @@ This file is the primary hub for project documentation.
 
 ## Navigation
 
-- [[docs/CONTEXT.md]]
-- [[docs/SECURITY.md]]
-- [[docs/QUALITY_GATES.md]]
-- [[docs/ACTION_ITEMS.md]]
-- [[docs/ARCHITECTURE.md]]
-- [[docs/WORKFLOW.md]]
-- [[docs/COMMANDS.md]]
-- [[docs/SKILLS.md]]
-- [[docs/GLOSSARY.md]]
-- [[docs/requirements/HUB-REQUIREMENTS.md]]
-- [[docs/sprint/HUB-SPRINTS.md]]
-- [[docs/adr/HUB-ADR.md]]
-- [[docs/runbooks/HUB-RUNBOOKS.md]]
+- [[CONTEXT.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]
+- [[ACTION_ITEMS.md]]
+- [[ARCHITECTURE.md]]
+- [[WORKFLOW.md]]
+- [[COMMANDS.md]]
+- [[SKILLS.md]]
+- [[GLOSSARY.md]]
+- [[requirements/HUB-REQUIREMENTS.md]]
+- [[sprint/HUB-SPRINTS.md]]
+- [[adr/HUB-ADR.md]]
+- [[runbooks/HUB-RUNBOOKS.md]]
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/WORKFLOW.md]]
+- [[CONTEXT.md]]
+- [[WORKFLOW.md]]
 `,
 		"GLOSSARY.md": `# Glossary
 
@@ -271,8 +271,8 @@ Standard terminology used across this project.
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/CONTEXT.md]]
+- [[HUB-DOCS.md]]
+- [[CONTEXT.md]]
 `,
 		"MIGRATION_CHECKLIST.md": `# Migration Checklist
 
@@ -284,19 +284,19 @@ Use this file to migrate legacy documentation to the Obsidian-compatible standar
 
 ## Link Standard
 
-- [ ] Replace internal Markdown links with wikilinks [[docs/...]]
+- [ ] Replace internal Markdown links with wikilinks [[...]]
 - [ ] Keep external URLs as standard Markdown links
 
 ## Hub Notes
 
-- [ ] Ensure [[docs/HUB-DOCS.md]] exists and links major sections
-- [ ] Ensure [[docs/requirements/HUB-REQUIREMENTS.md]] exists
-- [ ] Ensure [[docs/sprint/HUB-SPRINTS.md]] exists
+- [ ] Ensure [[HUB-DOCS.md]] exists and links major sections
+- [ ] Ensure [[requirements/HUB-REQUIREMENTS.md]] exists
+- [ ] Ensure [[sprint/HUB-SPRINTS.md]] exists
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/GLOSSARY.md]]
+- [[HUB-DOCS.md]]
+- [[GLOSSARY.md]]
 `,
 		"ARCHITECTURE.md": `# Architecture
 
@@ -304,9 +304,9 @@ Document your project architecture here.
 
 ## Related
 
-- [[docs/WORKFLOW.md]]
-- [[docs/COMMANDS.md]]
-- [[docs/SKILLS.md]]
+- [[WORKFLOW.md]]
+- [[COMMANDS.md]]
+- [[SKILLS.md]]
 `,
 		"COMMANDS.md": `# Commands Reference
 
@@ -325,9 +325,9 @@ OpenKit provides the following slash commands for SDD workflow:
 
 ## Related
 
-- [[docs/WORKFLOW.md]]
-- [[docs/ARCHITECTURE.md]]
-- [[docs/SKILLS.md]]
+- [[WORKFLOW.md]]
+- [[ARCHITECTURE.md]]
+- [[SKILLS.md]]
 `,
 		"SKILLS.md": `# Skills Reference
 
@@ -337,9 +337,9 @@ See the skills/ folder in your agent configuration for available skills.
 
 ## Related
 
-- [[docs/COMMANDS.md]]
-- [[docs/WORKFLOW.md]]
-- [[docs/ARCHITECTURE.md]]
+- [[COMMANDS.md]]
+- [[WORKFLOW.md]]
+- [[ARCHITECTURE.md]]
 `,
 		"WORKFLOW.md": `# Development Workflow
 
@@ -354,9 +354,9 @@ See the skills/ folder in your agent configuration for available skills.
 
 ## Related
 
-- [[docs/COMMANDS.md]]
-- [[docs/ARCHITECTURE.md]]
-- [[docs/SKILLS.md]]
+- [[COMMANDS.md]]
+- [[ARCHITECTURE.md]]
+- [[SKILLS.md]]
 `,
 		"requirements/HUB-REQUIREMENTS.md": `# Requirements Index
 
@@ -364,18 +364,18 @@ This hub links feature-level requirements packs.
 
 ## Structure
 
-- [[docs/requirements/<feature>/HUB-<FEATURE>.md]]
-- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/DATA_CONTRACTS.md]]
-- [[docs/requirements/<feature>/RISKS.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/HUB-<FEATURE>.md]]
+- [[requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/DATA_CONTRACTS.md]]
+- [[requirements/<feature>/RISKS.md]]
+- [[requirements/<feature>/PLAN.md]]
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/WORKFLOW.md]]
+- [[HUB-DOCS.md]]
+- [[WORKFLOW.md]]
 `,
 		"sprint/HUB-SPRINTS.md": `# Sprint Index
 
@@ -383,16 +383,16 @@ This hub links sprint folders and execution artifacts.
 
 ## Structure
 
-- [[docs/sprint/Sprint-XX/HUB-SPRINT-XX.md]]
-- [[docs/sprint/Sprint-XX/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-XX/BACKLOG.md]]
-- [[docs/sprint/Sprint-XX/TASKS.md]]
-- [[docs/sprint/Sprint-XX/RISK_REGISTER.md]]
+- [[sprint/Sprint-XX/HUB-SPRINT-XX.md]]
+- [[sprint/Sprint-XX/SPRINT_GOAL.md]]
+- [[sprint/Sprint-XX/BACKLOG.md]]
+- [[sprint/Sprint-XX/TASKS.md]]
+- [[sprint/Sprint-XX/RISK_REGISTER.md]]
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/WORKFLOW.md]]
+- [[HUB-DOCS.md]]
+- [[WORKFLOW.md]]
 `,
 		"adr/HUB-ADR.md": `# ADR Index
 
@@ -400,8 +400,8 @@ Architecture Decision Records index.
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/ARCHITECTURE.md]]
+- [[HUB-DOCS.md]]
+- [[ARCHITECTURE.md]]
 `,
 		"runbooks/HUB-RUNBOOKS.md": `# Runbooks Index
 
@@ -409,9 +409,9 @@ Operational playbooks and incident procedures.
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/SECURITY.md]]
-- [[docs/QUALITY_GATES.md]]
+- [[HUB-DOCS.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]
 `,
 	}
 

@@ -36,7 +36,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-04/README.md]]
+- [[docs/sprint/Sprint-04/HUB-SPRINT-04.md]]
 - [[docs/sprint/Sprint-04/SPRINT_GOAL.md]]
 - [[docs/sprint/Sprint-04/TASKS.md]]
 - [[docs/sprint/Sprint-04/RISK_REGISTER.md]]

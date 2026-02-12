@@ -73,7 +73,7 @@ What needs documenting?
 
 ### Obsidian Linking Principles
 
-- Use wikilinks for internal references (for example, `[[docs/HUB-DOCS.md]]`)
+- Use wikilinks for internal references (for example, `[[HUB-DOCS.md]]`)
 - Use regular Markdown links for external URLs only
 - Add `## Related` section in docs artifacts when applicable
 - Prefer heading links for deep references when they improve navigation

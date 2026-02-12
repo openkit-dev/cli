@@ -6,6 +6,6 @@
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/SECURITY.md]]
-- [[docs/QUALITY_GATES.md]]
+- [[CONTEXT.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]

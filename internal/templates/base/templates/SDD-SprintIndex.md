@@ -4,12 +4,12 @@
 
 ## Artifacts
 
-- [[docs/sprint/Sprint-XX/SPRINT_GOAL.md]]
-- [[docs/sprint/Sprint-XX/BACKLOG.md]]
-- [[docs/sprint/Sprint-XX/TASKS.md]]
-- [[docs/sprint/Sprint-XX/RISK_REGISTER.md]]
+- [[sprint/Sprint-XX/SPRINT_GOAL.md]]
+- [[sprint/Sprint-XX/BACKLOG.md]]
+- [[sprint/Sprint-XX/TASKS.md]]
+- [[sprint/Sprint-XX/RISK_REGISTER.md]]
 
 ## Related
 
-- [[docs/sprint/HUB-SPRINTS.md]]
-- [[docs/requirements/HUB-REQUIREMENTS.md]]
+- [[sprint/HUB-SPRINTS.md]]
+- [[requirements/HUB-REQUIREMENTS.md]]

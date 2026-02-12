@@ -24,6 +24,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/sprint/Sprint-XX/TASKS.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[sprint/Sprint-XX/TASKS.md]]

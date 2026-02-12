@@ -21,6 +21,6 @@ python .opencode/scripts/checklist.py .
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/SECURITY.md]]
-- [[docs/ACTION_ITEMS.md]]
+- [[CONTEXT.md]]
+- [[SECURITY.md]]
+- [[ACTION_ITEMS.md]]

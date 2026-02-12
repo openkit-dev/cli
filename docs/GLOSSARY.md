@@ -326,6 +326,6 @@ A sequence of phases and commands to accomplish a goal.
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/CONTEXT.md]]
 - [[docs/CONFLICT_ANALYSIS_REPORT.md]]

@@ -112,6 +112,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/requirements/<feature>/DATA_CONTRACTS.md]]
-- [[docs/requirements/<feature>/QUICKSTART.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/DATA_CONTRACTS.md]]
+- [[requirements/<feature>/QUICKSTART.md]]

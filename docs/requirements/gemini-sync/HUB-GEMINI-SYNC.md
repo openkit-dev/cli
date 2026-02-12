@@ -12,5 +12,5 @@ Requirements for Gemini target synchronization.
 
 ## Related
 
-- [[docs/requirements/README.md]]
-- [[docs/sprint/Sprint-02/README.md]]
+- [[docs/requirements/HUB-REQUIREMENTS.md]]
+- [[docs/sprint/Sprint-02/HUB-SPRINT-02.md]]

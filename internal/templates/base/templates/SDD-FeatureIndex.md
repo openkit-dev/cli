@@ -4,19 +4,19 @@
 
 ## Artifacts
 
-- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/DATA_CONTRACTS.md]]
-- [[docs/requirements/<feature>/RISKS.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/requirements/<feature>/RESEARCH.md]]
-- [[docs/requirements/<feature>/QUICKSTART.md]]
-- [[docs/requirements/<feature>/ANALYSIS.md]]
-- [[docs/requirements/<feature>/TECH_STACK.md]]
-- [[docs/requirements/<feature>/CHECKLIST.md]]
+- [[requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/DATA_CONTRACTS.md]]
+- [[requirements/<feature>/RISKS.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/RESEARCH.md]]
+- [[requirements/<feature>/QUICKSTART.md]]
+- [[requirements/<feature>/ANALYSIS.md]]
+- [[requirements/<feature>/TECH_STACK.md]]
+- [[requirements/<feature>/CHECKLIST.md]]
 
 ## Related
 
-- [[docs/requirements/HUB-REQUIREMENTS.md]]
-- [[docs/sprint/HUB-SPRINTS.md]]
+- [[requirements/HUB-REQUIREMENTS.md]]
+- [[sprint/HUB-SPRINTS.md]]

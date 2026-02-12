@@ -15,7 +15,7 @@ Create clear, actionable documentation based on code changes and context pack in
 1. Update only `docs/` files; reference code paths without editing them.
 2. Ensure API indexes, frontend routes, and data fetching docs are updated when relevant.
 3. Add Action Items for inconsistencies or cross-repo impacts.
-4. Use Obsidian-compatible links for internal docs references (`[[docs/...]]`).
+4. Use Obsidian-compatible links for internal docs references (`[[...]]`).
 5. Add a `## Related` section with at least two useful internal links.
 6. Follow canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`.
 

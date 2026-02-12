@@ -296,7 +296,7 @@ Before assigning agents, determine project type:
  | **Phase 3** | Final verification checklist |
 
 **Documentation linking requirement:**
-- Use wikilinks for internal references (for example, `[[docs/requirements/<feature>/PLAN.md]]`)
+- Use wikilinks for internal references (for example, `[[requirements/<feature>/PLAN.md]]`)
 - Add `## Related` sections for cross-artifact navigation
 - Use canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 

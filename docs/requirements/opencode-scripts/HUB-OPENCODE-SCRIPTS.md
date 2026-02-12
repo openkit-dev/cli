@@ -11,5 +11,5 @@ Requirements for script packaging and workflow docs.
 
 ## Related
 
-- [[docs/requirements/README.md]]
-- [[docs/sprint/Sprint-03/README.md]]
+- [[docs/requirements/HUB-REQUIREMENTS.md]]
+- [[docs/sprint/Sprint-03/HUB-SPRINT-03.md]]

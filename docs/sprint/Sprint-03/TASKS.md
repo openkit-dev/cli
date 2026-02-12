@@ -20,7 +20,7 @@ VERIFY: `go test ./...` in `cli/`
 
 ## Related
 
-- [[docs/sprint/Sprint-03/README.md]]
+- [[docs/sprint/Sprint-03/HUB-SPRINT-03.md]]
 - [[docs/sprint/Sprint-03/SPRINT_GOAL.md]]
 - [[docs/sprint/Sprint-03/BACKLOG.md]]
 - [[docs/requirements/opencode-scripts/PLAN.md]]

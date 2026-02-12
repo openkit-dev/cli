@@ -205,6 +205,6 @@ OpenKit includes verification scripts in `.opencode/scripts/` for checking proje
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/CONTEXT.md]]
 - [[docs/SECURITY.md]]

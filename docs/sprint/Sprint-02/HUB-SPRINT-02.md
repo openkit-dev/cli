@@ -9,5 +9,5 @@
 
 ## Related
 
-- [[docs/sprint/README.md]]
-- [[docs/requirements/gemini-sync/README.md]]
+- [[docs/sprint/HUB-SPRINTS.md]]
+- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]

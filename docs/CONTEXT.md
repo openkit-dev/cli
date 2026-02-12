@@ -111,7 +111,7 @@
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/GLOSSARY.md]]
 - [[docs/SECURITY.md]]
 - [[docs/QUALITY_GATES.md]]

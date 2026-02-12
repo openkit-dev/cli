@@ -13,5 +13,5 @@ Requirements for Cursor and Codex sync targets.
 
 ## Related
 
-- [[docs/requirements/README.md]]
-- [[docs/sprint/Sprint-04/README.md]]
+- [[docs/requirements/HUB-REQUIREMENTS.md]]
+- [[docs/sprint/Sprint-04/HUB-SPRINT-04.md]]

@@ -42,6 +42,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/sprint/Sprint-XX/BACKLOG.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[sprint/Sprint-XX/BACKLOG.md]]

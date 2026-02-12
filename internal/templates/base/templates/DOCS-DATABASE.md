@@ -11,6 +11,6 @@
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/BACKEND.md]]
-- [[docs/SECURITY.md]]
+- [[CONTEXT.md]]
+- [[BACKEND.md]]
+- [[SECURITY.md]]

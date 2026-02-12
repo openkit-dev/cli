@@ -41,6 +41,6 @@ The sync engine is responsible for:
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/agent-compat/agents/README.md]]
 - [[docs/content-protocol/README.md]]

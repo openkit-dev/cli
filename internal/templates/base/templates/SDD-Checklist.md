@@ -28,6 +28,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/sprint/Sprint-XX/TASKS.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[sprint/Sprint-XX/TASKS.md]]

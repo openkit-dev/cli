@@ -18,10 +18,10 @@ Produce documentation that behaves like an Obsidian knowledge graph:
 ## Core Rules
 
 1. Use wikilinks for internal docs references.
-   - `[[docs/HUB-DOCS.md]]`
-   - `[[docs/requirements/<feature>/PLAN.md]]`
+   - `[[HUB-DOCS.md]]`
+   - `[[requirements/<feature>/PLAN.md]]`
 2. Use heading links for precise references.
-   - `[[docs/SECURITY.md#Threats]]`
+   - `[[SECURITY.md#Threats]]`
 3. Keep external URLs as standard Markdown links.
    - `[Obsidian Help](https://help.obsidian.md/)`
 4. Add `## Related` with meaningful connections.
@@ -32,8 +32,8 @@ Produce documentation that behaves like an Obsidian knowledge graph:
 ```markdown
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/GLOSSARY.md]]
+- [[HUB-DOCS.md]]
+- [[GLOSSARY.md]]
 ```
 
 ## Feature Artifact Related Template
@@ -41,11 +41,11 @@ Produce documentation that behaves like an Obsidian knowledge graph:
 ```markdown
 ## Related
 
-- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/sprint/Sprint-XX/TASKS.md]]
+- [[requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[sprint/Sprint-XX/TASKS.md]]
 ```
 
 ## Notes

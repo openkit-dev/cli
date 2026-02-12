@@ -8,7 +8,7 @@ Use this file to migrate legacy documentation to the Obsidian-compatible standar
 
 ## Link Standard
 
-- [ ] Replace internal Markdown links with wikilinks `[[docs/...]]`
+- [ ] Replace internal Markdown links with wikilinks `[[...]]`
 - [ ] Keep external URLs as standard Markdown links
 
 ## Graph Connectivity
@@ -18,9 +18,9 @@ Use this file to migrate legacy documentation to the Obsidian-compatible standar
 
 ## Hub Notes
 
-- [ ] Ensure `[[docs/HUB-DOCS.md]]` exists and links all major sections
-- [ ] Ensure `[[docs/requirements/HUB-REQUIREMENTS.md]]` exists
-- [ ] Ensure `[[docs/sprint/HUB-SPRINTS.md]]` exists
+- [ ] Ensure `[[HUB-DOCS.md]]` exists and links all major sections
+- [ ] Ensure `[[requirements/HUB-REQUIREMENTS.md]]` exists
+- [ ] Ensure `[[sprint/HUB-SPRINTS.md]]` exists
 
 ## Feature/Sprint Hubs
 
@@ -34,6 +34,6 @@ Use this file to migrate legacy documentation to the Obsidian-compatible standar
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/GLOSSARY.md]]
-- [[docs/CONTEXT.md]]
+- [[HUB-DOCS.md]]
+- [[GLOSSARY.md]]
+- [[CONTEXT.md]]

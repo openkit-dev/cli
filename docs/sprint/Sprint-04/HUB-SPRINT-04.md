@@ -9,5 +9,5 @@
 
 ## Related
 
-- [[docs/sprint/README.md]]
-- [[docs/requirements/cursor-codex-targets/README.md]]
+- [[docs/sprint/HUB-SPRINTS.md]]
+- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]

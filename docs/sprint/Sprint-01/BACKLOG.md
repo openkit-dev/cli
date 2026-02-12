@@ -9,7 +9,7 @@
 
 ## Related
 
-- [[docs/sprint/Sprint-01/README.md]]
+- [[docs/sprint/Sprint-01/HUB-SPRINT-01.md]]
 - [[docs/sprint/Sprint-01/SPRINT_GOAL.md]]
 - [[docs/sprint/Sprint-01/TASKS.md]]
 - [[docs/sprint/Sprint-01/RISK_REGISTER.md]]

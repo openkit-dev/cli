@@ -9,5 +9,5 @@
 
 ## Related
 
-- [[docs/sprint/README.md]]
-- [[docs/requirements/opencode-scripts/README.md]]
+- [[docs/sprint/HUB-SPRINTS.md]]
+- [[docs/requirements/opencode-scripts/HUB-OPENCODE-SCRIPTS.md]]

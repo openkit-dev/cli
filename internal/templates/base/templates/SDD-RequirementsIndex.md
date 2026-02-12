@@ -12,5 +12,5 @@
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/WORKFLOW.md]]
+- [[HUB-DOCS.md]]
+- [[WORKFLOW.md]]

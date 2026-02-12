@@ -12,5 +12,5 @@ Requirements for hardening security scans and checks.
 
 ## Related
 
-- [[docs/requirements/README.md]]
-- [[docs/sprint/Sprint-06/README.md]]
+- [[docs/requirements/HUB-REQUIREMENTS.md]]
+- [[docs/sprint/Sprint-06/HUB-SPRINT-06.md]]

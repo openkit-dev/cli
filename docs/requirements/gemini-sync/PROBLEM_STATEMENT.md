@@ -23,7 +23,7 @@ As a result, Gemini users cannot reliably use the OpenKit workflow commands or d
 
 ## Related
 
-- [[docs/requirements/gemini-sync/README.md]]
+- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
 - [[docs/requirements/gemini-sync/USER_STORIES.md]]
 - [[docs/requirements/gemini-sync/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/gemini-sync/PLAN.md]]

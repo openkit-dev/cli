@@ -134,7 +134,7 @@
 
 ## Related
 
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
 - [[docs/requirements/semantic-memory/ARCHITECTURE_ANALYSIS.md]]
 - [[docs/requirements/semantic-memory/REFERENCE_ANALYSIS.md]]
 - [[docs/requirements/semantic-memory/ALTERNATIVES_DISCARDED.md]]

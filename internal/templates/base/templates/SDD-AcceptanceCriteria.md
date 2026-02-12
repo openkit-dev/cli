@@ -22,6 +22,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[requirements/<feature>/PLAN.md]]

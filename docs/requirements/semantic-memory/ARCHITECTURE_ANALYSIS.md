@@ -347,7 +347,7 @@ export const MemoryPlugin: Plugin = async (ctx) => {
 
 ## Related
 
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
 - [[docs/requirements/semantic-memory/REFERENCE_ANALYSIS.md]]
 - [[docs/requirements/semantic-memory/OPENKIT_INTEGRATION.md]]
 - [[docs/requirements/semantic-memory/RECOMMENDATIONS.md]]

@@ -14,5 +14,5 @@
 
 ## Related
 
-- [[docs/sprint/README.md]]
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/sprint/HUB-SPRINTS.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]

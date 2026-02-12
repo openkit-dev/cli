@@ -11,7 +11,7 @@
 
 ## Related
 
-- [[docs/requirements/security-scan-hardening/README.md]]
+- [[docs/requirements/security-scan-hardening/HUB-SECURITY-SCAN-HARDENING.md]]
 - [[docs/requirements/security-scan-hardening/PROBLEM_STATEMENT.md]]
 - [[docs/requirements/security-scan-hardening/PLAN.md]]
 - [[docs/sprint/Sprint-06/RISK_REGISTER.md]]

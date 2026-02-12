@@ -9,6 +9,6 @@
 
 ## Related
 
-- [[docs/sprint/README.md]]
-- [[docs/requirements/remove-blueprints-references/README.md]]
-- [[docs/requirements/security-scan-hardening/README.md]]
+- [[docs/sprint/HUB-SPRINTS.md]]
+- [[docs/requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
+- [[docs/requirements/security-scan-hardening/HUB-SECURITY-SCAN-HARDENING.md]]

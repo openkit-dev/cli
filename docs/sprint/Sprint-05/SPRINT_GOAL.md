@@ -79,7 +79,7 @@ Implement semantic memory plugin for OpenCode/OpenKit that enables persistent co
 
 ## Related
 
-- [[docs/sprint/Sprint-05/README.md]]
+- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]
 - [[docs/sprint/Sprint-05/BACKLOG.md]]
 - [[docs/sprint/Sprint-05/TASKS.md]]
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]

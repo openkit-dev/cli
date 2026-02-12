@@ -46,6 +46,6 @@ As a [role], I want [capability] so that [benefit].
 
 ## Related
 
-- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/PLAN.md]]

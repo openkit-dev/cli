@@ -11,6 +11,6 @@
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/API.md]]
-- [[docs/SECURITY.md]]
+- [[CONTEXT.md]]
+- [[API.md]]
+- [[SECURITY.md]]

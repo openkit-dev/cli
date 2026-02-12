@@ -44,6 +44,6 @@ If needed, pin to previous OpenKit release and restore previous generated docs f
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/CONTEXT.md]]
 - [[docs/MIGRATION_CHECKLIST.md]]

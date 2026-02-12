@@ -12,5 +12,5 @@ Requirements for OpenKit sync engine behavior.
 
 ## Related
 
-- [[docs/requirements/README.md]]
+- [[docs/requirements/HUB-REQUIREMENTS.md]]
 - [[docs/content-protocol/PROTOCOL.md]]

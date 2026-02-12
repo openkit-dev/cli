@@ -2,21 +2,21 @@
 
 ## Navigation
 
-- [[docs/CONTEXT.md]]
-- [[docs/SECURITY.md]]
-- [[docs/QUALITY_GATES.md]]
-- [[docs/ACTION_ITEMS.md]]
-- [[docs/ARCHITECTURE.md]]
-- [[docs/WORKFLOW.md]]
-- [[docs/COMMANDS.md]]
-- [[docs/SKILLS.md]]
-- [[docs/GLOSSARY.md]]
-- [[docs/requirements/HUB-REQUIREMENTS.md]]
-- [[docs/sprint/HUB-SPRINTS.md]]
-- [[docs/adr/HUB-ADR.md]]
-- [[docs/runbooks/HUB-RUNBOOKS.md]]
+- [[CONTEXT.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]
+- [[ACTION_ITEMS.md]]
+- [[ARCHITECTURE.md]]
+- [[WORKFLOW.md]]
+- [[COMMANDS.md]]
+- [[SKILLS.md]]
+- [[GLOSSARY.md]]
+- [[requirements/HUB-REQUIREMENTS.md]]
+- [[sprint/HUB-SPRINTS.md]]
+- [[adr/HUB-ADR.md]]
+- [[runbooks/HUB-RUNBOOKS.md]]
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/WORKFLOW.md]]
+- [[CONTEXT.md]]
+- [[WORKFLOW.md]]

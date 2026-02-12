@@ -22,6 +22,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/PLAN.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/RISKS.md]]
+- [[requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/RISKS.md]]

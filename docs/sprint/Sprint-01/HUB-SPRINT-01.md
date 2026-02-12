@@ -9,4 +9,4 @@
 
 ## Related
 
-- [[docs/sprint/README.md]]
+- [[docs/sprint/HUB-SPRINTS.md]]

@@ -108,7 +108,7 @@ All commands follow a hybrid behavior:
 
 All command-generated docs must use Obsidian-compatible internal links:
 
-- Prefer wikilinks for internal references: `[[docs/HUB-DOCS.md]]`
+- Prefer wikilinks for internal references: `[[HUB-DOCS.md]]`
 - Keep external references as regular Markdown links
 - Add `## Related` sections to connect artifacts across `docs/`
 - Follow canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`

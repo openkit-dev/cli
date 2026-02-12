@@ -8,7 +8,7 @@ We need to remove product-level references to "blueprints" and standardize on th
 
 ## Related
 
-- [[docs/requirements/remove-blueprints-references/README.md]]
+- [[docs/requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
 - [[docs/requirements/remove-blueprints-references/USER_STORIES.md]]
 - [[docs/requirements/remove-blueprints-references/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/remove-blueprints-references/PLAN.md]]

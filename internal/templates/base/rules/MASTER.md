@@ -36,7 +36,7 @@ This rule defines:
 **Canonical docs filenames MUST follow:** `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 
 Key principles:
-- Use wikilinks for internal documentation references (for example, `[[docs/CONTEXT.md]]`)
+- Use wikilinks for internal documentation references (for example, `[[CONTEXT.md]]`)
 - Build documentation as a graph with inbound and outbound links
 - Add a `## Related` section in docs artifacts when applicable
 - Keep links stable and explicit to improve retrieval and long-term memory

@@ -314,7 +314,7 @@ See [[docs/SECURITY.md]] for detailed security analysis.
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/CONTEXT.md]]
 - [[docs/SECURITY.md]]
 - [[docs/QUALITY_GATES.md]]

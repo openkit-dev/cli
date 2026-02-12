@@ -16,15 +16,15 @@ Use Obsidian-compatible links so docs can be navigated, indexed, and reused as l
 ## Required Link Standard
 
 1. Prefer wikilinks for internal Markdown references.
-   - `[[docs/CONTEXT.md]]`
-   - `[[docs/requirements/<feature>/PLAN.md]]`
-   - `[[docs/requirements/<feature>/PLAN.md#Success Criteria]]`
+   - `[[CONTEXT.md]]`
+   - `[[requirements/<feature>/PLAN.md]]`
+   - `[[requirements/<feature>/PLAN.md#Success Criteria]]`
 2. Use aliases when display text should be shorter.
-   - `[[docs/GLOSSARY.md|Glossary]]`
+   - `[[GLOSSARY.md|Glossary]]`
 3. Use heading links for precise references.
-   - `[[docs/SECURITY.md#Threats]]`
+   - `[[SECURITY.md#Threats]]`
 4. Use block references only when exact paragraph traceability is needed.
-   - `[[docs/CONTEXT.md#^evidence-cli-entry]]`
+   - `[[CONTEXT.md#^evidence-cli-entry]]`
 5. Use standard Markdown links only for external URLs.
    - `[Obsidian Help](https://help.obsidian.md/)`
 
@@ -40,11 +40,11 @@ For every new or updated doc in `docs/`:
 
 Use index notes to improve graph navigation and context retrieval:
 
-- `docs/HUB-DOCS.md` as global documentation hub.
-- `docs/requirements/HUB-REQUIREMENTS.md` as requirements hub.
-- `docs/sprint/HUB-SPRINTS.md` as sprint hub.
-- `docs/requirements/<feature>/HUB-<FEATURE>.md` as feature hub.
-- `docs/sprint/Sprint-XX/HUB-SPRINT-XX.md` as sprint execution hub.
+- `HUB-DOCS.md` as global documentation hub.
+- `requirements/HUB-REQUIREMENTS.md` as requirements hub.
+- `sprint/HUB-SPRINTS.md` as sprint hub.
+- `requirements/<feature>/HUB-<FEATURE>.md` as feature hub.
+- `sprint/Sprint-XX/HUB-SPRINT-XX.md` as sprint execution hub.
 
 ## Required Related Section
 
@@ -53,8 +53,8 @@ Whenever applicable, include:
 ```markdown
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/GLOSSARY.md]]
+- [[HUB-DOCS.md]]
+- [[GLOSSARY.md]]
 ```
 
 For feature docs, prefer feature-local references:
@@ -62,10 +62,10 @@ For feature docs, prefer feature-local references:
 ```markdown
 ## Related
 
-- [[docs/requirements/<feature>/PROBLEM_STATEMENT.md]]
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/PROBLEM_STATEMENT.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/PLAN.md]]
 ```
 
 ## Obsidian Compatibility Notes

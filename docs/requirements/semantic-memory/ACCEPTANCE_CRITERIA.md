@@ -159,7 +159,7 @@ Para uma User Story ser considerada completa:
 
 ## Related
 
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
 - [[docs/requirements/semantic-memory/PROBLEM_STATEMENT.md]]
 - [[docs/requirements/semantic-memory/USER_STORIES.md]]
 - [[docs/sprint/Sprint-05/TASKS.md]]

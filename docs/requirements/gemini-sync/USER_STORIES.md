@@ -26,7 +26,7 @@ so adopting OpenKit does not clobber local customization.
 
 ## Related
 
-- [[docs/requirements/gemini-sync/README.md]]
+- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
 - [[docs/requirements/gemini-sync/PROBLEM_STATEMENT.md]]
 - [[docs/requirements/gemini-sync/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/gemini-sync/PLAN.md]]

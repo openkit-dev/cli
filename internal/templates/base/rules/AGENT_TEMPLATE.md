@@ -169,7 +169,7 @@ See `.opencode/rules/MASTER.md` for complete TodoList Protocol.
 **You MUST follow:** `.opencode/rules/OBSIDIAN_LINKING.md`
 
 **Key requirements:**
-- Use wikilinks for internal docs references (for example, `[[docs/HUB-DOCS.md]]`)
+- Use wikilinks for internal docs references (for example, `[[HUB-DOCS.md]]`)
 - Keep documentation connected with inbound and outbound links
 - Include `## Related` sections for cross-document navigation
 - Prefer heading links for deep references when useful

@@ -55,7 +55,7 @@ The feature implementation is complete and verified according to `TASKS.md`. The
 
 ## Related
 
-- [[docs/requirements/cursor-codex-targets/README.md]]
+- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
 - [[docs/requirements/cursor-codex-targets/RISKS.md]]
 - [[docs/sprint/Sprint-04/BACKLOG.md]]
 - [[docs/sprint/Sprint-04/TASKS.md]]

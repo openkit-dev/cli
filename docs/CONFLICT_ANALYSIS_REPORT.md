@@ -280,6 +280,6 @@ The following templates were updated to include Glossary sections:
 
 ## Related
 
-- [[docs/README.md]]
+- [[docs/HUB-DOCS.md]]
 - [[docs/GLOSSARY.md]]
 - [[docs/CONTEXT.md]]

@@ -6,7 +6,7 @@ The solution must track managed files in `.openkit/managed.json` so upgrades can
 
 ## Related
 
-- [[docs/requirements/openkit-sync/README.md]]
+- [[docs/requirements/openkit-sync/HUB-OPENKIT-SYNC.md]]
 - [[docs/requirements/openkit-sync/USER_STORIES.md]]
 - [[docs/requirements/openkit-sync/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/openkit-sync/PLAN.md]]

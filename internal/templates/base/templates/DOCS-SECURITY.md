@@ -18,6 +18,6 @@
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/QUALITY_GATES.md]]
-- [[docs/ACTION_ITEMS.md]]
+- [[CONTEXT.md]]
+- [[QUALITY_GATES.md]]
+- [[ACTION_ITEMS.md]]

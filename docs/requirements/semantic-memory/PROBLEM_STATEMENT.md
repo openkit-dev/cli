@@ -53,7 +53,7 @@ Como persistir conhecimento tecnico relevante (decisoes, padroes, erros, specs) 
 
 ## Related
 
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
 - [[docs/requirements/semantic-memory/USER_STORIES.md]]
 - [[docs/requirements/semantic-memory/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/semantic-memory/RISKS.md]]

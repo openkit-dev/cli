@@ -26,7 +26,7 @@
 
 ## Terminology
 
-> For standard terminology definitions, see [[docs/GLOSSARY.md]]
+> For standard terminology definitions, see [[GLOSSARY.md]]
 
 | Term | Definition (project-specific) |
 |------|-------------------------------|
@@ -35,7 +35,7 @@
 
 ## Related
 
-- [[docs/HUB-DOCS.md]]
-- [[docs/QUALITY_GATES.md]]
-- [[docs/SECURITY.md]]
-- [[docs/ACTION_ITEMS.md]]
+- [[HUB-DOCS.md]]
+- [[QUALITY_GATES.md]]
+- [[SECURITY.md]]
+- [[ACTION_ITEMS.md]]

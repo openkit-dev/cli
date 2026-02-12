@@ -347,7 +347,7 @@ The CLI reads from these files in `.opencode/memory/`:
 
 ## Related
 
-- [[docs/sprint/Sprint-05/README.md]]
+- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]
 - [[docs/sprint/Sprint-05/IMPLEMENTATION_STATUS.md]]
 - [[docs/sprint/Sprint-05/TASKS.md]]
 - [[docs/CONTEXT.md]]

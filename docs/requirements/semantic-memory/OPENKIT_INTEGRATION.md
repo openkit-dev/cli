@@ -386,7 +386,7 @@ export const MemoryPlugin: Plugin = async (ctx) => {
 
 ## Related
 
-- [[docs/requirements/semantic-memory/README.md]]
+- [[docs/requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
 - [[docs/requirements/semantic-memory/ARCHITECTURE_ANALYSIS.md]]
 - [[docs/requirements/semantic-memory/RECOMMENDATIONS.md]]
 - [[docs/sprint/Sprint-05/TASKS.md]]

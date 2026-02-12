@@ -12,6 +12,6 @@
 
 ## Related
 
-- [[docs/CONTEXT.md]]
-- [[docs/API.md]]
-- [[docs/QUALITY_GATES.md]]
+- [[CONTEXT.md]]
+- [[API.md]]
+- [[QUALITY_GATES.md]]

@@ -210,7 +210,7 @@ Ensure `docs/` exists and follow the planning standard:
 -  NEVER use generic names like `plan.md`
 -  ALWAYS use `docs/` as the source of truth
 -  ALWAYS create `docs/` if missing
--  ALWAYS use Obsidian-compatible links (`[[docs/...]]`) across plan artifacts
+-  ALWAYS use Obsidian-compatible links (`[[...]]`) across plan artifacts
 -  ALWAYS add `## Related` sections for cross-doc navigation
 
 ### MANDATORY STOP POINT

@@ -249,7 +249,7 @@ VERIFY: Review docs for accuracy
 
 ## Related
 
-- [[docs/sprint/Sprint-04/README.md]]
+- [[docs/sprint/Sprint-04/HUB-SPRINT-04.md]]
 - [[docs/sprint/Sprint-04/SPRINT_GOAL.md]]
 - [[docs/sprint/Sprint-04/BACKLOG.md]]
 - [[docs/requirements/cursor-codex-targets/PLAN.md]]

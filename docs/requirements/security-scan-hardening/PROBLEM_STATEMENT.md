@@ -23,7 +23,7 @@ This creates a false sense of safety in `.opencode/scripts/checklist.py` because
 
 ## Related
 
-- [[docs/requirements/security-scan-hardening/README.md]]
+- [[docs/requirements/security-scan-hardening/HUB-SECURITY-SCAN-HARDENING.md]]
 - [[docs/requirements/security-scan-hardening/USER_STORIES.md]]
 - [[docs/requirements/security-scan-hardening/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/security-scan-hardening/PLAN.md]]

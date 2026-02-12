@@ -22,7 +22,7 @@
 
 ## Related
 
-- [[docs/requirements/gemini-sync/README.md]]
+- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
 - [[docs/requirements/gemini-sync/PROBLEM_STATEMENT.md]]
 - [[docs/requirements/gemini-sync/PLAN.md]]
 - [[docs/sprint/Sprint-02/RISK_REGISTER.md]]

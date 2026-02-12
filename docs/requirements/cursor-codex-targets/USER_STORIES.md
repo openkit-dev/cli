@@ -78,7 +78,7 @@
 
 ## Related
 
-- [[docs/requirements/cursor-codex-targets/README.md]]
+- [[docs/requirements/cursor-codex-targets/HUB-CURSOR-CODEX-TARGETS.md]]
 - [[docs/requirements/cursor-codex-targets/PROBLEM_STATEMENT.md]]
 - [[docs/requirements/cursor-codex-targets/ACCEPTANCE_CRITERIA.md]]
 - [[docs/requirements/cursor-codex-targets/PLAN.md]]

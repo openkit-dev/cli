@@ -243,7 +243,7 @@ cat .opencode/memory/config.json
 
 ## Related
 
-- [[docs/sprint/Sprint-05/README.md]]
+- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]
 - [[docs/sprint/Sprint-05/IMPLEMENTATION_STATUS.md]]
 - [[docs/QUALITY_GATES.md]]
 - [[docs/sprint/Sprint-05/TASKS.md]]

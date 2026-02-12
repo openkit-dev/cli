@@ -28,7 +28,7 @@ Follow `cli/docs/content-protocol/SYNC_SEMANTICS.md`.
 
 ## Related
 
-- [[docs/requirements/openkit-sync/README.md]]
+- [[docs/requirements/openkit-sync/HUB-OPENKIT-SYNC.md]]
 - [[docs/content-protocol/PROTOCOL.md]]
 - [[docs/content-protocol/MANAGED_STATE_SCHEMA.md]]
 - [[docs/content-protocol/SYNC_SEMANTICS.md]]

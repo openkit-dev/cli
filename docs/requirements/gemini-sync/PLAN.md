@@ -37,7 +37,7 @@ Complete the Gemini target so `openkit gemini sync` installs:
 
 ## Related
 
-- [[docs/requirements/gemini-sync/README.md]]
+- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]
 - [[docs/requirements/gemini-sync/PROBLEM_STATEMENT.md]]
 - [[docs/content-protocol/PROTOCOL.md]]
 - [[docs/sprint/Sprint-02/TASKS.md]]

@@ -556,7 +556,7 @@ All planning artifacts MUST be recorded in `docs/` and include:
 - **Risk Register** in `docs/sprint/Sprint-XX/RISK_REGISTER.md`
 
 All documentation artifacts must also follow Obsidian linking conventions:
-- Use wikilinks for internal references, for example `[[docs/HUB-DOCS.md]]`
+- Use wikilinks for internal references, for example `[[HUB-DOCS.md]]`
 - Add `## Related` sections to connect docs
 - Keep links stable to support context retrieval and long-term memory
 - Use canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`

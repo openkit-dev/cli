@@ -396,7 +396,7 @@ The semantic memory plugin is **production-ready** at the logic level. All core 
 
 ## Related
 
-- [[docs/sprint/Sprint-05/README.md]]
+- [[docs/sprint/Sprint-05/HUB-SPRINT-05.md]]
 - [[docs/sprint/Sprint-05/PHASE2_COMPLETE.md]]
 - [[docs/sprint/Sprint-05/BUILD_VERIFICATION.md]]
 - [[docs/sprint/Sprint-05/CLI_COMMANDS.md]]

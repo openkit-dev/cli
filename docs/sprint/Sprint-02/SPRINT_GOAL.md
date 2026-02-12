@@ -4,7 +4,7 @@ Complete the Gemini target sync by installing OpenKit commands (TOML), rules, an
 
 ## Related
 
-- [[docs/sprint/Sprint-02/README.md]]
+- [[docs/sprint/Sprint-02/HUB-SPRINT-02.md]]
 - [[docs/sprint/Sprint-02/BACKLOG.md]]
 - [[docs/sprint/Sprint-02/TASKS.md]]
-- [[docs/requirements/gemini-sync/README.md]]
+- [[docs/requirements/gemini-sync/HUB-GEMINI-SYNC.md]]

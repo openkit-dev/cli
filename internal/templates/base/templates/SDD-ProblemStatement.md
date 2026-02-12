@@ -26,7 +26,7 @@
 
 ## Glossary
 
-> For standard terminology, see [[docs/GLOSSARY.md]]
+> For standard terminology, see [[GLOSSARY.md]]
 
 | Term | Definition |
 |------|------------|
@@ -34,6 +34,6 @@
 
 ## Related
 
-- [[docs/requirements/<feature>/USER_STORIES.md]]
-- [[docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
-- [[docs/requirements/<feature>/PLAN.md]]
+- [[requirements/<feature>/USER_STORIES.md]]
+- [[requirements/<feature>/ACCEPTANCE_CRITERIA.md]]
+- [[requirements/<feature>/PLAN.md]]

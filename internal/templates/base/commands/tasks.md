@@ -96,7 +96,7 @@ Before any task breakdown work:
 2. Organize tasks by user story with dependencies and parallel markers.
 3. Include exact file paths for each task.
 4. Add INPUT -> OUTPUT -> VERIFY for each task where applicable.
-5. Keep links to requirements and sprint docs in Obsidian format (`[[docs/...]]`).
+5. Keep links to requirements and sprint docs in Obsidian format (`[[...]]`).
 
 ## Rules
 
