@@ -39,6 +39,7 @@ This rule defines:
 Key principles:
 - Use wikilinks for internal documentation references (for example, `[[CONTEXT.md]]`)
 - Build documentation as a graph with inbound and outbound links
+- Enforce Single-Level Hub Linking Policy (layered hub-and-spoke; no level skipping)
 - Add a `## Related` section in docs artifacts when applicable
 - Keep links stable and explicit to improve retrieval and long-term memory
 - Use canonical uppercase docs filenames from the glossary
