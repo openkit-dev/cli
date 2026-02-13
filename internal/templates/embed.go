@@ -93,6 +93,11 @@ func extractFS(efs embed.FS, root, targetDir string) error {
 			return nil
 		}
 
+		// Skip README.md in commands directory
+		if root == "base/commands" && d.Name() == "README.md" {
+			return nil
+		}
+
 		targetPath := filepath.Join(targetDir, relPath)
 
 		if d.IsDir() {
