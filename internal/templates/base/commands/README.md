@@ -1,282 +1,188 @@
-# Custom Commands - OpenKit
+# OpenKit Commands
 
-> Slash commands for the OpenCode TUI
-> OpenKit integration with structured commands
+> 7 Commands for the complete development workflow
 
 ---
 
 ## Available Commands
 
-When you type `/` in the OpenCode TUI, you will see:
+| # | Command | Description | Usage |
+|---|---------|-------------|-------|
+| 1 | `/discover` | Analyze project context (mandatory) | `/discover` |
+| 2 | `/specify` | Specification + Planning + Tasks | `/specify add user auth` |
+| 3 | `/create` | Implementation from plan | `/create from docs/sprint/Sprint-1/TASKS.md` |
+| 4 | `/verify` | Quality verification (tests, lint, security) | `/verify all` |
+| 5 | `/orchestrate` | Universal orchestrator for complex tasks | `/orchestrate build e-commerce` |
+| 6 | `/debug` | Systematic debugging | `/debug login not working` |
+| 7 | `/deploy` | Safe deployment | `/deploy staging` |
 
-| Command | Description | Usage |
-|---------|-------------|-------|
-| `/engineer` | Universal orchestrator for complex tasks | `/engineer build full e-commerce` |
-| `/specify` | Create feature specification | `/specify add user profiles` |
-| `/clarify` | Clarify requirements in spec | `/clarify` |
-| `/plan` | Create structured task plans | `/plan create auth system` |
-| `/tasks` | Generate executable tasks | `/tasks` |
-| `/analyze` | Cross-artifact consistency | `/analyze` |
-| `/checklist` | Spec/plan quality checklist | `/checklist` |
-| `/impl` | Execute implementation from a plan | `/impl from docs/sprint/Sprint-17/TASKS.md` |
-| `/test` | Run tests and checks | `/test all` or `/test security` |
-| `/debug` | 4-phase systematic debugging | `/debug login not working` |
-| `/ui-ux` | Design systems and UX audits | `/ui-ux create design system` |
-| `/deploy` | Safe deploy with verification | `/deploy staging` or `/deploy production` |
-| `/context` | Generate repo context pack | `/context` |
-| `/doc` | Write or update docs | `/doc update api index` |
-| `/preview` | Manage local preview server | `/preview start` |
-| `/status` | Show project status | `/status` |
-| `/create` | Create a new application | `/create blog site` |
-| `/brainstorm` | Explore ideas and options | `/brainstorm auth system` |
+---
+
+## Standard Workflow
+
+```
+/discover → /specify → /create → /verify → /deploy
+```
+
+For complex tasks, use `/orchestrate` to automate the entire flow.
 
 ---
 
 ## How to Use
 
-### 1. With Arguments (Direct)
+### With Arguments
 ```bash
-/plan create JWT auth system
-/engineer build e-commerce with Stripe checkout
+/specify add user authentication
+/create from docs/sprint/Sprint-1/TASKS.md
+/verify all
 ```
 
-### 2. Without Arguments (Interactive)
+### Without Arguments (Interactive)
 ```bash
-/plan
-→ (via question tool) "What would you like to plan?"
-→ You describe it
+/specify
+→ (via question tool) "Describe the feature"
 → System executes
-```
-
-### 3. Full Flow
-```bash
-# 1. Specify
-/specify add dark mode feature
-→ Creates docs/requirements/<feature>/
-→ STOP: "Proceed to clarify or plan?"
-
-# 2. Clarify
-/clarify
-→ Resolves ambiguities in spec
-→ STOP: "Proceed to plan?"
-
-# 3. Plan
-/plan add dark mode feature
-→ Creates plan + auxiliary artifacts when applicable
-→ STOP: "Review and confirm?"
-
-# 4. Tasks
-/tasks
-→ Generates docs/sprint/Sprint-XX/TASKS.md
-→ STOP: "Proceed to implement?"
-
-# 5. Implement (after approval)
-/impl from docs/sprint/Sprint-XX/TASKS.md
-→ Executes plan tasks
-→ STOP between phases (P0→P1→P2→P3)
-
-# 6. Analyze + Checklist
-/analyze
-→ Validates spec/plan/tasks consistency
-/checklist
-→ Confirms readiness and gaps
-
-# 7. Test
-/test all
-→ Runs all checks
-→ Reports results
-
-# 8. Deploy (if approved)
-/deploy production
-→ Pre-deploy checklist
-→ STOP: "Confirm production deploy?"
-→ Executes deploy
-→ Post-deploy verification
 ```
 
 ---
 
-## Hybrid Behavior
+## Workflow
 
-All commands follow a hybrid behavior:
+### 1. Discover
+```bash
+/discover
+→ Analyzes project structure
+→ Creates context documentation
+→ Identifies risks
+```
 
-1. **Show:** Load and explain the appropriate command protocol
-2. **Ask (via question tool):** Mandatory STOP points for approval
-3. **Execute:** Only after user confirmation
+### 2. Specify
+```bash
+/specify add user authentication
+→ Creates specification (Problem Statement, User Stories, Acceptance Criteria)
+→ Creates plan (PLAN.md, SPRINT_GOAL.md, BACKLOG.md)
+→ Creates task breakdown (TASKS.md)
+```
 
-## Obsidian Documentation Standard
+### 3. Create
+```bash
+/create from docs/sprint/Sprint-1/TASKS.md
+→ Executes P0: Foundation (DB + Security)
+→ Executes P1: Backend
+→ Executes P2: UI/UX
+→ Executes P3: Polish
+```
 
-All command-generated docs must use Obsidian-compatible internal links:
+### 4. Verify
+```bash
+/verify all
+→ Runs lint + type check
+→ Runs security scan
+→ Runs unit tests
+→ Runs UX audit
+→ Runs performance checks
+```
 
-- Prefer wikilinks for internal references: `[[HUB-DOCS.md]]`
-- Keep external references as regular Markdown links
-- Add `## Related` sections to connect artifacts across `docs/`
-- Follow canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`
+### 5. Deploy
+```bash
+/deploy staging
+/deploy production
+→ Prepares deployment
+→ Executes deploy
+→ Verifies post-deploy
+```
+
+---
+
+## Command Mapping
+
+| Old Command | New Command | Status |
+|-------------|------------|--------|
+| `/context` | `/discover` | Replaced |
+| `/specify` | `/specify` | Expanded |
+| `/clarify` | `/specify` | Absorbed |
+| `/plan` | `/specify` | Absorbed |
+| `/tasks` | `/specify` | Absorbed |
+| `/impl` | `/create` | Replaced |
+| `/test` | `/verify` | Replaced |
+| `/checklist` | `/verify` | Absorbed |
+| `/analyze` | `/verify` | Absorbed |
+| `/engineer` | `/orchestrate` | Replaced |
+| `/debug` | `/debug` | Maintained |
+| `/deploy` | `/deploy` | Maintained |
+| `/ui-ux` | `/orchestrate` | Absorbed |
+| `/doc` | `/orchestrate` | Absorbed |
+| `/status` | `/verify` | Absorbed |
+| `/preview` | `/deploy` | Absorbed |
+| `/create` | `/orchestrate` | Absorbed |
+| `/brainstorm` | `/discover` | Absorbed |
 
 ---
 
 ## STOP Points
 
-The system always pauses for approval at critical moments:
+Each command has mandatory STOP points:
 
-### `/plan`
-> "Plan recorded in `docs/requirements/` and `docs/sprint/Sprint-XX/`. Review and confirm to proceed?"
-
-### `/impl`
-- Between each phase (P0, P1, P2, P3)
-- At the end: "Run final verification?"
-
-### `/deploy`
-- Production requires explicit confirmation
-- After deploy: "Confirm success?"
-
----
-
-## File Structure
-
-```
-.opencode/
-└── commands/
-    ├── analyze.md     # Spec/plan/tasks analysis
-    ├── brainstorm.md  # Idea exploration
-    ├── checklist.md   # Spec/plan checklist
-    ├── clarify.md     # Spec clarification
-    ├── context.md     # Context pack generation
-    ├── create.md      # New app creation
-    ├── doc.md         # Documentation updates
-    ├── engineer.md    # Universal orchestrator
-    ├── impl.md        # Implementation command
-    ├── plan.md        # Planning command
-    ├── preview.md     # Preview management
-    ├── specify.md     # Feature specification
-    ├── status.md      # Status reporting
-    ├── tasks.md       # Task generation
-    ├── test.md        # Testing command
-    ├── ui-ux.md       # Design command
-    └── deploy.md      # Deploy command
-```
-
-```
-.opencode/
-├── agents/            # Specialist agents
-├── skills/            # Knowledge modules
-└── scripts/           # Python validation scripts
-```
-
----
-
-## Command Features
-
-### Placeholders
-- `$ARGUMENTS` - All user arguments
-- `$1`, `$2`, `$3` - Positional arguments
-
-### Shell Integration
-- `!command` - Inject shell output
-- Example: `!git log --oneline -10`
-
-### File References
-- `@file` - Include file content
-- Example: `@src/components/Button.tsx`
-
----
-
-## Configuration
-
-### Local (This Project)
-Files in `.opencode/commands/` are available only in this project.
-
-### Global (All Projects)
-Copy to `~/.config/opencode/commands/` to use everywhere:
-
-```bash
-cp -r .opencode/commands/* ~/.config/opencode/commands/
-```
+| After | Prompt |
+|-------|--------|
+| `/discover` | "Proceed to /specify?" |
+| `/specify` | "Proceed to /create?" |
+| `/create` (P0) | "Proceed to P1?" |
+| `/create` (P1) | "Proceed to P2?" |
+| `/create` (P2) | "Proceed to P3?" |
+| `/create` (P3) | "Run /verify?" |
+| `/verify` | "Proceed to /deploy?" |
+| `/deploy` | "Confirm success?" |
 
 ---
 
 ## Usage Examples
 
-### Example 1: Simple Feature
+### Example 1: New Feature
 ```bash
-# Plan
-/plan add dark mode toggle
-→ Updates docs artifacts
-
-# Approve and implement
-/impl from docs/sprint/Sprint-XX/TASKS.md
-→ Executes tasks
-
-# Test
-/test coverage
-→ 95% coverage, all passing
+/discover
+/specify add dark mode
+/create from docs/sprint/Sprint-1/TASKS.md
+/verify
+/deploy staging
 ```
 
-### Example 2: Complex System
+### Example 2: Bug Fix
 ```bash
-# Orchestrate everything
-/engineer build e-commerce with Stripe
-→ Phase 1: Planning (project-planner)
- → STOP: "Proceed?"
-→ Phase 2: Implementation (multiple agents)
-→ STOP: "Verify?"
-→ Phase 3: Verification
-→ Project complete!
+/debug login not working after update
+/verify
 ```
 
-### Example 3: Debug
+### Example 3: Complex Project
 ```bash
-/debug users can't login after last update
-→ Phase 1: Symptom Analysis
-→ Phase 2: Information Gathering
-→ Phase 3: Hypothesis Testing
-→ Phase 4: Resolution
-→ Bug fixed! 
+/orchestrate build e-commerce with Stripe
+→ Automates entire workflow
+→ Coordinates multiple agents
+→ Runs verification
 ```
 
 ---
 
 ## Tips
 
-1. **Use `/engineer` for complex tasks** - It coordinates multiple agents
-2. **Use `/plan` first** - Always plan before implementing
-3. **Do not skip STOPs** - Manual approvals ensure quality
-4. **Keep plans small** - If > 10 tasks, split into parts
-5. **Run `/test` often** - Catch issues early
+1. **Always start with `/discover`** - Required before `/specify`
+2. **Use `/orchestrate` for complex tasks** - Automates everything
+3. **Use `/specify` for planned features** - Full specification flow
+4. **Never skip STOP points** - Manual approval ensures quality
+5. **Run `/verify` before deploy** - Ensures code quality
 
 ---
 
-## 🆘 Troubleshooting
-
-### "Command does not appear after typing /"
-→ Restart the OpenCode TUI
+## Troubleshooting
 
 ### "Command not found"
-→ Verify that `.opencode/commands/` exists
+→ Verify commands exist in `.opencode/commands/`
 
 ### "Python scripts do not run"
 → Ensure Python is installed and dependencies are satisfied
 
 ---
 
-## OpenKit Integration
-
-These commands reuse:
--  Specialist prompts (`.opencode/prompts/`)
--  Skills (`.opencode/skills/`)
--  Python validation scripts (`.opencode/scripts/`)
--  Original rules and protocols
-
-They are only adapted to the OpenCode command format.
-
----
-
-## Additional Documentation
-
-- **OpenKit Architecture:** `.opencode/ARCHITECTURE.md`
-
----
-
 ## Ready to use!
 
-Open the OpenCode TUI and type `/` to see all available commands. 
+Open the OpenCode TUI and type `/` to see all available commands.

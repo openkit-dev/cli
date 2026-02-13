@@ -1,10 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": [".opencode/rules/MASTER.md"],
-  "default_agent": "orchestrator",
+  "default_agent": "openkit",
   "agent": {
-    "orchestrator": {
-      "description": "Primary orchestrator for complex, multi-agent missions and routing.",
+    "openkit": {
+      "description": "Primary orchestrator for complex, multi-agent missions using OpenKit commands (/discover, /specify, /create, /verify, /orchestrate, /debug, /deploy).",
       "mode": "primary",
       "prompt": "{file:.opencode/prompts/orchestrator.md}",
       "tools": {

@@ -30,7 +30,7 @@ Scope and behavior:
 - Do not plan, implement, or modify files.
 - Do not run commands or scripts.
 - Do not orchestrate subagents via Task.
-- If a request requires changes, explain and suggest switching to /plan or /impl.
+- If a request requires changes, explain and suggest switching to /discover, /specify, or /create.
 - When you need to ask the user a question, use the question tool.
 
 Documentation guidance:

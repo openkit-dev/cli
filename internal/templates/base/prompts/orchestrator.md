@@ -6,7 +6,7 @@ mode: primary
 <!-- Tools are configured in opencode.json -->
 <!-- Orchestrator has access to ALL tools: read, grep, glob, list, bash, edit, write, patch, webfetch, skill, todowrite, todoread, question -->
 
-# /engineer - Engineering Hub
+# /orchestrate - Universal Orchestrator
 
 > Opencode Agent System
 > Supports: Multi-provider execution
@@ -84,13 +84,13 @@ todowrite({
     },
     {
       id: "orch-02-planning",
-      content: "Create planning artifacts",
+      content: "Run /specify (includes planning + tasks)",
       status: "pending",
       priority: "high"
     },
     {
       id: "orch-03-tasks",
-      content: "Generate task breakdown (/tasks)",
+      content: "Run /specify (task breakdown included)",
       status: "pending",
       priority: "high"
     },
@@ -157,13 +157,13 @@ todowrite({
   todos: [
     {
       id: "orch-02-planning",
-      content: "Create planning artifacts",
+      content: "Run /specify (includes planning + tasks)",
       status: "completed",
       priority: "high"
     },
     {
       id: "orch-03-tasks",
-      content: "Generate task breakdown (/tasks)",
+      content: "Run /specify (task breakdown included)",
       status: "in_progress",
       priority: "high"
     },
@@ -230,51 +230,37 @@ Use these commands for focused tasks:
 
 | Command | Purpose | Use When |
 | :--- | :--- | :--- |
-| `/specify` | **Specification** | Create feature specification. |
-| `/clarify` | **Clarification** | Resolve spec ambiguities. |
-| `/plan` | **Planning** | Create implementation plan. |
-| `/tasks` | **Tasking** | Generate executable tasks. |
-| `/analyze` | **Analysis** | Validate spec/plan/tasks. |
-| `/checklist` | **Checklist** | Spec/plan readiness checks. |
-| `/impl` | **Implementation** | Writing code, fixing bugs, adding features. |
-| `/test` | **Testing** | Generating or running tests. |
-| `/deploy` | **Deployment** | Deploying to production or staging. |
-| `/doc` | **Documentation** | Writing/Updating docs only. |
-| `/debug` | **Debugging** | Investigating complex errors. |
-| `/ui-ux` | **Design** | Creating design systems or UI components. |
-| `/context`| **Analysis** | Generating context packs. |
-| `/status` | **Progress** | Viewing active tasks and stats. |
-| `/preview` | **Dev Environment** | Managing Docker Compose. |
+| `/discover` | **Discovery** | Analyze project context (mandatory). |
+| `/specify` | **Specification** | Create feature specification + planning + tasks. |
+| `/create` | **Implementation** | Execute implementation from plan. |
+| `/verify` | **Verification** | Run tests, lint, security, performance. |
+| `/deploy` | **Deployment** | Deploy to production or staging. |
+| `/debug` | **Debugging** | Investigate complex errors. |
 
 **Usage:**
 ```
+/discover
 /specify add user profiles
-/clarify
-/plan add user profiles
-/tasks
-/impl from docs/sprint/Sprint-XX/TASKS.md
+/create from docs/sprint/Sprint-XX/TASKS.md
+/verify all
+/deploy staging
 ```
 
 ### Mandatory Discovery + Planning + Docs (All Code Work)
 
-- **Before any /impl or code modification:**
-  1. Run `/context` (ALWAYS required) to refresh the project map and capture current risks.
-  2. Run `/brainstorm` (OPTIONAL, when scope is unclear) to explore options.
-  3. Run `/specify …` to create the feature spec in `docs/requirements/<feature>/`.
-  4. Run `/clarify` to close critical ambiguities.
-  5. Run `/plan …` to create `PLAN.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`. _No coding is allowed until the plan exists and is approved._
-  6. Run `/tasks` to generate `docs/sprint/Sprint-XX/TASKS.md` with INPUT->OUTPUT->VERIFY criteria.
-- **After implementation:** run `/doc …` to record what changed and link it back to the plan. Every code change must have an explicit plan + documentation trail.
-- The orchestrator must block execution if discovery or planning has been skipped, and remind contributors to update docs immediately after coding.
+- **Before any /create or code modification:**
+  1. Run `/discover` (ALWAYS required) to refresh the project map and capture current risks.
+  2. Run `/specify ...` to create the feature spec in `docs/requirements/<feature>/` (includes planning and tasks).
+- **After implementation:** run `/verify` to ensure quality.
+- The orchestrator must block execution if discovery has been skipped.
 
 **Standard Phase Flow:**
 ```
-Phase 0: /context (MANDATORY) → /brainstorm (optional)
-Phase 1: /specify → /clarify (optional)
-Phase 2: /plan → STOP for approval
-Phase 3: /tasks → STOP for approval
-Phase 4: /impl → parallel agents
-Phase 5: /test, /checklist scripts → /doc
+Phase 0: /discover (MANDATORY)
+Phase 1: /specify (includes planning and tasks)
+Phase 2: /create (implementation with phases)
+Phase 3: /verify (verification)
+Phase 4: /deploy (deployment)
 ```
 
 ---
@@ -287,17 +273,15 @@ Phase 5: /test, /checklist scripts → /doc
 
 ### Critical Rules
 - **Documentation:** All plans MUST follow Documentation Integrity Protocol
-- **Discovery Gate:** Always execute `/context` (MANDATORY) before authoring a new plan. Use `/brainstorm` additionally when scope is unclear.
-- **Planning Gate:** `/impl` or specialist agents cannot run until `/specify`, `/clarify`, `/plan`, and `/tasks` have produced the required docs.
-- **Post-Work Docs:** After implementation, `/doc` must be used to capture outcomes linked to the plan.
+- **Discovery Gate:** Always execute `/discover` (MANDATORY) before authoring a new plan.
+- **Planning Gate:** `/create` or specialist agents cannot run until `/specify` has produced the required docs.
 - **Minimum 3 Agents:** If you use fewer than 3, you are not orchestrating
-- **Standard Phase Execution (aligned with SDD workflow):**
-    - **Phase 0: Discovery** - `/context` (MANDATORY), `/brainstorm` (optional)
-    - **Phase 1: Specification** - `/specify`, `/clarify`
-    - **Phase 2: Planning** - `/plan` → STOP for approval
-    - **Phase 3: Task Breakdown** - `/tasks` → STOP for approval
-    - **Phase 4: Implementation** - `/impl` with parallel agents
-    - **Phase 5: Verification** - Scripts and tests
+- **Standard Phase Execution (aligned with workflow):**
+    - **Phase 0: Discovery** - `/discover` (MANDATORY)
+    - **Phase 1: Specification** - `/specify` (includes planning and tasks)
+    - **Phase 2: Implementation** - `/create` with parallel agents
+    - **Phase 3: Verification** - `/verify`
+    - **Phase 4: Deployment** - `/deploy`
 
 ### Orchestration Protocol
 
@@ -371,15 +355,15 @@ User Request
     ↓
 Parse Command
     ↓
-┌─────────────────┐
-│ /plan, /impl,   │  → Router Mode
-│ /test, /debug   │    (Single command)
-└─────────────────┘
+┌─────────────────────────────┐
+│ /specify, /create,         │  → Router Mode
+│ /verify, /debug, /deploy   │    (Single command)
+└─────────────────────────────┘
     ↓
 Complex task?
     ├─ Yes → Orchestrator Mode
     │        (Multi-agent coordination)
-    └─ No  → Continue with single agent
+    └─ No  → Continue with single command
 ```
 
 ---
@@ -387,14 +371,17 @@ Complex task?
 ## Example Usage
 
 **Router Mode:**
-> "/plan create auth system" → Runs the `/plan` command
+> "/specify create auth system" → Runs the `/specify` command
 
 **Orchestrator Mode:**
-> "/engineer build a secure e-commerce checkout with stripe"
+> "/orchestrate build a secure e-commerce checkout with stripe"
 > 1. Detects complexity
 > 2. Starts Orchestration Mode
-> 3. Plans with `project-planner`
-> 4. Executes with `backend-specialist` (API), `frontend-specialist` (UI), `security-auditor` (PCI compliance)
+> 3. Runs `/discover` (if not done)
+> 4. Runs `/specify`
+> 5. Executes with `backend-specialist` (API), `frontend-specialist` (UI), `security-auditor` (PCI compliance)
+> 6. Runs `/verify`
+> 7. Ready for `/deploy`
 
 ---
 
@@ -565,14 +552,20 @@ All documentation artifacts must also follow Obsidian linking conventions:
 
 ## STOP Points (MANDATORY)
 
-1. **After Phase 1 (Planning):**
-   > "Plan recorded in `docs/`. Proceed to implementation?"
+1. **After /discover:**
+   > "Context generated. Proceed to specification (/specify)?"
 
- 2. **After Phase 2 (Implementation):**
-    > "Implementation complete. Run final verification (Phase 3)?"
+2. **After /specify:**
+   > "Plan recorded in `docs/`. Proceed to implementation (/create)?"
 
- 3. **After Phase 3 (Verification):**
-    > "All checks passed. Mark the project as complete?"
+3. **After /create (each phase):**
+   > "P0/P1/P2/P3 complete. Continue to next phase?"
+
+4. **After /verify:**
+   > "Verification complete. Ready for deployment (/deploy)?"
+
+5. **After /deploy:**
+   > "Deployment complete. Mark project as finished?"
 
 ---
 

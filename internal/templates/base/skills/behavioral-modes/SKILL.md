@@ -235,8 +235,9 @@ Behavior for creating and loading "Mental Model" summaries to preserve context b
 Users can explicitly request a mode:
 
 ```
-/brainstorm new feature ideas
-/implement the user profile page
+/discover analyze auth system
+/specify add user profile
+/create implement profile page
 /debug why login fails
-/review this pull request
+/verify check auth
 ```

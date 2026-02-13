@@ -2,7 +2,7 @@
 
 > Universal Spec-Driven Development toolkit for AI coding agents.
 
-Configure a multi-agent AI development environment with specialized agents, 33+ domain skills, and 18 development commands.
+Configure a multi-agent AI development environment with specialized agents, 33+ domain skills, and 7 development commands.
 
 ## What is OpenKit?
 
@@ -175,7 +175,7 @@ npm i -g @opencode/cli
 
 **What OpenKit Installs:**
 - `opencode.json` - Agent configuration
-- `.opencode/commands/` - 18 slash commands
+- `.opencode/commands/` - 7 slash commands
 - `.opencode/prompts/` - Specialized agent prompts
 - `.opencode/rules/` - Master ruleset
 - `.opencode/skills/` - 33+ domain skills
@@ -281,7 +281,7 @@ openkit cursor sync
 **What OpenKit Installs:**
 - `GEMINI.md` - Main instruction file
 - `.gemini/settings.json` - Agent settings
-- `.gemini/commands/openkit/*.toml` - 18 TOML commands
+- `.gemini/commands/openkit/*.toml` - 7 TOML commands
 - `.gemini/rules/` - Universal rules
 - `.gemini/skills/` - Domain skills
 
@@ -321,119 +321,135 @@ codex  # Start Codex CLI in your project
 | Codex CLI | ✅ Supported | 147+ files | ❌ N/A |
 | Windsurf | 🚧 Planned | - | - |
 
-## Development Workflow
+## 7 Development Commands
 
-OpenKit provides 18 commands for Spec-Driven Development:
+OpenKit provides **7 commands** for the complete development workflow:
 
-### Core SDD Commands
+| # | Command | Purpose |
+|---|---------|---------|
+| 1 | `/discover` | Analyze project context (mandatory) |
+| 2 | `/specify` | Specification + Planning + Tasks |
+| 3 | `/create` | Implementation from plan |
+| 4 | `/verify` | Quality verification (tests, lint, security) |
+| 5 | `/orchestrate` | Universal orchestrator for complex tasks |
+| 6 | `/debug` | Systematic debugging |
+| 7 | `/deploy` | Safe deployment |
 
-| Command | Purpose |
-|---------|---------|
-| `/specify` | Create feature specification |
-| `/clarify` | Resolve spec ambiguities |
-| `/plan` | Create implementation plan |
-| `/tasks` | Generate executable tasks |
-| `/impl` | Execute implementation |
-| `/test` | Run tests and quality checks |
+---
 
-### Specialized Commands
+## Standard Workflow
 
-| Command | Purpose |
-|---------|---------|
-| `/engineer` | Orchestrate multi-domain tasks |
-| `/debug` | Systematic root cause analysis |
-| `/ui-ux` | Design system generation |
-| `/deploy` | Safe deployment procedures |
-| `/doc` | Documentation generation |
-| `/context` | Generate codebase context |
-| `/brainstorm` | Explore approaches |
-| `/status` | View progress |
-| `/preview` | Manage dev environment |
-| `/analyze` | Validate consistency |
-| `/checklist` | Readiness checks |
-| `/create` | Bootstrap new apps |
-
-### Context-Aware Detection
-
-`/context` now detects project shape and adapts outputs to the repository:
-
-- CLI tools -> generates CLI-focused docs (for example `CLI_ARCHITECTURE.md`)
-- Web full-stack -> keeps `BACKEND.md` and `FRONTEND.md`
-- Libraries/SDKs -> generates public API and versioning docs
-- Supports overlays (`testing`, `security`, `ci-cd`, `documentation`)
-
-For automation and CI usage:
-
-```bash
-openkit context --yes --type cli-tool --overlays testing-overlay,security-overlay
+```
+/discover → /specify → /create → /verify → /deploy
 ```
 
-### Standard Workflow (SDD)
+---
 
-Use this for most feature work:
+## Usage Examples
 
-```text
-/specify → /clarify → /plan → /tasks → /impl → /test
-```
+### Example 1: New Feature
 
-**Key Properties:**
-- Planning recorded in `docs/requirements/<feature>/`
-- Tasks tracked in `docs/sprint/Sprint-XX/`
-- STOP points require explicit approval
-
-**Example:**
 ```bash
-# In your AI agent (e.g., opencode)
+# In OpenCode
+
+# 1. Discover project context
+/discover
+# → Analyzes structure, identifies risks, creates CONTEXT.md
+
+# 2. Specify and plan the feature
 /specify add user authentication
-# Agent creates docs/requirements/user-auth/
+# → Creates PROBLEM_STATEMENT.md, USER_STORIES.md, ACCEPTANCE_CRITERIA.md
+# → Creates PLAN.md, SPRINT_GOAL.md, BACKLOG.md
+# → Creates TASKS.md with task breakdown
 
-/clarify
-# Resolve ambiguities about OAuth vs JWT
+# 3. Implement
+/create from docs/sprint/Sprint-1/TASKS.md
+# → Executes P0: Foundation (DB + Security)
+# → Executes P1: Backend
+# → Executes P2: UI/UX
+# → Executes P3: Polish
 
-/plan add user authentication
-# Agent creates PLAN.md with phases
+# 4. Verify
+/verify all
+# → Runs lint + type check
+# → Runs security scan
+# → Runs unit tests
+# → Runs UX audit
+# → Runs performance checks
 
-/tasks
-# Agent generates docs/sprint/Sprint-XX/TASKS.md
-
-/impl from docs/sprint/Sprint-XX/TASKS.md
-# Agent executes tasks one by one
-
-/test
-# Run verification suite
+# 5. Deploy
+/deploy staging
+# → Prepares deployment
+# → Executes deploy
+# → Verifies post-deploy
 ```
 
-### Orchestrated Workflow (/engineer)
+### Example 2: Bug Fix
 
-Use when task spans multiple domains:
-
-```text
-/engineer <mission>
-  Phase 1: Planning (project-planner) → STOP
-  Phase 2: Implementation (parallel specialists) → STOP
-  Phase X: Verification (scripts)
-```
-
-**Example:**
 ```bash
-/engineer build secure e-commerce checkout with Stripe integration
+# Debug the issue
+/debug login not working after update
+# → Phase 1: Symptom Analysis
+# → Phase 2: Information Gathering
+# → Phase 3: Hypothesis Testing
+# → Phase 4: Resolution
 
-# Phase 1: Planning
-# - Creates specs, risks, plan
-# - STOP for approval
-
-# Phase 2: Implementation
-# - database-architect: schema
-# - backend-specialist: API
-# - frontend-specialist: UI
-# - security-auditor: PCI compliance
-# - STOP for review
-
-# Phase X: Verification
-# - Runs security scan
-# - Runs tests
-# - Validates deployment
+# Verify the fix
+/verify quick
 ```
+
+### Example 3: Complex Project
+
+```bash
+# Use orchestrator for complex tasks
+/orchestrate build e-commerce with Stripe checkout
+# → Automatically runs /discover
+# → Automatically runs /specify
+# → Coordinates multiple agents (database-architect, backend-specialist, frontend-specialist, security-auditor)
+# → Runs /verify
+# → Reports results
+```
+
+---
+
+## Command Details
+
+### /discover
+Analyzes project structure and generates context documentation.
+- Creates: `docs/CONTEXT.md`, `docs/SECURITY.md`, `docs/QUALITY_GATES.md`
+- **Mandatory** before `/specify`
+
+### /specify
+Complete specification + planning + task breakdown.
+- Creates: Requirements, Plan, Sprint goals, Task breakdown
+- Unifies: `/specify`, `/clarify`, `/plan`, `/tasks`
+
+### /create
+Executes implementation from specification.
+- Reads: `docs/sprint/Sprint-XX/TASKS.md`
+- Executes: P0→P1→P2→P3 phases with STOP points
+
+### /verify
+Quality verification suite.
+- Runs: Lint, Security scan, Tests, UX audit, Performance
+- Unifies: `/test`, `/checklist`, `/analyze`
+
+### /orchestrate
+Universal orchestrator for complex multi-domain tasks.
+- Coordinates: Multiple specialist agents
+- Automates: Entire workflow
+
+### /debug
+4-phase systematic debugging protocol.
+- Phase 1: Symptom Analysis
+- Phase 2: Information Gathering
+- Phase 3: Hypothesis Testing
+- Phase 4: Resolution
+
+### /deploy
+Safe deployment with verification.
+- Environments: Staging, Production, Preview
+- Includes: Pre-deploy checklist, health checks, rollback
 
 ### Verification & Quality
 

@@ -1,8 +1,8 @@
 ---
-description: Create a contextual docs pack for this project (MANDATORY before /specify).
+description: Analyze project context and generate documentation (MANDATORY before /specify)
 ---
 
-# /context - Context Preflight (MANDATORY)
+# /discover - Project Discovery
 
 $ARGUMENTS
 
@@ -10,15 +10,11 @@ $ARGUMENTS
 
 Generate a verified context pack for the current project, documenting risks, drift, and gaps with file-cited evidence. Outputs are contextual (no frontend/backend docs unless applicable).
 
-**IMPORTANT:** This command is MANDATORY before starting the SDD workflow.
-- `/context` generates technical context (CONTEXT.md, SECURITY.md, etc.)
-- `/brainstorm` is OPTIONAL and used for exploring options when scope is unclear
+**IMPORTANT:** This command is MANDATORY before starting any feature work.
 
 **Discovery Gate Flow:**
 ```
-/context (MANDATORY) → /specify → /clarify → /plan → /tasks → /impl
-    ↑
-/brainstorm (OPTIONAL, when scope unclear)
+/discover (MANDATORY) → /specify → /create → /verify → /deploy
 ```
 
 ## Workflow
@@ -27,7 +23,7 @@ Generate a verified context pack for the current project, documenting risks, dri
 2. Map FE routing/data fetching and BE endpoints/models/migrations; mark missing items as "not found."
 3. Diagnose risks (security, config, drift, missing tests, missing configuration files, logger/correlation-id).
 4. Produce/update required `docs/` files with tables and concise summaries.
-5. If external/network tools are needed (pip-audit, npm audit, shadcn llms.txt), note blockers in `docs/ACTION_ITEMS.md`.
+5. If external/network tools are needed (pip-audit, npm audit), note blockers in `docs/ACTION_ITEMS.md`.
 
 ## Output Requirements
 
@@ -55,36 +51,53 @@ question({
 
 ## Context Pack Files (Contextual)
 
-Sempre criar/atualizar:
+Always create/update:
 
-- `docs/CONTEXT.md` (executive summary + overview + evidencias)
+- `docs/CONTEXT.md` (executive summary + overview + evidence)
 - `docs/QUALITY_GATES.md` (linters, tests, CI, checks)
 - `docs/SECURITY.md` (threats, controls, gaps, prioritized actions)
-- `docs/ACTION_ITEMS.md` (backlog priorizado por impacto x effort)
+- `docs/ACTION_ITEMS.md` (backlog prioritized by impact x effort)
 - `docs/HUB-DOCS.md` (documentation hub)
 - `docs/GLOSSARY.md` (shared terminology)
 - `docs/requirements/HUB-REQUIREMENTS.md` (requirements hub)
 - `docs/sprint/HUB-SPRINTS.md` (sprint hub)
-- `docs/MIGRATION_CHECKLIST.md` (legacy docs migration, when needed)
 
-Criar apenas quando o projeto tiver esse contexto:
+Create only when project has this context:
 
-- Frontend -> `docs/FRONTEND.md`
-- Backend/API -> `docs/BACKEND.md` e/ou `docs/API.md`
-- Database -> `docs/DATABASE.md`
+- Frontend → `docs/FRONTEND.md`
+- Backend/API → `docs/BACKEND.md` and/or `docs/API.md`
+- Database → `docs/DATABASE.md`
 
 ## Templates (REQUIRED)
 
-Use these templates as a starting point (adjust content, keep file names):
+Use these templates:
 
-- `.opencode/templates/DOCS-CONTEXT.md` -> `docs/CONTEXT.md`
-- `.opencode/templates/DOCS-README.md` -> `docs/HUB-DOCS.md`
-- `.opencode/templates/DOCS-GLOSSARY.md` -> `docs/GLOSSARY.md`
-- `.opencode/templates/DOCS-MIGRATION_CHECKLIST.md` -> `docs/MIGRATION_CHECKLIST.md` (if needed)
-- `.opencode/templates/DOCS-QUALITY_GATES.md` -> `docs/QUALITY_GATES.md`
-- `.opencode/templates/DOCS-SECURITY.md` -> `docs/SECURITY.md`
-- `.opencode/templates/DOCS-ACTION_ITEMS.md` -> `docs/ACTION_ITEMS.md`
-- `.opencode/templates/DOCS-FRONTEND.md` -> `docs/FRONTEND.md` (if applicable)
-- `.opencode/templates/DOCS-BACKEND.md` -> `docs/BACKEND.md` (if applicable)
-- `.opencode/templates/DOCS-API.md` -> `docs/API.md` (if applicable)
-- `.opencode/templates/DOCS-DATABASE.md` -> `docs/DATABASE.md` (if applicable)
+- `.opencode/templates/DOCS-CONTEXT.md` → `docs/CONTEXT.md`
+- `.opencode/templates/DOCS-README.md` → `docs/HUB-DOCS.md`
+- `.opencode/templates/DOCS-GLOSSARY.md` → `docs/GLOSSARY.md`
+- `.opencode/templates/DOCS-QUALITY_GATES.md` → `docs/QUALITY_GATES.md`
+- `.opencode/templates/DOCS-SECURITY.md` → `docs/SECURITY.md`
+- `.opencode/templates/DOCS-ACTION_ITEMS.md` → `docs/ACTION_ITEMS.md`
+- `.opencode/templates/DOCS-FRONTEND.md` → `docs/FRONTEND.md` (if applicable)
+- `.opencode/templates/DOCS-BACKEND.md` → `docs/BACKEND.md` (if applicable)
+- `.opencode/templates/DOCS-API.md` → `docs/API.md` (if applicable)
+- `.opencode/templates/DOCS-DATABASE.md` → `docs/DATABASE.md` (if applicable)
+
+---
+
+## STOP Point
+
+After discovery is complete, use the question tool:
+
+```javascript
+question({
+  questions: [{
+      header: "Discovery Complete",
+      question: "Context generated. Proceed to specification (/specify)?",
+      options: [
+        { label: "Yes, proceed to /specify", description: "Start specifying the feature" },
+        { label: "Review context first", description: "Check generated docs" }
+      ]
+    }]
+})
+```

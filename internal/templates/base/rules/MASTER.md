@@ -235,7 +235,7 @@ Always ask clarifying questions before execution when there is significant ambig
 
 ## SDD Gate (Mandatory)
 
-Before any `/impl` execution, the following artifacts MUST exist:
+Before any `/create` execution, the following artifacts MUST exist:
 
 **From `/specify` (Specification):**
 - `docs/requirements/<feature>/PROBLEM_STATEMENT.md`
@@ -243,23 +243,20 @@ Before any `/impl` execution, the following artifacts MUST exist:
 - `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
 - `docs/requirements/<feature>/RISKS.md`
 
-**From `/plan` (Planning):**
+**From `/specify` (Planning - included in specify):**
 - `docs/requirements/<feature>/PLAN.md`
+- `docs/sprint/Sprint-XX/SPRINT_GOAL.md`
+- `docs/sprint/Sprint-XX/BACKLOG.md`
+- `docs/sprint/Sprint-XX/RISK_REGISTER.md`
 
-**From `/tasks` (Task Breakdown):**
+**From `/specify` (Task Breakdown - included in specify):**
 - `docs/sprint/Sprint-XX/TASKS.md`
 
-If any are missing, STOP and direct the user to run the appropriate command:
-1. Missing spec artifacts → `/specify`
-2. Ambiguities in spec → `/clarify`
-3. Missing PLAN.md → `/plan`
-4. Missing TASKS.md → `/tasks`
+If any are missing, STOP and direct the user to run `/specify` first.
 
 **Command Flow:**
 ```
-/context → /specify → /clarify (optional) → /plan → /tasks → /impl
-    ↑
-/brainstorm (optional, when scope unclear)
+/discover (MANDATORY) → /specify → /create → /verify → /deploy
 ```
 
 ---
@@ -270,34 +267,27 @@ All agents and commands MUST use this standardized phase naming:
 
 | Phase | Name | Command(s) | Output | Code? |
 |-------|------|------------|--------|-------|
-| **0** | Discovery | `/context` (MANDATORY), `/brainstorm` (optional) | `docs/CONTEXT.md`, decisions | NO |
-| **1** | Specification | `/specify`, `/clarify` | `docs/requirements/<feature>/` | NO |
-| **2** | Planning | `/plan` | `PLAN.md`, `SPRINT_GOAL.md`, `BACKLOG.md` | NO |
-| **3** | Task Breakdown | `/tasks` | `TASKS.md` | NO |
-| **4** | Implementation | `/impl` | Working code | YES |
-| **5** | Verification | `/test`, scripts | Verified project | Scripts |
+| **0** | Discovery | `/discover` (MANDATORY) | `docs/CONTEXT.md`, decisions | NO |
+| **1** | Specification | `/specify` | `docs/requirements/<feature>/`, `docs/sprint/Sprint-XX/` | NO |
+| **2** | Implementation | `/create` | Working code | YES |
+| **3** | Verification | `/verify` | Verified project | Scripts |
+| **4** | Deployment | `/deploy` | Deployed application | - |
 
-**STOP Points:** After Phase 2 and Phase 3 (user approval required)
+**STOP Points:** After Phase 1, Phase 2 (each P0-P3), and Phase 3 (user approval required)
 
 ---
 
 ## Discovery Gate (Phase 0 - Mandatory)
 
-Before starting the SDD workflow, execute discovery commands:
+Before starting any feature work, execute discovery:
 
 | Command | When to Use | Output |
 |---------|-------------|--------|
-| `/context` | **ALWAYS** (mandatory) | `docs/CONTEXT.md`, `docs/SECURITY.md`, `docs/QUALITY_GATES.md` |
-| `/brainstorm` | **OPTIONAL** (when scope unclear) | Options analysis, trade-offs, recommendation |
+| `/discover` | **ALWAYS** (mandatory) | `docs/CONTEXT.md`, `docs/SECURITY.md`, `docs/QUALITY_GATES.md` |
 
 **Discovery Gate Rules:**
-1. `/context` is ALWAYS required before `/specify`
-2. `/brainstorm` is OPTIONAL - use when:
-   - Multiple valid approaches exist
-   - Scope is ambiguous
-   - User needs help deciding direction
-3. `/brainstorm` does NOT replace `/context` - they serve different purposes
-4. If `/context` was not run, STOP and direct user to run it first
+1. `/discover` is ALWAYS required before `/specify`
+2. If `/discover` was not run, STOP and direct user to run it first
 
 ---
 
@@ -307,24 +297,23 @@ Before starting the SDD workflow, execute discovery commands:
 2. **Sprint Selection**: Ask the user whether to use the latest sprint or create a new one.
    - If no sprint exists, create `Sprint-01`.
    - If creating a new sprint, use the next sequential number.
-3. **Planning** (`/plan`): Create requirements in `docs/requirements/<feature>/` and update `HUB-SPRINT-XX.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`.
-4. **Task Breakdown** (`/tasks`): Create detailed `TASKS.md` with INPUT->OUTPUT->VERIFY criteria.
-5. **Execution** (`/impl`): Mark progress in `TASKS.md`; update story status in `BACKLOG.md`.
-6. **Completion**: Mark tasks as `[x]`, register changes in `docs/CHANGELOG.md` when requested.
-7. **Templates**: Use `@[skills/documentation-templates]` for requirements, sprints, and reports.
+3. **Specification** (`/specify`): Create requirements in `docs/requirements/<feature>/` and update `HUB-SPRINT-XX.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`, `TASKS.md`.
+4. **Execution** (`/create`): Mark progress in `TASKS.md`; update story status in `BACKLOG.md`.
+5. **Completion**: Mark tasks as `[x]`, register changes in `docs/CHANGELOG.md` when requested.
+6. **Templates**: Use `@[skills/documentation-templates]` for requirements, sprints, and reports.
 
 **Command Ownership:**
 | Artifact | Created By |
 |----------|------------|
-| docs/HUB-DOCS.md | `/context` or `/plan` |
-| docs/requirements/HUB-REQUIREMENTS.md | `/context` or `/plan` |
-| docs/requirements/<feature>/HUB-<FEATURE>.md | `/plan` |
-| docs/sprint/HUB-SPRINTS.md | `/context` or `/plan` |
-| docs/sprint/Sprint-XX/HUB-SPRINT-XX.md | `/plan` |
-| SPRINT_GOAL.md | `/plan` |
-| BACKLOG.md | `/plan` |
-| RISK_REGISTER.md | `/plan` |
-| TASKS.md | `/tasks` (ONLY) |
+| docs/HUB-DOCS.md | `/discover` or `/specify` |
+| docs/requirements/HUB-REQUIREMENTS.md | `/discover` or `/specify` |
+| docs/requirements/<feature>/HUB-<FEATURE>.md | `/specify` |
+| docs/sprint/HUB-SPRINTS.md | `/discover` or `/specify` |
+| docs/sprint/Sprint-XX/HUB-SPRINT-XX.md | `/specify` |
+| SPRINT_GOAL.md | `/specify` |
+| BACKLOG.md | `/specify` |
+| RISK_REGISTER.md | `/specify` |
+| TASKS.md | `/specify` |
 
 CRITICAL: Ending a task without syncing `docs/sprint/` is a protocol violation.
 
@@ -350,7 +339,7 @@ A task only ends when `checklist.py` succeeds. If it fails, resolve critical blo
 
 ## Additional Best Practices
 
-- References to commands (`/plan`, `/impl`, `/engineer`, `/test`, `/deploy`, `/doc`, `/ui-ux`, `/preview`, `/status`) must follow `.opencode/commands/`.
+- References to commands (`/discover`, `/specify`, `/create`, `/verify`, `/orchestrate`, `/debug`, `/deploy`) must follow `.opencode/commands/`.
 - When generating new artifacts, record times using timezone UTC-3 as per `AGENTS.md`.
 - Update `docs/.context` and `docs/ACTION_ITEMS.md` when there is multi-repo impact.
 - Always validate sensitive data: never expose secrets, tokens, or `.env`.

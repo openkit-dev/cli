@@ -18,7 +18,7 @@
 
 | Priority | Gap | Recommended Fix | Owner Command |
 |---|---|---|---|
-| P0 | [Gap] | [Fix] | [/plan or /tasks] |
+| P0 | [Gap] | [Fix] | [/specify] |
 
 ## Remediation Plan
 

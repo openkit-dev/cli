@@ -479,61 +479,64 @@ todowrite({
 
 | Command | ID Prefix | Example |
 |---------|-----------|---------|
-| `/specify` | `sdd-spec-` | `sdd-spec-problem`, `sdd-spec-stories`, `sdd-spec-criteria` |
-| `/clarify` | `sdd-clarify-` | `sdd-clarify-gather`, `sdd-clarify-resolve` |
-| `/plan` | `sdd-plan-` | `sdd-plan-analyze`, `sdd-plan-requirements`, `sdd-plan-sprint` |
-| `/tasks` | `sdd-tasks-` | `sdd-tasks-breakdown`, `sdd-tasks-verify` |
-| `/impl` | `sdd-impl-` | `sdd-impl-p0-foundation`, `sdd-impl-p1-backend`, `sdd-impl-p2-frontend` |
-| `/engineer` | `orch-` | `orch-phase1-planning`, `orch-phase2-foundation`, `orch-phase3-verify` |
-| `/brainstorm` | `brainstorm-` | `brainstorm-context`, `brainstorm-options`, `brainstorm-recommend` |
-| `/context` | `context-` | `context-discover`, `context-analyze`, `context-document` |
-| `/test` | `test-` | `test-unit`, `test-e2e`, `test-verify` |
+| `/discover` | `disc-` | `disc-analyze`, `disc-context`, `disc-document` |
+| `/specify` | `spec-` | `spec-problem`, `spec-stories`, `spec-criteria`, `spec-plan`, `spec-tasks` |
+| `/create` | `create-` | `create-p0`, `create-p1`, `create-p2`, `create-p3` |
+| `/verify` | `verify-` | `verify-lint`, `verify-security`, `verify-tests` |
+| `/orchestrate` | `orch-` | `orch-phase1`, `orch-phase2`, `orch-phase3` |
+| `/debug` | `debug-` | `debug-symptom`, `debug-gather`, `debug-hypothesis`, `debug-resolve` |
+| `/deploy` | `deploy-` | `deploy-prep`, `deploy-exec`, `deploy-verify` |
 
-### Standard Phase IDs for SDD Workflow
+### Standard Phase IDs for OpenKit Workflow
 
 ```javascript
-// /specify command
-{ id: "sdd-spec-01-problem", content: "Create PROBLEM_STATEMENT.md", ... }
-{ id: "sdd-spec-02-stories", content: "Create USER_STORIES.md", ... }
-{ id: "sdd-spec-03-criteria", content: "Create ACCEPTANCE_CRITERIA.md", ... }
-{ id: "sdd-spec-04-risks", content: "Create RISKS.md", ... }
+// /discover command
+{ id: "disc-01-analyze", content: "Analyze project structure", ... }
+{ id: "disc-02-context", content: "Generate context documentation", ... }
 
-// /plan command
-{ id: "sdd-plan-01-check", content: "SDD Gate check (verify /specify ran)", ... }
-{ id: "sdd-plan-02-analyze", content: "Analyze project type and scope", ... }
-{ id: "sdd-plan-03-requirements", content: "Create PLAN.md", ... }
+// /specify command
+{ id: "spec-01-problem", content: "Create PROBLEM_STATEMENT.md", ... }
+{ id: "spec-02-stories", content: "Create USER_STORIES.md", ... }
+{ id: "spec-03-criteria", content: "Create ACCEPTANCE_CRITERIA.md", ... }
+{ id: "spec-04-risks", content: "Create RISKS.md", ... }
+{ id: "spec-05-plan", content: "Create PLAN.md", ... }
+{ id: "spec-06-tasks", content: "Create TASKS.md", ... }
 { id: "sdd-plan-04-sprint", content: "Create sprint artifacts", ... }
 
-// /tasks command
-{ id: "sdd-tasks-01-read", content: "Read plan and requirements", ... }
-{ id: "sdd-tasks-02-breakdown", content: "Create task breakdown", ... }
-{ id: "sdd-tasks-03-verify", content: "Verify INPUT->OUTPUT->VERIFY criteria", ... }
+// /specify command (includes planning + tasks)
+{ id: "spec-01-problem", content: "Create PROBLEM_STATEMENT.md", ... }
+{ id: "spec-02-stories", content: "Create USER_STORIES.md", ... }
+{ id: "spec-03-criteria", content: "Create ACCEPTANCE_CRITERIA.md", ... }
+{ id: "spec-04-risks", content: "Create RISKS.md", ... }
+{ id: "spec-05-plan", content: "Create PLAN.md and sprint artifacts", ... }
+{ id: "spec-06-tasks", content: "Create TASKS.md with INPUT->OUTPUT->VERIFY", ... }
 
-// /impl command
-{ id: "sdd-impl-01-precheck", content: "Pre-implementation checklist", ... }
-{ id: "sdd-impl-02-p0-foundation", content: "P0: Foundation (DB + Security)", ... }
-{ id: "sdd-impl-03-p1-backend", content: "P1: Core Backend", ... }
-{ id: "sdd-impl-04-p2-frontend", content: "P2: UI/UX", ... }
-{ id: "sdd-impl-05-p3-polish", content: "P3: Polish (Tests)", ... }
-{ id: "sdd-impl-06-update", content: "Update sprint TASKS.md", ... }
+// /create command
+{ id: "create-01-precheck", content: "Pre-implementation checklist", ... }
+{ id: "create-02-p0-foundation", content: "P0: Foundation (DB + Security)", ... }
+{ id: "create-03-p1-backend", content: "P1: Core Backend", ... }
+{ id: "create-04-p2-frontend", content: "P2: UI/UX", ... }
+{ id: "create-05-p3-polish", content: "P3: Polish (Tests)", ... }
+{ id: "create-06-update", content: "Update sprint TASKS.md", ... }
 ```
 
 ### Standard Phase IDs for Orchestration
 
 ```javascript
-// /engineer orchestrator mode
+// /orchestrate command
 { id: "orch-01-analysis", content: "Analyze mission complexity", ... }
-{ id: "orch-02-planning", content: "Create planning artifacts", ... }
-{ id: "orch-03-p0-foundation", content: "P0: Foundation (DB + Security)", ... }
-{ id: "orch-04-p1-backend", content: "P1: Core Backend", ... }
-{ id: "orch-05-p2-frontend", content: "P2: UI/UX", ... }
-{ id: "orch-06-p3-polish", content: "P3: Polish (Tests + Perf)", ... }
-{ id: "orch-07-verification", content: "Final verification scripts", ... }
+{ id: "orch-02-discover", content: "Run /discover", ... }
+{ id: "orch-03-specify", content: "Run /specify", ... }
+{ id: "orch-04-p0-foundation", content: "P0: Foundation (DB + Security)", ... }
+{ id: "orch-05-p1-backend", content: "P1: Core Backend", ... }
+{ id: "orch-06-p2-frontend", content: "P2: UI/UX", ... }
+{ id: "orch-07-p3-polish", content: "P3: Polish (Tests + Perf)", ... }
+{ id: "orch-08-verification", content: "Run /verify", ... }
 ```
 
 ### Why Standardized IDs?
 
-1. **Continuity:** When user runs `/plan` then `/tasks`, the IDs connect logically
+1. **Continuity:** When user runs `/discover` then `/specify` then `/create`, the IDs connect logically
 2. **Tracking:** Easy to filter by prefix to see what phase/command we're in
 3. **Debugging:** Clear provenance when something fails
 4. **Consistency:** All agents speak the same language
