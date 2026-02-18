@@ -39,6 +39,7 @@
 - `internal/managedstate/managedstate.go`: file hash tracking (`InstalledSHA256`) and schema checks.
 - `opencode.json`: some agents have broad permissions (example: `devops-engineer` sets `bash: allow`).
 - `.github/workflows/release.yml`: optional checksums signing when `MINISIGN_SECRET_KEY` is configured.
+- `.github/workflows/release.yml`: signing uses non-interactive minisign mode (`-W`) for CI compatibility.
 - `.github/workflows/ci.yml`: includes lint/test/build only; no security or secret scan jobs.
 
 ## Related

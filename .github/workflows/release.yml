@@ -114,7 +114,7 @@ jobs:
           key_file="$(mktemp)"
           printf '%s' "${MINISIGN_SECRET_KEY}" > "${key_file}"
           chmod 600 "${key_file}"
-          minisign -S -s "${key_file}" -m dist/checksums.txt -x dist/checksums.txt.minisig -t "openkit ${GITHUB_REF_NAME} checksums"
+          minisign -S -W -s "${key_file}" -m dist/checksums.txt -x dist/checksums.txt.minisig -t "openkit ${GITHUB_REF_NAME} checksums"
           rm -f "${key_file}"
 
       - name: Create release if needed
