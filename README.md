@@ -31,6 +31,8 @@ Download from [latest release](https://github.com/orionlabz/openkit/releases/lat
 ```bash
 openkit --help
 openkit --version
+openkit upgrade --check
+openkit upgrade --dry-run
 openkit check
 openkit check --json
 openkit init my-app --ai opencode --no-git

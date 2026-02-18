@@ -21,6 +21,7 @@ struct Cli {
 enum Commands {
     Check(CheckArgs),
     Init(ProjectInitArgs),
+    Upgrade(UpgradeArgs),
     Memory(MemoryCommand),
     Opencode(AgentCommand),
     Claude(AgentCommand),
@@ -34,6 +35,14 @@ enum Commands {
 struct CheckArgs {
     #[arg(long)]
     json: bool,
+}
+
+#[derive(Args, Debug)]
+struct UpgradeArgs {
+    #[arg(long)]
+    check: bool,
+    #[arg(long)]
+    dry_run: bool,
 }
 
 #[derive(Args, Debug)]
@@ -240,6 +249,7 @@ fn main() -> Result<(), String> {
     match cli.command {
         Commands::Check(args) => run_check(args),
         Commands::Init(args) => run_init(args),
+        Commands::Upgrade(args) => run_upgrade(args),
         Commands::Opencode(cmd) => run_agent_command("opencode", cmd),
         Commands::Claude(cmd) => run_agent_command("claude", cmd),
         Commands::Cursor(cmd) => run_agent_command("cursor", cmd),
@@ -253,6 +263,91 @@ fn main() -> Result<(), String> {
             MemorySubcommand::Review(args) => memory_review(args),
         },
     }
+}
+
+fn run_upgrade(args: UpgradeArgs) -> Result<(), String> {
+    let repo = std::env::var("OPENKIT_REPO").unwrap_or_else(|_| "orionlabz/openkit".to_string());
+    let current = env!("CARGO_PKG_VERSION");
+
+    if args.check {
+        let latest = fetch_latest_tag(&repo)?;
+        println!("Current: {}", current);
+        println!("Latest:  {}", latest);
+        if latest.trim_start_matches('v') == current {
+            println!("OpenKit is up to date.");
+        } else {
+            println!("Update available.");
+        }
+        return Ok(());
+    }
+
+    if std::env::consts::OS == "windows" {
+        let cmd = "irm https://raw.githubusercontent.com/orionlabz/openkit/main/scripts/install.ps1 | iex";
+        if args.dry_run {
+            println!("Dry run: powershell -NoProfile -Command \"{}\"", cmd);
+            return Ok(());
+        }
+        let status = Command::new("powershell")
+            .args(["-NoProfile", "-Command", cmd])
+            .status()
+            .map_err(|e| format!("failed to execute upgrade installer: {}", e))?;
+        if !status.success() {
+            return Err("upgrade installer failed".to_string());
+        }
+    } else {
+        let cmd = "curl -fsSL https://raw.githubusercontent.com/orionlabz/openkit/main/scripts/install.sh | bash";
+        if args.dry_run {
+            println!("Dry run: {}", cmd);
+            return Ok(());
+        }
+        let status = Command::new("sh")
+            .args(["-c", cmd])
+            .status()
+            .map_err(|e| format!("failed to execute upgrade installer: {}", e))?;
+        if !status.success() {
+            return Err("upgrade installer failed".to_string());
+        }
+    }
+
+    println!("Upgrade completed. Run `openkit --version` to verify.");
+    Ok(())
+}
+
+fn fetch_latest_tag(repo: &str) -> Result<String, String> {
+    let url = format!("https://api.github.com/repos/{}/releases/latest", repo);
+    let output = Command::new("curl")
+        .args([
+            "-fsSL",
+            "-H",
+            "Accept: application/vnd.github+json",
+            "-H",
+            "User-Agent: openkit-rust-cli",
+            &url,
+        ])
+        .output()
+        .map_err(|e| format!("failed to execute curl: {}", e))?;
+    if !output.status.success() {
+        return Err("failed to fetch latest release data".to_string());
+    }
+
+    let body = String::from_utf8_lossy(&output.stdout);
+    for line in body.lines() {
+        if line.contains("\"tag_name\"") {
+            let value = line
+                .split(':')
+                .nth(1)
+                .unwrap_or("")
+                .trim()
+                .trim_matches(',')
+                .trim_matches('"')
+                .to_string();
+            if !value.is_empty() {
+                return Ok(value);
+            }
+        }
+    }
+
+    Err("tag_name not found in release response".to_string())
 }
 
 fn run_agent_command(agent: &str, cmd: AgentCommand) -> Result<(), String> {

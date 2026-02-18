@@ -6,6 +6,8 @@
 |---|---|---|---|
 | CLI | `openkit` root command | `rust-cli/src/main.rs` | Main command entrypoint. |
 | CLI | `openkit --version` | `rust-cli/src/main.rs` | Prints runtime version. |
+| CLI | `openkit upgrade` | `rust-cli/src/main.rs` | Re-installs latest release via official installer scripts. |
+| CLI | `openkit upgrade --check` | `rust-cli/src/main.rs` | Checks latest GitHub release tag. |
 | CLI | `openkit check` | `rust-cli/src/main.rs` | Agent/system availability checks. |
 | CLI | `openkit check --json` | `rust-cli/src/main.rs` | Machine-readable health output. |
 | CLI | `openkit init` | `rust-cli/src/main.rs` | Initialize baseline project docs and structure. |

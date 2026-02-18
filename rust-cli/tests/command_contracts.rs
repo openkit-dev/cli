@@ -315,3 +315,12 @@ fn init_then_memory_doctor_is_healthy() {
     let data: JsonValue = serde_json::from_str(&payload).expect("invalid doctor json");
     assert_eq!(data["status"], "healthy");
 }
+
+#[test]
+fn upgrade_dry_run_succeeds() {
+    let output = Command::new(assert_cmd::cargo::cargo_bin!("openkit"))
+        .args(["upgrade", "--dry-run"])
+        .output()
+        .expect("failed to run upgrade --dry-run");
+    assert!(output.status.success());
+}
