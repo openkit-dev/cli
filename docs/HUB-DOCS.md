@@ -1,30 +1,35 @@
-# OpenKit CLI Documentation
-
-This folder is the source of truth for OpenKit CLI planning and documentation.
+# Documentation Index
 
 ## Context
 
-Global navigation hub for OpenKit documentation, connecting core references, feature requirement packs, sprint execution artifacts, and ADR history.
+Central hub for OpenKit project documentation and discovery artifacts.
 
 ## Status Overview
 
-- Documentation graph: Connected across 20 hub notes (`docs`, `requirements`, `sprint`, `adr`, `content-protocol`, `agent-compat`)
-- Canonical hub naming: Enforced for hub files (`HUB-*.md`)
-- Last review date: 2026-02-11
+- Documentation graph: Active
+- Canonical hub naming: Enforced (`HUB-*.md`)
+- Last discovery refresh: 2026-02-17
 
-## Sections
+## Navigation
 
-- [[content-protocol/HUB-CONTENT-PROTOCOL.md|content-protocol]]: canonical pack format, schemas, and sync semantics
-- [[agent-compat/HUB-AGENT-COMPAT.md|agent-compat]]: per-agent layout notes and constraints
-- [[requirements/HUB-REQUIREMENTS.md|requirements]]: feature specs and implementation plans (SDD gate)
-- [[sprint/HUB-SPRINTS.md|sprint]]: sprint goals, backlog, tasks, and risk register
-- [[adr/HUB-ADR.md|adr]]: architecture decision records for the CLI product
+- [[CONTEXT.md]]
+- [[SECURITY.md]]
+- [[QUALITY_GATES.md]]
+- [[ACTION_ITEMS.md]]
+- [[DEPRECATIONS.md]]
+- [[SUPPORT_MATRIX.md]]
+- [[BACKEND.md]]
+- [[API.md]]
+- [[GLOSSARY.md]]
+- [[MEMORY_LEGACY_MIGRATION.md]]
+- [[requirements/HUB-REQUIREMENTS.md]]
+- [[sprint/HUB-SPRINTS.md]]
 
 ## Related
 
+- [[CONTEXT.md]]
+- [[DEPRECATIONS.md]]
+- [[SUPPORT_MATRIX.md]]
+- [[MEMORY_LEGACY_MIGRATION.md]]
 - [[requirements/HUB-REQUIREMENTS.md]]
 - [[sprint/HUB-SPRINTS.md]]
-- [[content-protocol/HUB-CONTENT-PROTOCOL.md]]
-- [[agent-compat/HUB-AGENT-COMPAT.md]]
-- [[adr/HUB-ADR.md]]
-- [[GLOSSARY.md]]

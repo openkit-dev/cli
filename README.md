@@ -119,7 +119,6 @@ openkit check
 - `--here` - Initialize in current directory
 - `--force` - Overwrite existing files
 - `--no-git` - Skip git initialization
-- `--memory` - Install semantic memory plugin (OpenCode only)
 
 ### Agent-Specific Commands
 
@@ -135,32 +134,23 @@ openkit <agent> doctor    # Check configuration health
 - `--dry-run` - Preview changes without writing
 - `--overwrite` - Overwrite unmanaged or drifted files
 - `--prune` - Remove managed files no longer in the plan
-- `--memory` - Install/update semantic memory plugin (OpenCode only)
 
-### Semantic Memory Commands (OpenCode)
+### Memory Kernel Commands
 
-Manage semantic memory for AI context optimization:
+Manage docs-first project memory using the new runtime bridge:
 
 ```bash
-openkit memory list              # List all stored memories
-openkit memory search <query>    # Search memories by content
-openkit memory stats             # Show memory statistics
-openkit memory export <file>     # Export memories to JSON
-openkit memory prune             # Clean up old/unused memories
-openkit memory config            # Show/modify configuration
-openkit memory debug             # Debug system status
+openkit memory init                 # Initialize memory contracts and directories
+openkit memory doctor --json --write
+openkit memory capture --session-id s01 --summary "Sprint work" --action create
+openkit memory review --json
 ```
 
-**Memory List Flags:**
-- `--type <type>` - Filter by type (decision, pattern, error, spec, context)
-- `--limit <n>` - Maximum number to show (default: 20)
-
-**Memory Search Flags:**
-- `--limit <n>` - Maximum results (default: 10)
-
-**Memory Prune Flags:**
-- `--dry-run` - Show what would be deleted
-- `--force` - Skip confirmation
+Notes:
+- `openkit memory` delegates to the Rust runtime (`openkit-rs`).
+- Runtime resolution order: explicit `OPENKIT_MEMORY_RUNTIME_PATH`, sidecar binary next to `openkit`, `openkit-rs` on PATH, then cargo fallback in `rust-cli/`.
+- You can force runtime mode with `OPENKIT_MEMORY_RUNTIME=binary|cargo`.
+- Release installers attempt to install `openkit-rs` sidecar when an official asset exists for your platform.
 
 ## Supported Agents
 
@@ -187,54 +177,15 @@ openkit opencode sync
 opencode  # Start OpenCode in your project
 ```
 
-**Memory Plugin (Optional):**
+**Permanent Memory (Docs-First):**
 
-OpenKit provides a semantic memory plugin that persists context across OpenCode sessions:
+OpenKit is migrating from the legacy semantic memory plugin to a docs-first permanent memory model.
 
-```bash
-# Initialize project with memory plugin
-openkit init my-app --memory
+- Durable context in `docs/` (requirements, sprint, ADR, related links)
+- Operational state in `.openkit/ops/`
+- Memory contracts in `.openkit/memory/`
 
-# Or add to existing project
-openkit opencode sync --memory
-```
-
-**Features:**
-- 🧠 **Automatic Context Capture**: Extracts decisions, patterns, and errors from sessions
-- 🔍 **Vector Search**: Fast semantic search with LanceDB
-- 💾 **Persistent Storage**: Context survives across sessions
-- 🛠️ **4 Tools**: `memory_query`, `memory_save`, `memory_stats`, `memory_debug`
-- 📊 **CLI Management**: Full control via `openkit memory` commands
-
-**In OpenCode:**
-```bash
-# Save important decisions
-Use memory_save with type=decision, title="Use React", content="..."
-
-# Query past context
-Use memory_query with query="authentication decisions"
-
-# Check statistics
-Use memory_stats
-```
-
-**From Terminal:**
-```bash
-# List all memories
-openkit memory list
-
-# Search for specific context
-openkit memory search "React"
-
-# View statistics
-openkit memory stats
-
-# Export for backup
-openkit memory export memories.json
-
-# Clean up old memories
-openkit memory prune --dry-run
-```
+See `docs/MEMORY_LEGACY_MIGRATION.md` and `docs/DEPRECATIONS.md` for migration details.
 
 ---
 
@@ -312,14 +263,14 @@ codex  # Start Codex CLI in your project
 
 ### Status Summary
 
-| Agent | Status | Files Installed | Memory Plugin |
-|-------|--------|-----------------|---------------|
-| OpenCode | ✅ Supported | 150+ files | ✅ Available |
-| Claude Code | ✅ Supported | 145+ files | ❌ N/A |
-| Cursor | ✅ Supported | 147+ files | ❌ N/A |
-| Gemini CLI | ✅ Supported | 171+ files | ❌ N/A |
-| Codex CLI | ✅ Supported | 147+ files | ❌ N/A |
-| Windsurf | 🚧 Planned | - | - |
+| Agent | Status | Files Installed |
+|-------|--------|-----------------|
+| OpenCode | ✅ Supported | 150+ files |
+| Claude Code | ✅ Supported | 145+ files |
+| Cursor | ✅ Supported | 147+ files |
+| Gemini CLI | ✅ Supported | 171+ files |
+| Codex CLI | ✅ Supported | 147+ files |
+| Windsurf | 🚧 Planned | - |
 
 ## 7 Development Commands
 

@@ -6,6 +6,7 @@ set -e
 
 REPO="openkit-devtools/openkit"
 BINARY_NAME="openkit"
+RUNTIME_NAME="openkit-rs"
 
 OPENKIT_HOME_DEFAULT="$HOME/.openkit"
 OPENKIT_HOME="${OPENKIT_HOME:-$OPENKIT_HOME_DEFAULT}"
@@ -155,6 +156,22 @@ if [ ! -w "$INSTALL_DIR" ]; then
 fi
 
 install -m 755 "$BINARY_NAME" "$INSTALL_DIR/$BINARY_NAME"
+
+# Optional: install Rust runtime sidecar when available
+RUNTIME_FILENAME="openkit-rs_${OS}_${ARCH}.tar.gz"
+RUNTIME_URL="https://github.com/$REPO/releases/download/$LATEST_RELEASE/$RUNTIME_FILENAME"
+echo -e "${CYAN}Checking memory runtime sidecar...${NC}"
+if curl -fsSL "$RUNTIME_URL" -o "$RUNTIME_FILENAME"; then
+  tar -xzf "$RUNTIME_FILENAME"
+  if [ -f "$RUNTIME_NAME" ]; then
+    install -m 755 "$RUNTIME_NAME" "$INSTALL_DIR/$RUNTIME_NAME"
+    echo "  Installed runtime: $RUNTIME_NAME"
+  else
+    echo "  Runtime archive found, but binary missing. Skipping sidecar install."
+  fi
+else
+  echo "  Runtime sidecar not available for $OS/$ARCH. Cargo fallback remains available."
+fi
 
 # Verify installation
 if command -v "$BINARY_NAME" &> /dev/null; then

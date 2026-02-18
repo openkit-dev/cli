@@ -20,6 +20,42 @@ jobs:
           go-version: '1.25.x'
           cache: true
 
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Validate release sidecar matrix
+        run: |
+          set -euo pipefail
+
+          release_file=".github/workflows/release.yml"
+
+          required_targets=(
+            "x86_64-unknown-linux-gnu"
+            "aarch64-unknown-linux-gnu"
+            "x86_64-pc-windows-msvc"
+            "x86_64-apple-darwin"
+            "aarch64-apple-darwin"
+          )
+
+          for target in "${required_targets[@]}"; do
+            if ! grep -q "$target" "$release_file"; then
+              echo "Missing Rust runtime release target: $target"
+              exit 1
+            fi
+          done
+
+          if ! grep -q 'openkit-rs_${OS}_${ARCH}.tar.gz' scripts/install.sh; then
+            echo "install.sh missing sidecar runtime naming pattern"
+            exit 1
+          fi
+
+          if ! grep -q 'openkit-rs_Windows_${ARCH}.zip' scripts/install.ps1; then
+            echo "install.ps1 missing sidecar runtime naming pattern"
+            exit 1
+          fi
+
+          echo "Release sidecar matrix validation passed"
+
       - name: Lint
         uses: golangci/golangci-lint-action@v6
         with:
@@ -34,3 +70,6 @@ jobs:
 
       - name: Build
         run: make build
+
+      - name: Rust Contract Tests
+        run: cargo test --manifest-path rust-cli/Cargo.toml

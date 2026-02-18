@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "score": 100,
+  "status": "healthy",
+  "checks": {
+    "broken_wikilinks": "pass",
+    "inline_links": "pass",
+    "related_sections": "pass",
+    "stale_docs": "pass"
+  }
+}

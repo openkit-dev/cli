@@ -358,6 +358,6 @@ O sistema OpenKit utiliza **7 comandos principais** que cobrem todo o fluxo de d
 
 ## Referências
 
-- [[MASTER.md]] - Regras principais do sistema
-- [[AGENTS.md]] - Lista de agentes disponíveis
-- [[SKILLS.md]] - Skills e seus propósitos
+- [[HUB-DOCS.md]] - Hub principal de documentação
+- [[CONTEXT.md]] - Contexto operacional do projeto
+- [[QUALITY_GATES.md]] - Regras de validação e qualidade

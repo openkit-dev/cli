@@ -1,0 +1,6 @@
+version: 1
+items:
+  - id: MK-001
+    type: maintenance
+    status: pending
+    title: Resolve stale links in requirements docs

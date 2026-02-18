@@ -4,13 +4,12 @@ Feature specifications and planning artifacts.
 
 ## Context
 
-Portfolio hub for feature requirement packs, linking specification artifacts to planning artifacts and sprint execution hubs.
+Portfolio hub for feature requirement packs.
 
 ## Status Overview
 
-- Feature packs with hub notes: 7
-- Feature packs with `PLAN.md`: 6/7
-- Packs currently at risk: 3 (`semantic-memory`, `remove-blueprints-references`, `security-scan-hardening`)
+- Feature hubs indexed: 8
+- Discovery refresh: 2026-02-17
 
 ## Features
 
@@ -21,6 +20,7 @@ Portfolio hub for feature requirement packs, linking specification artifacts to 
 - [[requirements/remove-blueprints-references/HUB-REMOVE-BLUEPRINTS-REFERENCES.md]]
 - [[requirements/security-scan-hardening/HUB-SECURITY-SCAN-HARDENING.md]]
 - [[requirements/semantic-memory/HUB-SEMANTIC-MEMORY.md]]
+- [[requirements/memory-kernel-rust-cli/HUB-MEMORY-KERNEL-RUST-CLI.md]]
 
 ## Related
 

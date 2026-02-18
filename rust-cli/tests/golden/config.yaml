@@ -1,0 +1,8 @@
+version: 1
+mode: assisted
+health_thresholds:
+  healthy: 85
+  warning: 70
+linking:
+  require_inline_links: true
+  require_related_section: true

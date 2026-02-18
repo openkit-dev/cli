@@ -10,15 +10,13 @@ import (
 	"github.com/openkit-devtools/openkit/internal/managedstate"
 	"github.com/openkit-devtools/openkit/internal/syncer"
 	"github.com/openkit-devtools/openkit/internal/targets"
-	"github.com/openkit-devtools/openkit/internal/templates"
 	"github.com/spf13/cobra"
 )
 
 var (
-	flagDryRun     bool
-	flagOverwrite  bool
-	flagPrune      bool
-	flagSyncMemory bool
+	flagDryRun    bool
+	flagOverwrite bool
+	flagPrune     bool
 )
 
 func init() {
@@ -68,10 +66,6 @@ func addAgentTarget(agentID string) {
 		c.Flags().BoolVar(&flagDryRun, "dry-run", false, "Plan changes without writing")
 		c.Flags().BoolVar(&flagOverwrite, "overwrite", false, "Overwrite unmanaged or drifted files")
 		c.Flags().BoolVar(&flagPrune, "prune", false, "Remove managed files no longer in the target plan (safe)")
-		// Memory flag only for OpenCode
-		if ag.ID == "opencode" {
-			c.Flags().BoolVar(&flagSyncMemory, "memory", false, "Install/update semantic memory plugin")
-		}
 	}
 
 	cmd.AddCommand(syncCmd)
@@ -155,154 +149,8 @@ func runAgentSync(agentID string) error {
 		}
 	}
 
-	// Handle --memory flag for OpenCode
-	if agentID == "opencode" && flagSyncMemory {
-		fmt.Println()
-		if err := syncMemoryPlugin(projectDir); err != nil {
-			yellow.Printf("Warning: Failed to sync memory plugin: %v\n", err)
-		}
-	}
-
 	green.Println("\nSync completed")
 	return nil
-}
-
-// syncMemoryPlugin installs or updates the semantic memory plugin
-func syncMemoryPlugin(projectDir string) error {
-	cyan := color.New(color.FgCyan)
-	green := color.New(color.FgGreen)
-	yellow := color.New(color.FgYellow)
-
-	pluginDir := filepath.Join(projectDir, ".opencode", "plugins", "semantic-memory")
-	memoryDir := filepath.Join(projectDir, ".opencode", "memory")
-	configPath := filepath.Join(memoryDir, "config.json")
-
-	// Check if plugin already exists
-	pluginExists := false
-	if _, err := os.Stat(pluginDir); err == nil {
-		pluginExists = true
-	}
-
-	if pluginExists {
-		cyan.Println("Updating semantic memory plugin...")
-	} else {
-		cyan.Println("Installing semantic memory plugin...")
-	}
-
-	// Create directories
-	if err := os.MkdirAll(pluginDir, 0755); err != nil {
-		return fmt.Errorf("failed to create plugin directory: %w", err)
-	}
-	if err := os.MkdirAll(filepath.Join(pluginDir, "lib"), 0755); err != nil {
-		return fmt.Errorf("failed to create lib directory: %w", err)
-	}
-	if err := os.MkdirAll(memoryDir, 0755); err != nil {
-		return fmt.Errorf("failed to create memory directory: %w", err)
-	}
-
-	// Extract plugin templates
-	if err := extractMemoryPluginForSync(pluginDir); err != nil {
-		return fmt.Errorf("failed to extract plugin: %w", err)
-	}
-
-	// Create or preserve config
-	if _, err := os.Stat(configPath); os.IsNotExist(err) {
-		if err := createDefaultMemoryConfig(configPath); err != nil {
-			return fmt.Errorf("failed to create config: %w", err)
-		}
-		green.Println("  Created config.json")
-	} else {
-		yellow.Println("  Preserved existing config.json")
-	}
-
-	// Create .gitignore if not exists
-	gitignorePath := filepath.Join(memoryDir, ".gitignore")
-	if _, err := os.Stat(gitignorePath); os.IsNotExist(err) {
-		if err := os.WriteFile(gitignorePath, []byte("index.lance/\nmetrics.json\n"), 0644); err != nil {
-			return fmt.Errorf("failed to create .gitignore: %w", err)
-		}
-	}
-
-	// Extract memory rules to .opencode/rules/
-	rulesDir := filepath.Join(projectDir, ".opencode", "rules")
-	if err := templates.ExtractMemoryRules(rulesDir); err != nil {
-		return fmt.Errorf("failed to extract memory rules: %w", err)
-	}
-	green.Println("  Extracted SEMANTIC_MEMORY.md rule")
-
-	// Create/update .opencode/package.json with memory plugin dependencies
-	if err := syncOpencodePackageJson(projectDir); err != nil {
-		yellow.Printf("  Warning: %v\n", err)
-	} else {
-		green.Println("  Updated package.json with dependencies")
-	}
-
-	// Note: Local plugins in .opencode/plugins/ are loaded automatically by OpenCode
-	// No need to modify opencode.json - the "plugin" array is only for npm packages
-	// See: https://opencode.ai/docs/plugins#from-local-files
-
-	if pluginExists {
-		green.Println("  Plugin updated successfully")
-	} else {
-		green.Println("  Plugin installed successfully")
-	}
-
-	return nil
-}
-
-// syncOpencodePackageJson creates or updates .opencode/package.json with memory dependencies
-func syncOpencodePackageJson(projectDir string) error {
-	packagePath := filepath.Join(projectDir, ".opencode", "package.json")
-
-	// Package.json content with memory plugin dependencies
-	// OpenCode reads this file and runs bun install automatically at startup
-	// "type": "module" is required for ES module imports in the plugin
-	packageContent := `{
-  "type": "module",
-  "dependencies": {
-    "@opencode-ai/plugin": "^1.1.0",
-    "@lancedb/lancedb": "^0.26.0",
-    "onnxruntime-node": "^1.24.0"
-  }
-}
-`
-	return os.WriteFile(packagePath, []byte(packageContent), 0644)
-}
-
-// extractMemoryPluginForSync extracts embedded memory plugin templates
-func extractMemoryPluginForSync(targetDir string) error {
-	// Use the same extraction logic as init.go
-	return templates.ExtractMemoryPlugin(targetDir)
-}
-
-// createDefaultMemoryConfig creates the default config.json
-func createDefaultMemoryConfig(configPath string) error {
-	config := `{
-  "version": "1.0.0",
-  "embedding": {
-    "model": "nomic-embed-text",
-    "runtime": "onnx"
-  },
-  "retrieval": {
-    "max_results": 10,
-    "min_similarity": 0.7,
-    "token_budget": 4000
-  },
-  "curation": {
-    "ttl_days": 90,
-    "max_per_project": 500,
-    "prune_unused_after_days": 30
-  },
-  "extraction": {
-    "on_session_idle": true,
-    "patterns": ["decision", "architecture", "pattern", "fix", "solution"]
-  },
-  "debug": {
-    "verbose": false,
-    "show_injection_indicator": true
-  }
-}`
-	return os.WriteFile(configPath, []byte(config), 0644)
 }
 
 func runAgentDoctor(agentID string) error {

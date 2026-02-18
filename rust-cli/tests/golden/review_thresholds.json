@@ -1,0 +1,10 @@
+{
+  "sessions": 5,
+  "observations": 10,
+  "tensions": 5,
+  "recommendations": [
+    "Run memory review for accumulated observations",
+    "Resolve repeated tensions before next implementation phase",
+    "Summarize recent sessions into sprint artifacts"
+  ]
+}

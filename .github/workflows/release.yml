@@ -9,7 +9,78 @@ permissions:
   contents: write
 
 jobs:
+  rust-runtime:
+    name: Build Rust Runtime (${{ matrix.os_name }}-${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            os_name: Linux
+            arch: x86_64
+            target: x86_64-unknown-linux-gnu
+            ext: ""
+            archive: tar.gz
+          - runner: ubuntu-24.04-arm
+            os_name: Linux
+            arch: arm64
+            target: aarch64-unknown-linux-gnu
+            ext: ""
+            archive: tar.gz
+          - runner: windows-latest
+            os_name: Windows
+            arch: x86_64
+            target: x86_64-pc-windows-msvc
+            ext: .exe
+            archive: zip
+          - runner: macos-13
+            os_name: Darwin
+            arch: x86_64
+            target: x86_64-apple-darwin
+            ext: ""
+            archive: tar.gz
+          - runner: macos-14
+            os_name: Darwin
+            arch: arm64
+            target: aarch64-apple-darwin
+            ext: ""
+            archive: tar.gz
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Build runtime
+        run: cargo build --release --manifest-path rust-cli/Cargo.toml --target ${{ matrix.target }}
+
+      - name: Package runtime (unix)
+        if: matrix.archive == 'tar.gz'
+        run: |
+          mkdir -p dist
+          cp "rust-cli/target/${{ matrix.target }}/release/openkit-rs${{ matrix.ext }}" "dist/openkit-rs${{ matrix.ext }}"
+          tar -czf "dist/openkit-rs_${{ matrix.os_name }}_${{ matrix.arch }}.tar.gz" -C dist "openkit-rs${{ matrix.ext }}"
+
+      - name: Package runtime (windows)
+        if: matrix.archive == 'zip'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path dist -Force | Out-Null
+          Copy-Item "rust-cli/target/${{ matrix.target }}/release/openkit-rs${{ matrix.ext }}" "dist/openkit-rs${{ matrix.ext }}" -Force
+          Compress-Archive -Path "dist/openkit-rs${{ matrix.ext }}" -DestinationPath "dist/openkit-rs_${{ matrix.os_name }}_${{ matrix.arch }}.zip" -Force
+
+      - name: Upload runtime asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/openkit-rs_${{ matrix.os_name }}_${{ matrix.arch }}.${{ matrix.archive }}
+
   goreleaser:
+    needs: rust-runtime
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

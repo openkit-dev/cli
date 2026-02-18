@@ -4,13 +4,12 @@ Sprint planning and execution artifacts.
 
 ## Context
 
-Portfolio-level sprint hub for planning and execution history, with one hub per sprint and links back to related feature hubs.
+Portfolio-level sprint hub linking each sprint execution pack.
 
 ## Status Overview
 
-- Total sprints indexed: 6 (`Sprint-01` to `Sprint-06`)
-- Active sprint (inferred): `Sprint-06` (open tasks and current planning/execution artifacts)
-- Delivery health: At Risk (latest sprint completion is 5.5% by TASKS checkbox count)
+- Total sprints indexed: 7 (`Sprint-01` to `Sprint-07`)
+- Discovery refresh: 2026-02-17
 
 ## Sprints
 
@@ -20,6 +19,7 @@ Portfolio-level sprint hub for planning and execution history, with one hub per 
 - [[sprint/Sprint-04/HUB-SPRINT-04.md]]
 - [[sprint/Sprint-05/HUB-SPRINT-05.md]]
 - [[sprint/Sprint-06/HUB-SPRINT-06.md]]
+- [[sprint/Sprint-07/HUB-SPRINT-07.md]]
 
 ## Related
 

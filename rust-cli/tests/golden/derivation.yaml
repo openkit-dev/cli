@@ -1,0 +1,12 @@
+version: 1
+feature_slug: memory-kernel-rust-cli
+decisions:
+  runtime_language: rust
+  migration_strategy: strangler
+  tier_policy:
+    tier1:
+      - opencode
+    tier2:
+      - claude-code
+      - codex
+      - antigravity

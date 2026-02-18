@@ -22,6 +22,9 @@ Thumbs.db
 # Go
 vendor/
 
+# Rust (Memory Kernel bootstrap)
+/rust-cli/target/
+
 # OpenKit managed state (generated during testing)
 /.openkit/
 /.gemini/

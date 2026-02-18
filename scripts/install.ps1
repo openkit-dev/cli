@@ -5,6 +5,7 @@ $ErrorActionPreference = 'Stop'
 
 $REPO = "openkit-devtools/openkit"
 $BINARY_NAME = "openkit"
+$RUNTIME_NAME = "openkit-rs"
 
 $OPENKIT_HOME = if ($env:OPENKIT_HOME) { $env:OPENKIT_HOME } else { Join-Path $HOME ".openkit" }
 $INSTALL_DIR = if ($env:OPENKIT_INSTALL_DIR) { $env:OPENKIT_INSTALL_DIR } else { Join-Path $OPENKIT_HOME "bin" }
@@ -73,6 +74,26 @@ try {
     $BINARY_PATH = Join-Path $TMP_DIR "$BINARY_NAME.exe"
     $DEST_PATH = Join-Path $INSTALL_DIR "$BINARY_NAME.exe"
     Copy-Item -Path $BINARY_PATH -Destination $DEST_PATH -Force
+
+    # Optional: install Rust runtime sidecar when available
+    $RUNTIME_FILENAME = "openkit-rs_Windows_${ARCH}.zip"
+    $RUNTIME_URL = "https://github.com/$REPO/releases/download/$LATEST_RELEASE/$RUNTIME_FILENAME"
+    Write-Host "Checking memory runtime sidecar..." -ForegroundColor Cyan
+    try {
+        $RUNTIME_ZIP_PATH = Join-Path $TMP_DIR $RUNTIME_FILENAME
+        Invoke-WebRequest -Uri $RUNTIME_URL -OutFile $RUNTIME_ZIP_PATH -UseBasicParsing
+        $RUNTIME_TMP = Join-Path $TMP_DIR "runtime"
+        Expand-Archive -Path $RUNTIME_ZIP_PATH -DestinationPath $RUNTIME_TMP -Force
+        $RUNTIME_BIN = Join-Path $RUNTIME_TMP "$RUNTIME_NAME.exe"
+        if (Test-Path $RUNTIME_BIN) {
+            Copy-Item -Path $RUNTIME_BIN -Destination (Join-Path $INSTALL_DIR "$RUNTIME_NAME.exe") -Force
+            Write-Host "  Installed runtime: $RUNTIME_NAME.exe" -ForegroundColor Gray
+        } else {
+            Write-Host "  Runtime archive found, but binary missing. Skipping sidecar install." -ForegroundColor Yellow
+        }
+    } catch {
+        Write-Host "  Runtime sidecar not available for Windows/$ARCH. Cargo fallback remains available." -ForegroundColor Yellow
+    }
 
     # Add to PATH
     $PATH = [Environment]::GetEnvironmentVariable("Path", "User")
