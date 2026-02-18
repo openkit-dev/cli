@@ -8,8 +8,9 @@ use std::time::{SystemTime, UNIX_EPOCH};
 use walkdir::WalkDir;
 
 #[derive(Parser, Debug)]
-#[command(name = "openkit-rs")]
+#[command(name = "openkit")]
 #[command(about = "OpenKit Rust bootstrap CLI")]
+#[command(version)]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
