@@ -34,7 +34,7 @@ jobs:
             target: x86_64-pc-windows-msvc
             ext: .exe
             archive: zip
-          - runner: macos-13
+          - runner: macos-14
             os_name: Darwin
             arch: x86_64
             target: x86_64-apple-darwin
