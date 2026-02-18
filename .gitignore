@@ -43,5 +43,5 @@ vendor/
 /AGENTS.md 
 /opencode.json
 
-# Local signing keys
+# Local private keys
 /minisign.key

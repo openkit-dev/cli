@@ -10,14 +10,13 @@
 ## Controls
 
 - SHA256 verification for downloaded upgrade artifacts.
-- Optional minisign verification for `checksums.txt` when `OPENKIT_MINISIGN_PUBKEY` is configured.
 - Safe path guard blocks writes outside project root in sync engine.
 - Managed-state checksum tracking to detect drift.
 - CI lint/test/build pipeline on `main` PR/push.
 
 ## Gaps
 
-- Signature verification is optional and depends on environment key configuration.
+- No signature verification (Cosign/GPG/minisign) in self-update path.
 - No dependency vulnerability scanner in CI (`govulncheck`/equivalent absent).
 - No secret scanning in CI.
 - No dedicated structured audit log/correlation ID pattern for security operations.
@@ -26,7 +25,7 @@
 
 | Priority | Action | Impact | Effort | Owner | Notes |
 |---|---|---|---|---|---|
-| P0 | Enforce signed release verification by default | High | Medium | Security/DevOps | Require public key configuration in managed environments. |
+| P0 | Add signed release verification | High | Medium | Security/DevOps | Validate signatures in upgrade before install. |
 | P0 | Add secret scanning in CI | High | Low | Security | Add gitleaks or equivalent in PR pipeline. |
 | P1 | Add dependency scanning in CI | Medium | Low | Security | Add `govulncheck ./...` gate. |
 | P1 | Add security-specific static analysis | Medium | Medium | Security | Add `gosec` or security linters. |
@@ -34,12 +33,10 @@
 
 ## Evidence
 
-- `rust-cli/src/main.rs`: `run_self_update_unix()` validates SHA256 checksums and optionally verifies minisign signatures.
+- `rust-cli/src/main.rs`: `run_self_update_unix()` validates SHA256 checksums from `checksums.txt`.
 - `internal/syncer/syncer.go`: `SafeAbsPath()` rejects writes outside project root.
 - `internal/managedstate/managedstate.go`: file hash tracking (`InstalledSHA256`) and schema checks.
 - `opencode.json`: some agents have broad permissions (example: `devops-engineer` sets `bash: allow`).
-- `.github/workflows/release.yml`: optional checksums signing when `MINISIGN_SECRET_KEY` is configured.
-- `.github/workflows/release.yml`: signing uses non-interactive minisign mode (`-W`) for CI compatibility.
 - `.github/workflows/ci.yml`: includes lint/test/build only; no security or secret scan jobs.
 
 ## Related

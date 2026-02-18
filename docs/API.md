@@ -6,7 +6,7 @@
 |---|---|---|---|
 | CLI | `openkit` root command | `rust-cli/src/main.rs` | Main command entrypoint. |
 | CLI | `openkit --version` | `rust-cli/src/main.rs` | Prints runtime version. |
-| CLI | `openkit upgrade` | `rust-cli/src/main.rs` | Rust-native self-update on Linux/macOS (checksum + atomic swap, optional minisign validation via `OPENKIT_MINISIGN_PUBKEY`); installer flow on Windows. |
+| CLI | `openkit upgrade` | `rust-cli/src/main.rs` | Rust-native self-update on Linux/macOS (checksum + atomic swap); installer flow on Windows. |
 | CLI | `openkit upgrade --check` | `rust-cli/src/main.rs` | Checks latest GitHub release tag. |
 | CLI | `openkit uninstall` | `rust-cli/src/main.rs` | Removes installed OpenKit binary from known install paths with confirmation. |
 | CLI | `openkit check` | `rust-cli/src/main.rs` | Agent/system availability checks. |

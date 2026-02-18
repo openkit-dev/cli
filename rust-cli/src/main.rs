@@ -441,7 +441,6 @@ fn run_self_update_unix(repo: &str, current: &str) -> Result<(), String> {
     if let Some(checksum_asset) = checksums {
         let checksums_path = tmp_dir.join("checksums.txt");
         download_file(&checksum_asset.browser_download_url, &checksums_path)?;
-        maybe_verify_checksums_signature(&release, &checksums_path, &tmp_dir)?;
         verify_checksum(&archive_path, &checksums_path, &asset_name)?;
     }
 
@@ -477,56 +476,6 @@ fn verify_checksum(archive: &Path, checksums: &Path, asset_name: &str) -> Result
             "checksum mismatch for {}: expected {}, got {}",
             asset_name, expected, actual
         ));
-    }
-    Ok(())
-}
-
-fn maybe_verify_checksums_signature(
-    release: &LatestRelease,
-    checksums_path: &Path,
-    tmp_dir: &Path,
-) -> Result<(), String> {
-    let pubkey = std::env::var("OPENKIT_MINISIGN_PUBKEY")
-        .ok()
-        .map(|v| v.trim().to_string())
-        .filter(|v| !v.is_empty());
-    let Some(pubkey) = pubkey else {
-        return Ok(());
-    };
-
-    let sig_asset = release
-        .assets
-        .iter()
-        .find(|a| a.name == "checksums.txt.minisig")
-        .ok_or_else(|| {
-            "checksums signature asset missing while OPENKIT_MINISIGN_PUBKEY is set".to_string()
-        })?;
-
-    let signature_path = tmp_dir.join("checksums.txt.minisig");
-    download_file(&sig_asset.browser_download_url, &signature_path)?;
-    verify_minisign(checksums_path, &signature_path, &pubkey)
-}
-
-fn verify_minisign(
-    checksums_path: &Path,
-    signature_path: &Path,
-    pubkey: &str,
-) -> Result<(), String> {
-    let status = Command::new("minisign")
-        .args(["-Vm"])
-        .arg(checksums_path)
-        .args(["-x"])
-        .arg(signature_path)
-        .args(["-P", pubkey])
-        .status()
-        .map_err(|e| {
-            format!(
-                "failed to execute minisign verification (is minisign installed?): {}",
-                e
-            )
-        })?;
-    if !status.success() {
-        return Err("checksums signature verification failed".to_string());
     }
     Ok(())
 }
