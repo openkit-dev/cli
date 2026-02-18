@@ -108,6 +108,9 @@ jobs:
     needs: [rust-runtime, goreleaser]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Download runtime artifacts
         uses: actions/download-artifact@v4
         with:
