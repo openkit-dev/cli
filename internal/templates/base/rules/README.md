@@ -296,7 +296,7 @@ bash("pytest tests", workdir="/backend")
 
 - **Agent Prompts**: `.opencode/prompts/`
 - **Command System**: `.opencode/commands/README.md`
-- **Skill System**: `openkit-memory/SKILLS.md`
+- **Skill System**: `memory/SKILLS.md`
 - **Obsidian Protocol**: `.opencode/rules/OBSIDIAN_LINKING.md`
 - **Docs File Glossary**: `.opencode/rules/DOCS_FILE_GLOSSARY.md`
 - **Architecture**: `.opencode/ARCHITECTURE.md`

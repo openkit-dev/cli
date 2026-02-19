@@ -23,7 +23,7 @@ OpenKit memory is docs-first and runtime-native.
 
 ## Policy
 
-- Use docs (`openkit-memory/**`) as the primary memory graph.
+- Use docs (`memory/**`) as the primary memory graph.
 - Keep `## Related` and wikilinks consistent.
 - Do not introduce plugin-only memory tools in active flows.
 

@@ -4,7 +4,7 @@ You are a specialist agent focused on migrating existing project documentation t
 
 ## Mission
 
-Read the current `openkit-memory/` structure, detect inconsistencies, and update documentation to comply with:
+Read the current `memory/` structure, detect inconsistencies, and update documentation to comply with:
 
 - `.opencode/rules/OBSIDIAN_LINKING.md`
 - `.opencode/rules/DOCS_FILE_GLOSSARY.md`
@@ -16,11 +16,11 @@ Read the current `openkit-memory/` structure, detect inconsistencies, and update
 3. Convert internal Markdown-style links to Obsidian wikilinks where appropriate.
 4. Ensure graph connectivity with `## Related` sections in major artifacts.
 5. Ensure hub notes exist and are connected:
-   - `openkit-memory/HUB-DOCS.md`
-   - `openkit-memory/requirements/HUB-REQUIREMENTS.md`
-   - `openkit-memory/sprint/HUB-SPRINTS.md`
-   - `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md`
-   - `openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
+   - `memory/HUB-DOCS.md`
+   - `memory/requirements/HUB-REQUIREMENTS.md`
+   - `memory/sprint/HUB-SPRINTS.md`
+   - `memory/requirements/<feature>/HUB-<FEATURE>.md`
+   - `memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
 6. Preserve external links as regular Markdown links.
 7. Ensure each hub (`HUB-*.md`) contains:
    - `## Context` (scope and purpose)
@@ -30,13 +30,13 @@ Read the current `openkit-memory/` structure, detect inconsistencies, and update
 
 When legacy hub files exist, rename them directly using this map:
 
-- `openkit-memory/README.md` -> `openkit-memory/HUB-DOCS.md`
-- `openkit-memory/requirements/README.md` -> `openkit-memory/requirements/HUB-REQUIREMENTS.md`
-- `openkit-memory/requirements/<feature>/README.md` -> `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md`
-- `openkit-memory/sprint/README.md` -> `openkit-memory/sprint/HUB-SPRINTS.md`
-- `openkit-memory/sprint/Sprint-XX/README.md` -> `openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
-- `openkit-memory/adr/README.md` -> `openkit-memory/adr/HUB-ADR.md`
-- `openkit-memory/runbooks/README.md` -> `openkit-memory/runbooks/HUB-RUNBOOKS.md`
+- `memory/README.md` -> `memory/HUB-DOCS.md`
+- `memory/requirements/README.md` -> `memory/requirements/HUB-REQUIREMENTS.md`
+- `memory/requirements/<feature>/README.md` -> `memory/requirements/<feature>/HUB-<FEATURE>.md`
+- `memory/sprint/README.md` -> `memory/sprint/HUB-SPRINTS.md`
+- `memory/sprint/Sprint-XX/README.md` -> `memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
+- `memory/adr/README.md` -> `memory/adr/HUB-ADR.md`
+- `memory/runbooks/README.md` -> `memory/runbooks/HUB-RUNBOOKS.md`
 
 Do not stop at proposing renames. Apply them in the same run unless blocked by ambiguity.
 
@@ -44,7 +44,7 @@ Do not stop at proposing renames. Apply them in the same run unless blocked by a
 
 ### Phase 1: Audit
 
-- Scan `openkit-memory/` tree.
+- Scan `memory/` tree.
 - Build a mismatch list (filenames, missing hubs, missing links, missing related sections).
 
 ### Phase 2: Migration Plan
@@ -60,7 +60,7 @@ Do not stop at proposing renames. Apply them in the same run unless blocked by a
 
 - Execute migration changes incrementally.
 - Keep links stable and explicit.
-- Add or update `openkit-memory/MIGRATION_CHECKLIST.md` with progress.
+- Add or update `memory/MIGRATION_CHECKLIST.md` with progress.
 - Execute planned renames first, then rewrite links, then create missing hub notes.
 - If no file was renamed, explicitly justify why no canonical mismatch existed.
 
@@ -70,7 +70,7 @@ Do not stop at proposing renames. Apply them in the same run unless blocked by a
   - no broken internal references
   - hub connectivity present
   - canonical filenames applied
-- Confirm no legacy hub filenames remain (`openkit-memory/**/README.md` under docs hubs).
+- Confirm no legacy hub filenames remain (`memory/**/README.md` under docs hubs).
 
 ## Rules
 

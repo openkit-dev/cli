@@ -179,7 +179,7 @@ At each STOP point, update todolist BEFORE asking user:
 1. **After Phase 1 (Planning):**
    - Update todolist: Mark Phase 1 tasks as `completed`
    - Mark Phase 2 first task as `in_progress`
-   - Ask: "Plan recorded in `openkit-memory/`. Proceed to implementation?"
+   - Ask: "Plan recorded in `memory/`. Proceed to implementation?"
 
  2. **After Phase 2 (Implementation):**
     - Update todolist: Mark all Phase 2 tasks as `completed`
@@ -241,7 +241,7 @@ Use these commands for focused tasks:
 ```
 /discover
 /specify add user profiles
-/create from openkit-memory/sprint/Sprint-XX/TASKS.md
+/create from memory/sprint/Sprint-XX/TASKS.md
 /verify all
 /deploy staging
 ```
@@ -250,7 +250,7 @@ Use these commands for focused tasks:
 
 - **Before any /create or code modification:**
   1. Run `/discover` (ALWAYS required) to refresh the project map and capture current risks.
-  2. Run `/specify ...` to create the feature spec in `openkit-memory/requirements/<feature>/` (includes planning and tasks).
+  2. Run `/specify ...` to create the feature spec in `memory/requirements/<feature>/` (includes planning and tasks).
 - **After implementation:** run `/verify` to ensure quality.
 - The orchestrator must block execution if discovery has been skipped.
 
@@ -295,7 +295,7 @@ Phase 4: /deploy (deployment)
     - *Reasoning:* Why is this complex enough for orchestration?
 
 2. **Identify Domains:** Security, Backend, Frontend, Database, etc.
-3. **Agent:** Use `project-planner` to create docs artifacts in `openkit-memory/requirements/` and `openkit-memory/sprint/Sprint-XX/`
+3. **Agent:** Use `project-planner` to create docs artifacts in `memory/requirements/` and `memory/sprint/Sprint-XX/`
 4. **STOP:** Ask the user "Plan recorded in docs. Proceed to implementation?"
 
 #### Step 2: Execute (Phase 2)
@@ -423,7 +423,7 @@ Use docs-first memory operations during orchestration to keep project context du
 - Skip trivial edits and temporary workarounds.
 - Never capture secrets, credentials, or tokens.
 
-See `.opencode/rules/MASTER.md` and `openkit-memory/DEPRECATIONS.md` for current policy boundaries.
+See `.opencode/rules/MASTER.md` and `memory/DEPRECATIONS.md` for current policy boundaries.
 
 ---
 
@@ -478,21 +478,21 @@ python .opencode/scripts/verify_all.py . --url http://localhost:3000
 
 ## Documentation Standards
 
-All planning artifacts MUST be recorded in `openkit-memory/` and include:
-- **Docs Hub** in `openkit-memory/HUB-DOCS.md`
-- **Requirements Hub** in `openkit-memory/requirements/HUB-REQUIREMENTS.md`
-- **Feature Hub** in `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md`
-- **Problem Statement** in `openkit-memory/requirements/<feature>/PROBLEM_STATEMENT.md`
-- **User Stories** in `openkit-memory/requirements/<feature>/USER_STORIES.md`
-- **Acceptance Criteria** in `openkit-memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
-- **Data Contracts** in `openkit-memory/requirements/<feature>/DATA_CONTRACTS.md`
-- **Risks** in `openkit-memory/requirements/<feature>/RISKS.md`
-- **Sprint Hub** in `openkit-memory/sprint/HUB-SPRINTS.md`
-- **Sprint Index** in `openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
-- **Sprint Goal** in `openkit-memory/sprint/Sprint-XX/SPRINT_GOAL.md`
-- **Backlog** in `openkit-memory/sprint/Sprint-XX/BACKLOG.md`
-- **Tasks** in `openkit-memory/sprint/Sprint-XX/TASKS.md` with INPUT→OUTPUT→VERIFY
-- **Risk Register** in `openkit-memory/sprint/Sprint-XX/RISK_REGISTER.md`
+All planning artifacts MUST be recorded in `memory/` and include:
+- **Docs Hub** in `memory/HUB-DOCS.md`
+- **Requirements Hub** in `memory/requirements/HUB-REQUIREMENTS.md`
+- **Feature Hub** in `memory/requirements/<feature>/HUB-<FEATURE>.md`
+- **Problem Statement** in `memory/requirements/<feature>/PROBLEM_STATEMENT.md`
+- **User Stories** in `memory/requirements/<feature>/USER_STORIES.md`
+- **Acceptance Criteria** in `memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
+- **Data Contracts** in `memory/requirements/<feature>/DATA_CONTRACTS.md`
+- **Risks** in `memory/requirements/<feature>/RISKS.md`
+- **Sprint Hub** in `memory/sprint/HUB-SPRINTS.md`
+- **Sprint Index** in `memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
+- **Sprint Goal** in `memory/sprint/Sprint-XX/SPRINT_GOAL.md`
+- **Backlog** in `memory/sprint/Sprint-XX/BACKLOG.md`
+- **Tasks** in `memory/sprint/Sprint-XX/TASKS.md` with INPUT→OUTPUT→VERIFY
+- **Risk Register** in `memory/sprint/Sprint-XX/RISK_REGISTER.md`
 
 All documentation artifacts must also follow Obsidian linking conventions:
 - Use wikilinks for internal references, for example `[[HUB-DOCS.md]]`
@@ -508,7 +508,7 @@ All documentation artifacts must also follow Obsidian linking conventions:
    > "Context generated. Proceed to specification (/specify)?"
 
 2. **After /specify:**
-   > "Plan recorded in `openkit-memory/`. Proceed to implementation (/create)?"
+   > "Plan recorded in `memory/`. Proceed to implementation (/create)?"
 
 3. **After /create (each phase):**
    > "P0/P1/P2/P3 complete. Continue to next phase?"
@@ -527,4 +527,4 @@ All documentation artifacts must also follow Obsidian linking conventions:
 - Check agent frontmatter for required skills
 - Never skip validation scripts
 - Dynamic naming: `{task-slug}.md` based on task keywords
-- Location: Project root (NOT openkit-memory/ folder)
+- Location: Project root (NOT memory/ folder)

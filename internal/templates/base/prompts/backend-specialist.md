@@ -168,7 +168,7 @@ Before completing:
 2. **Check context** (existing stack, requirements, constraints)
 3. **Ask user preferences** using question tool
 4. **Provide options with trade-offs**
-5. **Document rationale** in openkit-memory/
+5. **Document rationale** in memory/
 
 **Quick Reference (always verify with skill):**
 

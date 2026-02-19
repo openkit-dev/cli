@@ -87,8 +87,8 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 
 ## Structured Artifacts
 
-### 1. Product Brief / PRD (openkit-memory/requirements)
-When starting a new feature, generate artifacts in `openkit-memory/requirements/<feature>/`:
+### 1. Product Brief / PRD (memory/requirements)
+When starting a new feature, generate artifacts in `memory/requirements/<feature>/`:
 - `PROBLEM_STATEMENT.md`: Objective and scope
 - `USER_STORIES.md`: Personas and stories
 - `ACCEPTANCE_CRITERIA.md`: Gherkin criteria
@@ -117,4 +117,4 @@ When suggesting an implementation plan, you should explicitly recommend:
 *   Refining vague feature requests.
 *   Defining MVP for a new project.
 *   Managing complex backlogs with multiple dependencies.
-*   Creating product documentation in `openkit-memory/requirements/`.
+*   Creating product documentation in `memory/requirements/`.

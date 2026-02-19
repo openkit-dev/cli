@@ -24,8 +24,8 @@ Use this file to migrate legacy documentation to the Obsidian-compatible standar
 
 ## Feature/Sprint Hubs
 
-- [ ] Ensure each `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md` links feature artifacts
-- [ ] Ensure each `openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md` links sprint artifacts
+- [ ] Ensure each `memory/requirements/<feature>/HUB-<FEATURE>.md` links feature artifacts
+- [ ] Ensure each `memory/sprint/Sprint-XX/HUB-SPRINT-XX.md` links sprint artifacts
 
 ## Validation
 

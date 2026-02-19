@@ -38,12 +38,12 @@ question({
 
 Create or update:
 
-- `openkit-memory/requirements/<feature>/PROBLEM_STATEMENT.md`
-- `openkit-memory/requirements/<feature>/USER_STORIES.md`
-- `openkit-memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
-- `openkit-memory/requirements/<feature>/RISKS.md`
+- `memory/requirements/<feature>/PROBLEM_STATEMENT.md`
+- `memory/requirements/<feature>/USER_STORIES.md`
+- `memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
+- `memory/requirements/<feature>/RISKS.md`
 
-Ensure `openkit-memory/requirements/<feature>/` exists before writing.
+Ensure `memory/requirements/<feature>/` exists before writing.
 
 ### Templates
 
@@ -55,7 +55,7 @@ Ensure `openkit-memory/requirements/<feature>/` exists before writing.
 ### Workflow
 
 1. Confirm feature name and scope.
-2. Create `openkit-memory/requirements/<feature>/` if missing.
+2. Create `memory/requirements/<feature>/` if missing.
 3. Fill templates for Problem Statement, User Stories, Acceptance Criteria, and Risks.
 4. Write prioritized user stories with independent acceptance scenarios.
 5. Capture functional requirements and edge cases.
@@ -77,10 +77,10 @@ Ensure `openkit-memory/requirements/<feature>/` exists before writing.
 
 Create or update:
 
-- `openkit-memory/requirements/<feature>/PLAN.md`
-- `openkit-memory/sprint/Sprint-XX/SPRINT_GOAL.md`
-- `openkit-memory/sprint/Sprint-XX/BACKLOG.md`
-- `openkit-memory/sprint/Sprint-XX/RISK_REGISTER.md`
+- `memory/requirements/<feature>/PLAN.md`
+- `memory/sprint/Sprint-XX/SPRINT_GOAL.md`
+- `memory/sprint/Sprint-XX/BACKLOG.md`
+- `memory/sprint/Sprint-XX/RISK_REGISTER.md`
 
 ### Workflow
 
@@ -98,7 +98,7 @@ question({
 })
 ```
 
-2. If no sprint exists, create `openkit-memory/sprint/Sprint-01/`.
+2. If no sprint exists, create `memory/sprint/Sprint-01/`.
 3. Create PLAN.md with:
    - Technical approach
    - File structure
@@ -115,7 +115,7 @@ question({
 ### Outputs
 
 Create:
-- `openkit-memory/sprint/Sprint-XX/TASKS.md`
+- `memory/sprint/Sprint-XX/TASKS.md`
 
 ### Workflow
 

@@ -67,8 +67,8 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 4. Create and order tasks
 5. Generate task dependency graph
 6. Assign specialized agents
-7. **Create planning artifacts in `openkit-memory/` (MANDATORY for PLANNING mode)**
-8. **Verify `openkit-memory/requirements/` and `openkit-memory/sprint/Sprint-XX/` outputs exist**
+7. **Create planning artifacts in `memory/` (MANDATORY for PLANNING mode)**
+8. **Verify `memory/requirements/` and `memory/sprint/Sprint-XX/` outputs exist**
 9. **Verify compliance with `rules/MASTER.md` Documentation Integrity Protocol**
 10. **Use Obsidian-compatible wikilinks across generated docs artifacts**
 
@@ -76,25 +76,25 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 
 ## PLANNING OUTPUTS (DOCS FIRST)
 
-> **Planning artifacts live in `openkit-memory/` only.**
+> **Planning artifacts live in `memory/` only.**
 
 ### Requirements Location
 
-- `openkit-memory/requirements/HUB-REQUIREMENTS.md`
-- `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md`
-- `openkit-memory/requirements/<feature>/PROBLEM_STATEMENT.md`
-- `openkit-memory/requirements/<feature>/USER_STORIES.md`
-- `openkit-memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
-- `openkit-memory/requirements/<feature>/DATA_CONTRACTS.md`
-- `openkit-memory/requirements/<feature>/RISKS.md`
+- `memory/requirements/HUB-REQUIREMENTS.md`
+- `memory/requirements/<feature>/HUB-<FEATURE>.md`
+- `memory/requirements/<feature>/PROBLEM_STATEMENT.md`
+- `memory/requirements/<feature>/USER_STORIES.md`
+- `memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
+- `memory/requirements/<feature>/DATA_CONTRACTS.md`
+- `memory/requirements/<feature>/RISKS.md`
 
 ### Sprint Location
 
-- `openkit-memory/sprint/HUB-SPRINTS.md`
-- `openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
-- `openkit-memory/sprint/Sprint-XX/SPRINT_GOAL.md`
-- `openkit-memory/sprint/Sprint-XX/BACKLOG.md`
-- `openkit-memory/sprint/Sprint-XX/RISK_REGISTER.md`
+- `memory/sprint/HUB-SPRINTS.md`
+- `memory/sprint/Sprint-XX/HUB-SPRINT-XX.md`
+- `memory/sprint/Sprint-XX/SPRINT_GOAL.md`
+- `memory/sprint/Sprint-XX/BACKLOG.md`
+- `memory/sprint/Sprint-XX/RISK_REGISTER.md`
 
 **NOTE:** `TASKS.md` is created by the `/specify` command (which now includes planning and task breakdown).
 
@@ -146,8 +146,8 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 
 | Phase | Name | Focus | Output | Code? |
 |-------|------|-------|--------|-------|
-| 0 | **DISCOVERY** | Context, risks, exploration | `openkit-memory/CONTEXT.md`, decisions |  NO |
-| 1 | **SPECIFICATION** | Requirements, stories, criteria | `openkit-memory/requirements/` |  NO |
+| 0 | **DISCOVERY** | Context, risks, exploration | `memory/CONTEXT.md`, decisions |  NO |
+| 1 | **SPECIFICATION** | Requirements, stories, criteria | `memory/requirements/` |  NO |
 | 2 | **PLANNING** | Plan, sprint artifacts | `PLAN.md`, `SPRINT_GOAL.md`, `BACKLOG.md` |  NO |
 | 3 | **TASK BREAKDOWN** | Detailed tasks | `TASKS.md` |  NO |
 | 4 | **IMPLEMENTATION** | Code per sprint Tasks | Working code |  YES |
@@ -190,7 +190,7 @@ Phase 4: /deploy (deployment)
 | 2 | Scripts | `security_scan.py`, `ux_audit.py`, `lighthouse_audit.py` |
 | 3 | Build | `npm run build` |
 | 4 | Run & Test | `npm run dev` + manual test |
-| 5 | Complete | Mark all `[ ]` → `[x]` in `openkit-memory/sprint/Sprint-XX/TASKS.md` |
+| 5 | Complete | Mark all `[ ]` → `[x]` in `memory/sprint/Sprint-XX/TASKS.md` |
 
 >  **Rule:** DO NOT mark `[x]` without actually running the check!
 
@@ -273,14 +273,14 @@ Before assigning agents, determine project type:
 
 ### Step 6: Create Planning Artifacts (DOCS)
 
->  **ABSOLUTE REQUIREMENT:** Planning artifacts MUST be created in `openkit-memory/`.
+>  **ABSOLUTE REQUIREMENT:** Planning artifacts MUST be created in `memory/`.
 >  **BAN:** NEVER write plan files to project root.
 
 **Storage (For PLANNING Mode):**
-- `openkit-memory/requirements/<feature>/`
-- `openkit-memory/sprint/Sprint-XX/`
+- `memory/requirements/<feature>/`
+- `memory/sprint/Sprint-XX/`
 
->  **Location:** `openkit-memory/` only. Create `openkit-memory/` if missing.
+>  **Location:** `memory/` only. Create `memory/` if missing.
 
 **Required Plan structure:**
 
@@ -303,9 +303,9 @@ Before assigning agents, determine project type:
 **EXIT GATE:**
 ```
 [IF PLANNING MODE]
-[OK] openkit-memory/ exists
-[OK] openkit-memory/requirements/<feature>/ updated (PROBLEM_STATEMENT, USER_STORIES, ACCEPTANCE_CRITERIA, RISKS, PLAN)
-[OK] openkit-memory/sprint/Sprint-XX/ updated (SPRINT_GOAL, BACKLOG, RISK_REGISTER, TASKS)
+[OK] memory/ exists
+[OK] memory/requirements/<feature>/ updated (PROBLEM_STATEMENT, USER_STORIES, ACCEPTANCE_CRITERIA, RISKS, PLAN)
+[OK] memory/sprint/Sprint-XX/ updated (SPRINT_GOAL, BACKLOG, RISK_REGISTER, TASKS)
 [OK] Required sections present
 → ONLY THEN can you exit planning.
 
@@ -403,7 +403,7 @@ python .opencode/skills/webapp-testing/scripts/playwright_runner.py http://local
 - Date: [Current Date]
 ```
 
->  **EXIT GATE:** Phase 3 marker MUST be in `openkit-memory/sprint/Sprint-XX/TASKS.md` before project is complete.
+>  **EXIT GATE:** Phase 3 marker MUST be in `memory/sprint/Sprint-XX/TASKS.md` before project is complete.
 
 ---
 
@@ -435,7 +435,7 @@ python .opencode/skills/webapp-testing/scripts/playwright_runner.py http://local
 | 5 | **Rollback** | Every task has recovery path | Tasks fail, prepare for it |
 | 6 | **Context** | Explain WHY not just WHAT | Better agent decisions |
 | 7 | **Risks** | Identify before they happen | Prepared responses |
-| 8 | **DOCS FIRST** | Use `openkit-memory/requirements/` and `openkit-memory/sprint/` | Centralized planning |
+| 8 | **DOCS FIRST** | Use `memory/requirements/` and `memory/sprint/` | Centralized planning |
 | 9 | **Milestones** | Each phase ends with working state | Continuous value |
  | 10 | **Phase 3** | Verification is ALWAYS final | Definition of done |
 

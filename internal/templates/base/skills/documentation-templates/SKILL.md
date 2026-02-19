@@ -12,7 +12,7 @@ allowed-tools: Read, Glob, Grep
 
 ## 0. Obsidian Compatibility (Mandatory)
 
-When writing docs in `openkit-memory/`, use Obsidian-compatible internal references:
+When writing docs in `memory/`, use Obsidian-compatible internal references:
 
 - Prefer wikilinks for internal docs:
   - `[[HUB-DOCS.md]]`
@@ -70,8 +70,8 @@ Brief one-line description.
 
 ## Documentation
 
-- [API Reference](./openkit-memory/API.md)
-- [Architecture](./openkit-memory/ARCHITECTURE.md)
+- [API Reference](./memory/API.md)
+- [Architecture](./memory/ARCHITECTURE.md)
 
 ## License
 
@@ -185,7 +185,7 @@ For AI crawlers and agents:
 ## Core Files
 - [src/index.ts]: Main entry
 - [src/api/]: API routes
-- [openkit-memory/]: Documentation
+- [memory/]: Documentation
 
 ## Key Concepts
 - Concept 1: Brief explanation
@@ -202,9 +202,9 @@ For RAG indexing:
 
 ---
 
-## 7. Planning Artifacts in openkit-memory/
+## 7. Planning Artifacts in memory/
 
-### Requirements (openkit-memory/requirements/<feature>/)
+### Requirements (memory/requirements/<feature>/)
 
 ```markdown
 # Problem Statement — [Feature]
@@ -261,7 +261,7 @@ Scenario: [Nome]
 |------|-------------|--------|------------|
 ```
 
-### Sprint Planning (openkit-memory/sprint/Sprint-XX/)
+### Sprint Planning (memory/sprint/Sprint-XX/)
 
 ```markdown
 # Sprint XX Goal

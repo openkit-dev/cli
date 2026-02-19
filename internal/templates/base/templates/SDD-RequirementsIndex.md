@@ -12,13 +12,13 @@ Hub for all feature requirement packs. It organizes discovery-to-plan artifacts 
 
 ## Structure
 
-- `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md`
-- `openkit-memory/requirements/<feature>/PROBLEM_STATEMENT.md`
-- `openkit-memory/requirements/<feature>/USER_STORIES.md`
-- `openkit-memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
-- `openkit-memory/requirements/<feature>/DATA_CONTRACTS.md`
-- `openkit-memory/requirements/<feature>/RISKS.md`
-- `openkit-memory/requirements/<feature>/PLAN.md`
+- `memory/requirements/<feature>/HUB-<FEATURE>.md`
+- `memory/requirements/<feature>/PROBLEM_STATEMENT.md`
+- `memory/requirements/<feature>/USER_STORIES.md`
+- `memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
+- `memory/requirements/<feature>/DATA_CONTRACTS.md`
+- `memory/requirements/<feature>/RISKS.md`
+- `memory/requirements/<feature>/PLAN.md`
 
 ## Related
 
