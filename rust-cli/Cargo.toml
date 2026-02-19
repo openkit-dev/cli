@@ -1,6 +1,6 @@
 [package]
 name = "openkit"
-version = "0.5.16"
+version = "0.5.17"
 edition = "2021"
 description = "OpenKit Rust CLI"
 
