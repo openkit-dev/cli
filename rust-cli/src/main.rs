@@ -326,7 +326,7 @@ fn run_uninstall(args: UninstallArgs) -> Result<(), String> {
     }
 
     println!("OpenKit uninstall complete. Removed {} file(s).", removed);
-    println!("Project-level files (.openkit/, .opencode/, openkit-memory/) were not modified.");
+    println!("Project-level files (.openkit/, .opencode/, memory/) were not modified.");
     Ok(())
 }
 
@@ -616,6 +616,11 @@ fn run_agent_sync_at(project: &Path, agent: AgentName, args: AgentSyncArgs) -> R
         return Ok(());
     }
 
+    if args.overwrite && target.exists() {
+        fs::remove_dir_all(&target)
+            .map_err(|e| format!("failed to reset {}: {}", target.display(), e))?;
+    }
+
     fs::create_dir_all(&target)
         .map_err(|e| format!("failed to create {}: {}", target.display(), e))?;
 
@@ -744,7 +749,7 @@ fn run_init(args: ProjectInitArgs) -> Result<(), String> {
 
     let agent = resolve_init_agent(&args);
 
-    let docs_dir = project_dir.join("openkit-memory");
+    let docs_dir = project_dir.join("memory");
     let req_dir = docs_dir.join("requirements");
     let sprint_dir = docs_dir.join("sprint");
 
@@ -763,7 +768,7 @@ fn run_init(args: ProjectInitArgs) -> Result<(), String> {
     let files = vec![
         (
             project_dir.join("AGENTS.md"),
-            "# Agents\n\nSee `openkit-memory/HUB-DOCS.md` for project context and workflow references.\n".to_string(),
+            "# Agents\n\nSee `memory/HUB-DOCS.md` for project context and workflow references.\n".to_string(),
         ),
         (
             docs_dir.join("HUB-DOCS.md"),
@@ -853,6 +858,19 @@ fn run_init(args: ProjectInitArgs) -> Result<(), String> {
 
     for (path, content) in files {
         write_text(&path, &content, args.overwrite)?;
+    }
+
+    if args.overwrite {
+        let legacy_docs = project_dir.join("openkit-memory");
+        if legacy_docs.exists() {
+            fs::remove_dir_all(&legacy_docs).map_err(|e| {
+                format!(
+                    "failed to remove legacy docs directory {}: {}",
+                    legacy_docs.display(),
+                    e
+                )
+            })?;
+        }
     }
 
     run_agent_sync_at(
@@ -1061,7 +1079,9 @@ fn memory_init(args: MemoryInitArgs) -> Result<(), String> {
 
 fn memory_doctor(args: DoctorArgs) -> Result<(), String> {
     let root = project_root(args.project)?;
-    let docs = if root.join("openkit-memory").exists() {
+    let docs = if root.join("memory").exists() {
+        root.join("memory")
+    } else if root.join("openkit-memory").exists() {
         root.join("openkit-memory")
     } else {
         root.join("docs")
@@ -1335,6 +1355,7 @@ fn broken_wikilinks(docs_root: &Path) -> Result<Vec<String>, String> {
                 continue;
             }
             let normalized = link
+                .trim_start_matches("memory/")
                 .trim_start_matches("openkit-memory/")
                 .trim_start_matches("docs/");
             if !existing.contains(normalized) {
