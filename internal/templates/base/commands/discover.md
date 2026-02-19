@@ -22,14 +22,14 @@ Generate a verified context pack for the current project, documenting risks, dri
 1. Discover structure/configs with `rg` and directory listings; record evidence with file paths and short snippets.
 2. Map FE routing/data fetching and BE endpoints/models/migrations; mark missing items as "not found."
 3. Diagnose risks (security, config, drift, missing tests, missing configuration files, logger/correlation-id).
-4. Produce/update required `docs/` files with tables and concise summaries.
-5. If external/network tools are needed (pip-audit, npm audit), note blockers in `docs/ACTION_ITEMS.md`.
+4. Produce/update required `openkit-memory/` files with tables and concise summaries.
+5. If external/network tools are needed (pip-audit, npm audit), note blockers in `openkit-memory/ACTION_ITEMS.md`.
 
 ## Output Requirements
 
 - Create or update the full context pack (see list below).
 - Cite evidence in each doc with explicit file paths.
-- Put cross-repo impacts in `docs/ACTION_ITEMS.md` with severity and owner.
+- Put cross-repo impacts in `openkit-memory/ACTION_ITEMS.md` with severity and owner.
 - Use Obsidian-compatible links (`[[...]]`) for all internal documentation references.
 - Add `## Related` section in each generated docs artifact where applicable.
 - Enforce canonical docs filenames from `.opencode/rules/DOCS_FILE_GLOSSARY.md`.
@@ -53,35 +53,35 @@ question({
 
 Always create/update:
 
-- `docs/CONTEXT.md` (executive summary + overview + evidence)
-- `docs/QUALITY_GATES.md` (linters, tests, CI, checks)
-- `docs/SECURITY.md` (threats, controls, gaps, prioritized actions)
-- `docs/ACTION_ITEMS.md` (backlog prioritized by impact x effort)
-- `docs/HUB-DOCS.md` (documentation hub)
-- `docs/GLOSSARY.md` (shared terminology)
-- `docs/requirements/HUB-REQUIREMENTS.md` (requirements hub)
-- `docs/sprint/HUB-SPRINTS.md` (sprint hub)
+- `openkit-memory/CONTEXT.md` (executive summary + overview + evidence)
+- `openkit-memory/QUALITY_GATES.md` (linters, tests, CI, checks)
+- `openkit-memory/SECURITY.md` (threats, controls, gaps, prioritized actions)
+- `openkit-memory/ACTION_ITEMS.md` (backlog prioritized by impact x effort)
+- `openkit-memory/HUB-DOCS.md` (documentation hub)
+- `openkit-memory/GLOSSARY.md` (shared terminology)
+- `openkit-memory/requirements/HUB-REQUIREMENTS.md` (requirements hub)
+- `openkit-memory/sprint/HUB-SPRINTS.md` (sprint hub)
 
 Create only when project has this context:
 
-- Frontend → `docs/FRONTEND.md`
-- Backend/API → `docs/BACKEND.md` and/or `docs/API.md`
-- Database → `docs/DATABASE.md`
+- Frontend → `openkit-memory/FRONTEND.md`
+- Backend/API → `openkit-memory/BACKEND.md` and/or `openkit-memory/API.md`
+- Database → `openkit-memory/DATABASE.md`
 
 ## Templates (REQUIRED)
 
 Use these templates:
 
-- `.opencode/templates/DOCS-CONTEXT.md` → `docs/CONTEXT.md`
-- `.opencode/templates/DOCS-README.md` → `docs/HUB-DOCS.md`
-- `.opencode/templates/DOCS-GLOSSARY.md` → `docs/GLOSSARY.md`
-- `.opencode/templates/DOCS-QUALITY_GATES.md` → `docs/QUALITY_GATES.md`
-- `.opencode/templates/DOCS-SECURITY.md` → `docs/SECURITY.md`
-- `.opencode/templates/DOCS-ACTION_ITEMS.md` → `docs/ACTION_ITEMS.md`
-- `.opencode/templates/DOCS-FRONTEND.md` → `docs/FRONTEND.md` (if applicable)
-- `.opencode/templates/DOCS-BACKEND.md` → `docs/BACKEND.md` (if applicable)
-- `.opencode/templates/DOCS-API.md` → `docs/API.md` (if applicable)
-- `.opencode/templates/DOCS-DATABASE.md` → `docs/DATABASE.md` (if applicable)
+- `.opencode/templates/DOCS-CONTEXT.md` → `openkit-memory/CONTEXT.md`
+- `.opencode/templates/DOCS-README.md` → `openkit-memory/HUB-DOCS.md`
+- `.opencode/templates/DOCS-GLOSSARY.md` → `openkit-memory/GLOSSARY.md`
+- `.opencode/templates/DOCS-QUALITY_GATES.md` → `openkit-memory/QUALITY_GATES.md`
+- `.opencode/templates/DOCS-SECURITY.md` → `openkit-memory/SECURITY.md`
+- `.opencode/templates/DOCS-ACTION_ITEMS.md` → `openkit-memory/ACTION_ITEMS.md`
+- `.opencode/templates/DOCS-FRONTEND.md` → `openkit-memory/FRONTEND.md` (if applicable)
+- `.opencode/templates/DOCS-BACKEND.md` → `openkit-memory/BACKEND.md` (if applicable)
+- `.opencode/templates/DOCS-API.md` → `openkit-memory/API.md` (if applicable)
+- `.opencode/templates/DOCS-DATABASE.md` → `openkit-memory/DATABASE.md` (if applicable)
 
 ---
 

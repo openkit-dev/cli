@@ -2,7 +2,7 @@
 
 **Feature**: [Feature name]
 **Created**: [YYYY-MM-DD]
-**Inputs**: docs/requirements/<feature>/PLAN.md
+**Inputs**: openkit-memory/requirements/<feature>/PLAN.md
 
 ## Format
 
@@ -32,7 +32,7 @@
 
 ## Phase 5 - Polish
 
-- [ ] T040 Documentation updates in docs/
+- [ ] T040 Documentation updates in openkit-memory/
 - [ ] T041 Performance or UX refinements
 
 ## Verification

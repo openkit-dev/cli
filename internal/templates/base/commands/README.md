@@ -10,7 +10,7 @@
 |---|---------|-------------|-------|
 | 1 | `/discover` | Analyze project context (mandatory) | `/discover` |
 | 2 | `/specify` | Specification + Planning + Tasks | `/specify add user auth` |
-| 3 | `/create` | Implementation from plan | `/create from docs/sprint/Sprint-1/TASKS.md` |
+| 3 | `/create` | Implementation from plan | `/create from openkit-memory/sprint/Sprint-1/TASKS.md` |
 | 4 | `/verify` | Quality verification (tests, lint, security) | `/verify all` |
 | 5 | `/orchestrate` | Universal orchestrator for complex tasks | `/orchestrate build e-commerce` |
 | 6 | `/debug` | Systematic debugging | `/debug login not working` |
@@ -33,7 +33,7 @@ For complex tasks, use `/orchestrate` to automate the entire flow.
 ### With Arguments
 ```bash
 /specify add user authentication
-/create from docs/sprint/Sprint-1/TASKS.md
+/create from openkit-memory/sprint/Sprint-1/TASKS.md
 /verify all
 ```
 
@@ -66,7 +66,7 @@ For complex tasks, use `/orchestrate` to automate the entire flow.
 
 ### 3. Create
 ```bash
-/create from docs/sprint/Sprint-1/TASKS.md
+/create from openkit-memory/sprint/Sprint-1/TASKS.md
 → Executes P0: Foundation (DB + Security)
 → Executes P1: Backend
 → Executes P2: UI/UX
@@ -142,7 +142,7 @@ Each command has mandatory STOP points:
 ```bash
 /discover
 /specify add dark mode
-/create from docs/sprint/Sprint-1/TASKS.md
+/create from openkit-memory/sprint/Sprint-1/TASKS.md
 /verify
 /deploy staging
 ```

@@ -1,49 +1,48 @@
-# Migration Guide: Context-Aware OpenKit
+# Migration Guide
 
-## Overview
+## Scope
 
-OpenKit now adapts to project type instead of assuming `backend/` + `frontend/` layout for all repositories.
+This guide covers migration from legacy OpenKit flows to the current Rust runtime and docs-first Memory Kernel.
 
-## What Changed
+## Current Runtime Baseline
 
-- Added detection engine in `internal/detection/`.
-- Refactored `context` command in `internal/cli/context.go`.
-- Added project type definitions in `.opencode/project-types/`.
-- Added overlays in `.opencode/overlays/`.
-- Added new base skills in `internal/templates/base/skills/`:
-  - `cli-design`
-  - `library-patterns`
-  - `desktop-patterns`
-  - `serverless-patterns`
-  - `iac-patterns`
+- Runtime: Rust-only CLI (`rust-cli/src/main.rs`)
+- Release assets: `openkit_<OS>_<ARCH>` + `checksums.txt`
+- Memory model: docs-first (`docs/` + `.openkit/memory/` + `.openkit/ops/`)
 
-## Behavior Changes in `openkit context`
+## Removed Legacy Surfaces
 
-- Auto-detects project type with evidence.
-- Supports non-interactive mode via flags:
-  - `--yes`
-  - `--type`
-  - `--overlays`
-- Generates only relevant docs for detected type.
+- `openkit init --memory`
+- `openkit opencode sync --memory`
+- plugin directory `.opencode/plugins/semantic-memory/`
+- plugin-era commands (`openkit memory list/search/stats/prune/export/config/debug`)
 
-## Backward Compatibility
+## Supported Commands
 
-- Web projects still generate `docs/BACKEND.md` and `docs/FRONTEND.md`.
-- Existing workflows remain valid.
+- `openkit --version`
+- `openkit check`
+- `openkit init`
+- `openkit upgrade`
+- `openkit uninstall`
+- `openkit memory init|doctor|capture|review`
 
-## Recommended Upgrade Steps
+## Migration Steps
 
-1. Pull latest OpenKit changes.
-2. Run `go test ./...`.
-3. Run `openkit context --yes` in a target project.
-4. Validate generated docs for project relevance.
+1. Update to latest OpenKit release.
+2. Initialize/refresh project scaffold with `openkit init` if needed.
+3. Initialize memory kernel artifacts with `openkit memory init`.
+4. Validate docs graph and memory health with `openkit memory doctor --json`.
+5. Replace any legacy memory workflow references in local docs/scripts.
 
-## Rollback
+## Verification
 
-If needed, pin to previous OpenKit release and restore previous generated docs from git history.
+- CLI command surface matches `docs/API.md`.
+- `openkit check` succeeds.
+- `openkit memory doctor --json` reports healthy status.
 
 ## Related
 
-- [[HUB-DOCS.md]]
-- [[CONTEXT.md]]
-- [[MIGRATION_CHECKLIST.md]]
+- [[API.md]]
+- [[DEPRECATIONS.md]]
+- [[MEMORY_LEGACY_MIGRATION.md]]
+- [[audit/HUB-AUDIT.md]]

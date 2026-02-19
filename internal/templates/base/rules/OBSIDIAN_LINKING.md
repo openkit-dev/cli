@@ -30,7 +30,7 @@ Use Obsidian-compatible links so docs can be navigated, indexed, and reused as l
 
 ## Graph Requirements
 
-For every new or updated doc in `docs/`:
+For every new or updated doc in `openkit-memory/`:
 
 1. Add at least one inbound path from an index or parent doc.
 2. Add at least two outbound wikilinks to related docs when relevant.
@@ -45,12 +45,12 @@ Goal: enforce layered navigation and avoid cross-level backlinks.
 ### Rule
 
 1. `HUB-DOCS.md` links only to:
-   - root docs (`docs/*.md`)
-   - first-level hubs (`docs/<section>/HUB-*.md`)
+   - root docs (`openkit-memory/*.md`)
+   - first-level hubs (`openkit-memory/<section>/HUB-*.md`)
 2. First-level hubs (for example `requirements/HUB-REQUIREMENTS.md`, `sprint/HUB-SPRINTS.md`) link only to:
    - sibling first-level hubs when relevant
    - direct child hubs in their own section
-3. Deep docs (for example `docs/sprint/Sprint-20/TASKS.md`) link only to:
+3. Deep docs (for example `openkit-memory/sprint/Sprint-20/TASKS.md`) link only to:
    - their immediate local hub (for example `[[HUB-SPRINT-20.md]]`)
    - local peer docs when relevant
 4. No level skipping:
@@ -110,7 +110,7 @@ For feature docs, use feature-local references only:
 
 ## Enforcement
 
-This protocol is mandatory for rule files, command docs, skill docs, and sprint or requirement artifacts in `docs/`.
+This protocol is mandatory for rule files, command docs, skill docs, and sprint or requirement artifacts in `openkit-memory/`.
 
 If a generated or updated doc does not include Obsidian-compatible internal links, the task is incomplete.
 

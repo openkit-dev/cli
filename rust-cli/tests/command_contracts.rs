@@ -23,27 +23,27 @@ fn fixture(path: &str) -> String {
 
 fn setup_docs(root: &Path) {
     write_file(
-        &root.join("docs/HUB-DOCS.md"),
+        &root.join("openkit-memory/HUB-DOCS.md"),
         "# HUB\nSee [[CONTEXT.md]]\n## Related\n- [[CONTEXT.md]]\n- [[SECURITY.md]]\n",
     );
     write_file(
-        &root.join("docs/CONTEXT.md"),
+        &root.join("openkit-memory/CONTEXT.md"),
         "# CONTEXT\n## Related\n- [[HUB-DOCS.md]]\n",
     );
     write_file(
-        &root.join("docs/SECURITY.md"),
+        &root.join("openkit-memory/SECURITY.md"),
         "# SECURITY\n## Related\n- [[HUB-DOCS.md]]\n",
     );
     write_file(
-        &root.join("docs/QUALITY_GATES.md"),
+        &root.join("openkit-memory/QUALITY_GATES.md"),
         "# QUALITY\n## Related\n- [[HUB-DOCS.md]]\n",
     );
     write_file(
-        &root.join("docs/requirements/HUB-REQUIREMENTS.md"),
+        &root.join("openkit-memory/requirements/HUB-REQUIREMENTS.md"),
         "# REQ\n## Related\n- [[HUB-DOCS.md]]\n",
     );
     write_file(
-        &root.join("docs/sprint/HUB-SPRINTS.md"),
+        &root.join("openkit-memory/sprint/HUB-SPRINTS.md"),
         "# SPRINT\n## Related\n- [[HUB-DOCS.md]]\n",
     );
 }
@@ -119,7 +119,7 @@ fn memory_doctor_reports_broken_links_with_actionable_error() {
     let root = temp.path();
     setup_docs(root);
     write_file(
-        &root.join("docs/BROKEN.md"),
+        &root.join("openkit-memory/BROKEN.md"),
         "# BROKEN\nBad link [[MISSING.md]]\n## Related\n- [[HUB-DOCS.md]]\n",
     );
 
@@ -248,19 +248,35 @@ fn init_command_creates_baseline_project_artifacts() {
 
     let project_root = root.join(project_name);
     assert!(project_root.join("AGENTS.md").exists());
-    assert!(project_root.join("docs/HUB-DOCS.md").exists());
-    assert!(project_root.join("docs/CONTEXT.md").exists());
-    assert!(project_root.join("docs/SECURITY.md").exists());
-    assert!(project_root.join("docs/QUALITY_GATES.md").exists());
+    assert!(project_root.join("openkit-memory/HUB-DOCS.md").exists());
+    assert!(project_root.join("openkit-memory/CONTEXT.md").exists());
+    assert!(project_root.join("openkit-memory/SECURITY.md").exists());
     assert!(project_root
-        .join("docs/requirements/HUB-REQUIREMENTS.md")
+        .join("openkit-memory/QUALITY_GATES.md")
         .exists());
     assert!(project_root
-        .join("docs/requirements/bootstrap/HUB-BOOTSTRAP.md")
+        .join("openkit-memory/requirements/HUB-REQUIREMENTS.md")
         .exists());
-    assert!(project_root.join("docs/sprint/HUB-SPRINTS.md").exists());
     assert!(project_root
-        .join("docs/sprint/Sprint-01/HUB-SPRINT-01.md")
+        .join("openkit-memory/requirements/bootstrap/HUB-BOOTSTRAP.md")
+        .exists());
+    assert!(project_root
+        .join("openkit-memory/sprint/HUB-SPRINTS.md")
+        .exists());
+    assert!(project_root
+        .join("openkit-memory/sprint/Sprint-01/HUB-SPRINT-01.md")
+        .exists());
+    assert!(project_root.join("opencode.json").exists());
+    assert!(project_root.join(".opencode/commands/discover.md").exists());
+    assert!(project_root
+        .join(".opencode/prompts/orchestrator.md")
+        .exists());
+    assert!(project_root.join(".opencode/rules/MASTER.md").exists());
+    assert!(project_root
+        .join(".opencode/skills/clean-code/SKILL.md")
+        .exists());
+    assert!(project_root
+        .join(".opencode/rules/MEMORY_KERNEL.md")
         .exists());
     assert!(project_root.join(".openkit/memory/config.yaml").exists());
     assert!(project_root.join(".opencode/OPENKIT.md").exists());
@@ -314,6 +330,25 @@ fn init_then_memory_doctor_is_healthy() {
     let payload = String::from_utf8(doctor.stdout).expect("doctor stdout not utf8");
     let data: JsonValue = serde_json::from_str(&payload).expect("invalid doctor json");
     assert_eq!(data["status"], "healthy");
+}
+
+#[test]
+fn init_with_codex_flag_materializes_codex_pack() {
+    let temp = tempdir().expect("failed to create temp dir");
+    let root = temp.path();
+
+    let output = Command::new(assert_cmd::cargo::cargo_bin!("openkit"))
+        .current_dir(root)
+        .args(["init", "codex-app", "--codex", "--no-git"])
+        .output()
+        .expect("failed to run init with --codex");
+
+    assert!(output.status.success());
+
+    let project_root = root.join("codex-app");
+    assert!(project_root.join(".codex/commands/discover.md").exists());
+    assert!(project_root.join(".codex/rules/MEMORY_KERNEL.md").exists());
+    assert!(project_root.join(".openkit/memory/config.yaml").exists());
 }
 
 #[test]

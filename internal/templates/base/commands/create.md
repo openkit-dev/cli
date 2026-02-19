@@ -10,7 +10,7 @@ $ARGUMENTS
 ## Overview
 
 Execute implementation tasks from the specification. This command:
-- Reads tasks from `docs/sprint/Sprint-XX/TASKS.md`
+- Reads tasks from `openkit-memory/sprint/Sprint-XX/TASKS.md`
 - Executes in priority order (P0 → P1 → P2 → P3)
 - Coordinates multiple agents as needed
 
@@ -33,7 +33,7 @@ question({
 })
 ```
 
-**Syntax:** `from docs/sprint/Sprint-XX/TASKS.md`
+**Syntax:** `from openkit-memory/sprint/Sprint-XX/TASKS.md`
 
 ---
 
@@ -132,7 +132,7 @@ question({
 
 ## Progress Updates
 
-Mark tasks in `docs/sprint/Sprint-XX/TASKS.md`:
+Mark tasks in `openkit-memory/sprint/Sprint-XX/TASKS.md`:
 
 ```markdown
 - [x] task-01: [Name]  COMPLETE

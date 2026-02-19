@@ -5,6 +5,20 @@ All notable changes to OpenKit CLI will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.11] - 2026-02-18
+
+### Added
+- `openkit init` now materializes full agent template packs from `internal/templates/base/**` and injects `MEMORY_KERNEL.md` into agent rules.
+- New agent selection flags for initialization: `--claude`, `--codex`, `--cursor`, `--gemini`, `--antigravity` (default remains OpenCode).
+
+### Changed
+- OpenKit template documentation root migrated from `docs/` to `openkit-memory/` across internal templates.
+- `opencode.json` template policy is now permission-centric (removed boolean `tools` blocks in favor of explicit `permission` mapping).
+- Memory Kernel defaults are now sourced from embedded templates (`internal/templates/memory/*.yaml`) instead of hardcoded Rust structs.
+
+### Fixed
+- Restored Rust parity by wiring `init/sync` to the real template source-of-truth in `internal/templates/**`.
+
 ## [0.5.10] - 2026-02-18
 
 ### Changed

@@ -69,7 +69,7 @@ Proposed | Accepted | Deprecated | Superseded by [ADR-YYY]
 ## ADR Storage
 
 ```
-docs/
+openkit-memory/
 └── architecture/
     ├── adr-001-use-nextjs.md
     ├── adr-002-postgresql-over-mongodb.md

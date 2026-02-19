@@ -11,6 +11,7 @@ Central hub for documentation and internal system sanitization artifacts.
 - [[audit/DECISION_MATRIX.md]]
 - [[audit/INTERNAL_BASELINE.md]]
 - [[audit/INTERNAL_SWEEP_PLAN.md]]
+- [[audit/DRIFT_SWEEP_REPORT.md]]
 
 ## Scope
 

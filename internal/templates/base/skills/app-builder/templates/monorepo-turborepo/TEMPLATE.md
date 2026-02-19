@@ -24,7 +24,7 @@ project-name/
 ├── apps/
 │   ├── web/             # Next.js app
 │   ├── api/             # Express API
-│   └── docs/            # Documentation
+│   └── openkit-memory/            # Documentation
 ├── packages/
 │   ├── ui/              # Shared components
 │   ├── config/          # ESLint, TS, Tailwind

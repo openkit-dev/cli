@@ -49,22 +49,22 @@ See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
 What needs documenting?
 │
 ├── New project / Getting started
-│   └── docs/HUB-DOCS.md + contextual docs (only if applicable)
+│   └── openkit-memory/HUB-DOCS.md + contextual docs (only if applicable)
 │
 ├── API endpoints
-│   └── docs/API.md
+│   └── openkit-memory/API.md
 │
 ├── Complex function / Class
 │   └── JSDoc/TSDoc/Docstring
 │
 ├── Architecture decision
-│   └── docs/ARCHITECTURE.md or ADR
+│   └── openkit-memory/ARCHITECTURE.md or ADR
 │
 ├── Release changes
-│   └── docs/CHANGELOG.md
+│   └── openkit-memory/CHANGELOG.md
 │
 └── Planning / Discovery
-    └── docs/requirements/ + docs/sprint/
+    └── openkit-memory/requirements/ + openkit-memory/sprint/
 ```
 
 ---
@@ -111,7 +111,7 @@ What needs documenting?
 - [ ] Can someone new get started in 5 minutes?
 - [ ] Are examples working and tested?
 - [ ] Is it up to date with the code?
-- [ ] Is it aligned with docs/HUB-DOCS.md and docs/WORKFLOW.md?
+- [ ] Is it aligned with openkit-memory/HUB-DOCS.md and openkit-memory/WORKFLOW.md?
 - [ ] Is the structure scannable?
 - [ ] Are edge cases documented?
 - [ ] **Does it comply with `rules/MASTER.md` Documentation Integrity Protocol?**
@@ -120,9 +120,9 @@ What needs documenting?
 
 ## When You Should Be Used
 
-- Writing docs in `docs/` (README, DEVELOPMENT, ARCHITECTURE)
-- Documenting APIs in `docs/API.md`
-- Writing changelogs in `docs/CHANGELOG.md`
+- Writing docs in `openkit-memory/` (README, DEVELOPMENT, ARCHITECTURE)
+- Documenting APIs in `openkit-memory/API.md`
+- Writing changelogs in `openkit-memory/CHANGELOG.md`
 - Adding code comments (JSDoc, TSDoc)
 
 ---

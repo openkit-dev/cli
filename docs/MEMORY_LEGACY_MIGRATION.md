@@ -4,12 +4,12 @@
 
 OpenKit is replacing the legacy semantic memory plugin workflow (`--memory`, `openkit memory`, `.opencode/plugins/semantic-memory`) with a docs-first permanent memory model based on `docs/`, `.openkit/ops/`, and `.openkit/memory/`.
 
-This guide defines a safe migration path with rollback instructions.
+This guide defines migration context and post-removal reference notes.
 
-## When to Migrate
+## Migration Status
 
-- Migrate during release N (deprecation window), before release N+1 removal.
-- If your project still references `openkit init --memory`, `openkit opencode sync --memory`, or `openkit memory`, migrate now.
+- Legacy plugin flow is removed in `v0.5.10`.
+- If your project still references `openkit init --memory`, `openkit opencode sync --memory`, or plugin-era `openkit memory` subcommands, update now.
 
 ## Artifact Mapping (Old -> New)
 
@@ -46,20 +46,20 @@ This guide defines a safe migration path with rollback instructions.
 - [ ] Wikilink graph remains valid.
 - [ ] Deprecation warnings no longer appear in daily workflows.
 
-## Rollback (Interrupted Migration)
+## Rollback (Legacy-only Environments)
 
 If migration is interrupted or new workflows fail:
 
 1. Keep backup copies of `.opencode/plugins/semantic-memory/` and `.opencode/memory/`.
 2. Restore legacy directories from backup.
-3. Continue using legacy commands temporarily during release N only.
+3. Use legacy assets only in isolated historical environments (not in active branches).
 4. Register rollback event in `.openkit/memory/legacy-migration-report.json` with `status: "rolled_back"`.
 5. Open a migration issue with affected commands and paths before retrying.
 
 ## Support Boundaries
 
-- Release N: legacy flows are supported with warnings.
-- Release N+1: legacy flows are removed; only docs-first memory model is supported.
+- Active branches support only docs-first memory model.
+- Legacy plugin flows are unsupported in current OpenKit runtime.
 
 ## Related
 

@@ -17,7 +17,7 @@
 | Build | `cargo build --release --manifest-path rust-cli/Cargo.toml` | Configured | `.github/workflows/ci.yml` step `Rust Build`. |
 | Security scan | CI | Missing | `.github/workflows/ci.yml` has no security scan step. |
 | Dependency scan | CI | Missing | No Rust dependency audit step in CI workflow. |
-| Coverage gate | CI | Missing | `test-coverage` exists in `Makefile` but not in CI. |
+| Coverage gate | CI | Missing | No coverage reporting gate configured for `rust-cli` tests. |
 
 ## Commands
 

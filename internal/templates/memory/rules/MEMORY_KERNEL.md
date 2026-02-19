@@ -9,7 +9,7 @@ OpenKit memory is docs-first and runtime-native.
 
 ## Supported Commands
 
-- `openkit memory init`
+- `openkit memory init` (repair only)
 - `openkit memory doctor --json`
 - `openkit memory capture --summary "..." --action "..."`
 - `openkit memory review --json`
@@ -23,7 +23,7 @@ OpenKit memory is docs-first and runtime-native.
 
 ## Policy
 
-- Use docs (`docs/**`) as the primary memory graph.
+- Use docs (`openkit-memory/**`) as the primary memory graph.
 - Keep `## Related` and wikilinks consistent.
 - Do not introduce plugin-only memory tools in active flows.
 

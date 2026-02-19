@@ -6,7 +6,7 @@ allowed-tools: Read, Glob, Grep
 
 # Obsidian Docs
 
-Use this skill when creating or updating documentation in `docs/`.
+Use this skill when creating or updating documentation in `openkit-memory/`.
 
 ## Objective
 

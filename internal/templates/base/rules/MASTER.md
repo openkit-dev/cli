@@ -45,6 +45,23 @@ Key principles:
 
 ---
 
+## Memory Kernel Protocol (MANDATORY)
+
+Memory Kernel is a default OpenKit protocol and must be present in initialized projects.
+
+- Required artifacts:
+  - `.openkit/memory/config.yaml`
+  - `.openkit/memory/derivation.yaml`
+  - `.openkit/ops/queue.yaml`
+- Required command surface:
+  - `openkit memory init` (repair only)
+  - `openkit memory doctor --json`
+  - `openkit memory capture`
+  - `openkit memory review --json`
+- Do not reference deprecated plugin-era memory flows in active rules/prompts/templates.
+
+---
+
 ## Context & Language
 
 - Respond in the user's language; keep code/comments in English.
@@ -223,11 +240,11 @@ Always ask clarifying questions before execution when there is significant ambig
 
 ## Project Structure & Standards
 
-- **frontend/**: Use stack defined in project (check existing code or `docs/requirements/`). Follow `frontend-specialist` rules.
-- **backend/**: Use stack defined in project (check existing code or `docs/requirements/`). Follow `backend-specialist` rules.
-- **docs/**: Source of truth for discovery, planning, and documentation. Create `docs/` if missing.
+- **frontend/**: Use stack defined in project (check existing code or `openkit-memory/requirements/`). Follow `frontend-specialist` rules.
+- **backend/**: Use stack defined in project (check existing code or `openkit-memory/requirements/`). Follow `backend-specialist` rules.
+- **openkit-memory/**: Source of truth for discovery, planning, and documentation. Create `openkit-memory/` if missing.
 - **Stack Selection**: For new projects, use `@[skills/stack-selection]` to determine appropriate technologies with user input.
-- Record cross-scope impacts in `docs/ACTION_ITEMS.md` (when it exists).
+- Record cross-scope impacts in `openkit-memory/ACTION_ITEMS.md` (when it exists).
 - Branches `feat/<area>-<slug>`; commits `feat|fix|docs|test|refactor|perf|chore|revert`.
 - No `console.log`/`print`. Use official loggers.
 
@@ -238,19 +255,19 @@ Always ask clarifying questions before execution when there is significant ambig
 Before any `/create` execution, the following artifacts MUST exist:
 
 **From `/specify` (Specification):**
-- `docs/requirements/<feature>/PROBLEM_STATEMENT.md`
-- `docs/requirements/<feature>/USER_STORIES.md`
-- `docs/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
-- `docs/requirements/<feature>/RISKS.md`
+- `openkit-memory/requirements/<feature>/PROBLEM_STATEMENT.md`
+- `openkit-memory/requirements/<feature>/USER_STORIES.md`
+- `openkit-memory/requirements/<feature>/ACCEPTANCE_CRITERIA.md`
+- `openkit-memory/requirements/<feature>/RISKS.md`
 
 **From `/specify` (Planning - included in specify):**
-- `docs/requirements/<feature>/PLAN.md`
-- `docs/sprint/Sprint-XX/SPRINT_GOAL.md`
-- `docs/sprint/Sprint-XX/BACKLOG.md`
-- `docs/sprint/Sprint-XX/RISK_REGISTER.md`
+- `openkit-memory/requirements/<feature>/PLAN.md`
+- `openkit-memory/sprint/Sprint-XX/SPRINT_GOAL.md`
+- `openkit-memory/sprint/Sprint-XX/BACKLOG.md`
+- `openkit-memory/sprint/Sprint-XX/RISK_REGISTER.md`
 
 **From `/specify` (Task Breakdown - included in specify):**
-- `docs/sprint/Sprint-XX/TASKS.md`
+- `openkit-memory/sprint/Sprint-XX/TASKS.md`
 
 If any are missing, STOP and direct the user to run `/specify` first.
 
@@ -267,8 +284,8 @@ All agents and commands MUST use this standardized phase naming:
 
 | Phase | Name | Command(s) | Output | Code? |
 |-------|------|------------|--------|-------|
-| **0** | Discovery | `/discover` (MANDATORY) | `docs/CONTEXT.md`, decisions | NO |
-| **1** | Specification | `/specify` | `docs/requirements/<feature>/`, `docs/sprint/Sprint-XX/` | NO |
+| **0** | Discovery | `/discover` (MANDATORY) | `openkit-memory/CONTEXT.md`, decisions | NO |
+| **1** | Specification | `/specify` | `openkit-memory/requirements/<feature>/`, `openkit-memory/sprint/Sprint-XX/` | NO |
 | **2** | Implementation | `/create` | Working code | YES |
 | **3** | Verification | `/verify` | Verified project | Scripts |
 | **4** | Deployment | `/deploy` | Deployed application | - |
@@ -283,7 +300,7 @@ Before starting any feature work, execute discovery:
 
 | Command | When to Use | Output |
 |---------|-------------|--------|
-| `/discover` | **ALWAYS** (mandatory) | `docs/CONTEXT.md`, `docs/SECURITY.md`, `docs/QUALITY_GATES.md` |
+| `/discover` | **ALWAYS** (mandatory) | `openkit-memory/CONTEXT.md`, `openkit-memory/SECURITY.md`, `openkit-memory/QUALITY_GATES.md` |
 
 **Discovery Gate Rules:**
 1. `/discover` is ALWAYS required before `/specify`
@@ -293,29 +310,29 @@ Before starting any feature work, execute discovery:
 
 ## Sprint Documentation & Artifacts
 
-1. **Identification**: Locate `docs/sprint/Sprint-XX/` and review `HUB-SPRINT-XX.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `TASKS.md`.
+1. **Identification**: Locate `openkit-memory/sprint/Sprint-XX/` and review `HUB-SPRINT-XX.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `TASKS.md`.
 2. **Sprint Selection**: Ask the user whether to use the latest sprint or create a new one.
    - If no sprint exists, create `Sprint-01`.
    - If creating a new sprint, use the next sequential number.
-3. **Specification** (`/specify`): Create requirements in `docs/requirements/<feature>/` and update `HUB-SPRINT-XX.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`, `TASKS.md`.
+3. **Specification** (`/specify`): Create requirements in `openkit-memory/requirements/<feature>/` and update `HUB-SPRINT-XX.md`, `SPRINT_GOAL.md`, `BACKLOG.md`, `RISK_REGISTER.md`, `TASKS.md`.
 4. **Execution** (`/create`): Mark progress in `TASKS.md`; update story status in `BACKLOG.md`.
-5. **Completion**: Mark tasks as `[x]`, register changes in `docs/CHANGELOG.md` when requested.
+5. **Completion**: Mark tasks as `[x]`, register changes in `openkit-memory/CHANGELOG.md` when requested.
 6. **Templates**: Use `@[skills/documentation-templates]` for requirements, sprints, and reports.
 
 **Command Ownership:**
 | Artifact | Created By |
 |----------|------------|
-| docs/HUB-DOCS.md | `/discover` or `/specify` |
-| docs/requirements/HUB-REQUIREMENTS.md | `/discover` or `/specify` |
-| docs/requirements/<feature>/HUB-<FEATURE>.md | `/specify` |
-| docs/sprint/HUB-SPRINTS.md | `/discover` or `/specify` |
-| docs/sprint/Sprint-XX/HUB-SPRINT-XX.md | `/specify` |
+| openkit-memory/HUB-DOCS.md | `/discover` or `/specify` |
+| openkit-memory/requirements/HUB-REQUIREMENTS.md | `/discover` or `/specify` |
+| openkit-memory/requirements/<feature>/HUB-<FEATURE>.md | `/specify` |
+| openkit-memory/sprint/HUB-SPRINTS.md | `/discover` or `/specify` |
+| openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md | `/specify` |
 | SPRINT_GOAL.md | `/specify` |
 | BACKLOG.md | `/specify` |
 | RISK_REGISTER.md | `/specify` |
 | TASKS.md | `/specify` |
 
-CRITICAL: Ending a task without syncing `docs/sprint/` is a protocol violation.
+CRITICAL: Ending a task without syncing `openkit-memory/sprint/` is a protocol violation.
 
 ---
 
@@ -341,7 +358,7 @@ A task only ends when `checklist.py` succeeds. If it fails, resolve critical blo
 
 - References to commands (`/discover`, `/specify`, `/create`, `/verify`, `/orchestrate`, `/debug`, `/deploy`) must follow `.opencode/commands/`.
 - When generating new artifacts, record times using timezone UTC-3 as per `AGENTS.md`.
-- Update `docs/.context` and `docs/ACTION_ITEMS.md` when there is multi-repo impact.
+- Update `openkit-memory/.context` and `openkit-memory/ACTION_ITEMS.md` when there is multi-repo impact.
 - Always validate sensitive data: never expose secrets, tokens, or `.env`.
 
 This file supersedes all previous rules (`CORE`, `ROUTING`, `CHECKLIST`, `SPRINTS`).
@@ -350,10 +367,10 @@ This file supersedes all previous rules (`CORE`, `ROUTING`, `CHECKLIST`, `SPRINT
 
 ## References
 
-- **Glossary:** `docs/GLOSSARY.md` - Standard terminology definitions
+- **Glossary:** `openkit-memory/GLOSSARY.md` - Standard terminology definitions
 - **TodoList Protocol:** `.opencode/rules/TODOLIST_PROTOCOL.md` - Complete workflow
 - **Tool Usage:** `.opencode/rules/TOOL_USAGE.md` - Correct tool selection
 - **Obsidian Linking:** `.opencode/rules/OBSIDIAN_LINKING.md` - Documentation graph protocol
 - **Single-Level Hub Links:** `.opencode/rules/SINGLE_LEVEL_HUB_LINKS.md` - Hub hierarchy policy
 - **Docs File Glossary:** `.opencode/rules/DOCS_FILE_GLOSSARY.md` - Canonical documentation filenames
-- **Conflict Analysis:** `docs/CONFLICT_ANALYSIS_REPORT.md` - Resolution history
+- **Conflict Analysis:** `openkit-memory/CONFLICT_ANALYSIS_REPORT.md` - Resolution history

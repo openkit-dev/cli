@@ -13,8 +13,8 @@ This file tracks active and planned deprecations with expected removal windows.
   - `openkit memory` legacy command group
   - `.opencode/plugins/semantic-memory/`
   - `.opencode/memory/`
-- Release N: Deprecated (warnings enabled)
-- Release N+1: Removed
+- Status: Removed (completed)
+- Removal release: `v0.5.10`
 - Migration guide: [[MEMORY_LEGACY_MIGRATION.md]]
 - Removal plan: [[sprint/Sprint-07/LEGACY_MEMORY_REMOVAL_PLAN.md]]
 

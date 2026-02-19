@@ -2,7 +2,7 @@
 
 **Feature**: [Feature name]
 **Created**: [YYYY-MM-DD]
-**Inputs**: docs/requirements/<feature>/
+**Inputs**: openkit-memory/requirements/<feature>/
 
 ## Summary
 

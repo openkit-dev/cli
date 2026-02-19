@@ -16,10 +16,10 @@ This policy establishes a hierarchical linking structure for all documentation t
 
 | Layer | Examples | Links To |
 |-------|----------|----------|
-| **Layer 0 (Root)** | `docs/HUB-DOCS.md`, `docs/CONTEXT.md` | Layer 1 hubs only |
-| **Layer 1 (Section Hubs)** | `docs/requirements/HUB-REQUIREMENTS.md`, `docs/sprint/HUB-SPRINTS.md` | Layer 0, Layer 2, sibling Layer 1 |
-| **Layer 2 (Feature/Sprint Hubs)** | `docs/requirements/<feature>/HUB-<FEATURE>.md`, `docs/sprint/Sprint-XX/HUB-SPRINT-XX.md` | Layer 1, Layer 3, local peers |
-| **Layer 3 (Artifacts)** | `docs/sprint/Sprint-XX/TASKS.md`, `docs/requirements/<feature>/PLAN.md` | Layer 2 only |
+| **Layer 0 (Root)** | `openkit-memory/HUB-DOCS.md`, `openkit-memory/CONTEXT.md` | Layer 1 hubs only |
+| **Layer 1 (Section Hubs)** | `openkit-memory/requirements/HUB-REQUIREMENTS.md`, `openkit-memory/sprint/HUB-SPRINTS.md` | Layer 0, Layer 2, sibling Layer 1 |
+| **Layer 2 (Feature/Sprint Hubs)** | `openkit-memory/requirements/<feature>/HUB-<FEATURE>.md`, `openkit-memory/sprint/Sprint-XX/HUB-SPRINT-XX.md` | Layer 1, Layer 3, local peers |
+| **Layer 3 (Artifacts)** | `openkit-memory/sprint/Sprint-XX/TASKS.md`, `openkit-memory/requirements/<feature>/PLAN.md` | Layer 2 only |
 
 ## Linking Rules
 
@@ -43,10 +43,10 @@ Disallowed: TASKS.md -> HUB-SPRINTS (skips HUB-SPRINT-20)
 
 ```
 HUB-DOCS.md
-  |-- docs/*.md (root docs)
-  |-- docs/requirements/HUB-REQUIREMENTS.md (Layer 1)
-  |-- docs/sprint/HUB-SPRINTS.md (Layer 1)
-  |-- docs/adr/HUB-ADR.md (Layer 1)
+  |-- openkit-memory/*.md (root docs)
+  |-- openkit-memory/requirements/HUB-REQUIREMENTS.md (Layer 1)
+  |-- openkit-memory/sprint/HUB-SPRINTS.md (Layer 1)
+  |-- openkit-memory/adr/HUB-ADR.md (Layer 1)
 
 requirements/HUB-REQUIREMENTS.md
   |-- HUB-DOCS.md (Layer 0 - back reference)
@@ -82,7 +82,7 @@ Use only immediate-level references in `## Related` sections:
 ### Feature Documentation
 
 ```
-docs/requirements/auth-system/
+openkit-memory/requirements/auth-system/
   |-- HUB-AUTH-SYSTEM.md        (Layer 2)
   |-- PROBLEM_STATEMENT.md      (Layer 3)
   |-- USER_STORIES.md           (Layer 3)
@@ -103,7 +103,7 @@ PROBLEM_STATEMENT.md links to:
 ### Sprint Documentation
 
 ```
-docs/sprint/Sprint-05/
+openkit-memory/sprint/Sprint-05/
   |-- HUB-SPRINT-05.md          (Layer 2)
   |-- SPRINT_GOAL.md            (Layer 3)
   |-- BACKLOG.md                (Layer 3)

@@ -1,47 +1,34 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "instructions": [".opencode/rules/MASTER.md"],
+  "instructions": [
+    ".opencode/rules/MASTER.md"
+  ],
   "default_agent": "openkit",
   "agent": {
     "openkit": {
       "description": "Primary orchestrator for complex, multi-agent missions using OpenKit commands (/discover, /specify, /create, /verify, /orchestrate, /debug, /deploy).",
       "mode": "primary",
       "prompt": "{file:.opencode/prompts/orchestrator.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "list": true,
-        "bash": true,
-        "edit": true,
-        "write": true,
-        "patch": true,
-        "webfetch": true,
-        "skill": true,
-        "todowrite": true,
-        "todoread": true,
-        "question": true
-      },
       "permission": {
         "edit": "ask",
         "bash": "ask",
-        "webfetch": "ask"
+        "webfetch": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "write": "allow",
+        "patch": "allow",
+        "skill": "allow",
+        "todowrite": "allow",
+        "todoread": "allow",
+        "question": "allow"
       }
     },
     "chat": {
       "description": "Primary chat agent for answering questions without planning, coding, or orchestration.",
       "mode": "primary",
       "prompt": "{file:.opencode/prompts/chat.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "webfetch": true,
-        "skill": true,
-        "edit": false,
-        "write": false,
-        "bash": false
-      },
       "permission": {
         "edit": "deny",
         "bash": "deny",
@@ -51,273 +38,215 @@
           "*": "deny",
           "behavioral-modes": "allow",
           "documentation-templates": "allow"
-        }
+        },
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "deny"
       }
     },
     "backend-specialist": {
       "description": "Expert backend architect for Python (FastAPI/Django). Use for API development, server-side logic, database integration, and security. Triggers on backend, server, api, endpoint, database, auth, python, fastapi.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/backend-specialist.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "frontend-specialist": {
       "description": "Senior Frontend Architect who builds maintainable React (TanStack Stack) systems. Use for UI components, styling, state management, and frontend architecture.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/frontend-specialist.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "database-architect": {
       "description": "Expert database architect for schema design, query optimization, migrations, and modern serverless databases.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/database-architect.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "security-auditor": {
       "description": "Elite cybersecurity expert. Think like an attacker, defend like an expert. OWASP 2025, supply chain security, zero trust architecture.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/security-auditor.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true,
-        "webfetch": true
-      },
       "permission": {
         "edit": "ask",
         "bash": "ask",
-        "webfetch": "ask"
+        "webfetch": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "test-engineer": {
       "description": "Expert in testing, TDD, and test automation (E2E/Unit). Use for writing tests, improving coverage, debugging test failures, and setting up CI pipelines.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/test-engineer.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "devops-engineer": {
       "description": "Expert in deployment, server management, CI/CD, and production operations. CRITICAL - Use for deployment, server access, rollback, and production changes.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/devops-engineer.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "allow"
+        "bash": "allow",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "mobile-developer": {
       "description": "Expert in React Native and Flutter mobile development. Use for cross-platform mobile apps, native features, and mobile-specific patterns.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/mobile-developer.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "debugger": {
       "description": "Expert in systematic debugging, root cause analysis, and crash investigation. Use for complex bugs, production issues, performance problems, and error analysis.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/debugger.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "explorer-agent": {
       "description": "Advanced codebase discovery, deep architectural analysis, and proactive research agent. The eyes and ears of the framework.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/explorer-agent.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true
-      },
       "permission": {
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow"
       }
     },
     "performance-optimizer": {
       "description": "Expert in performance optimization, profiling, Core Web Vitals, and bundle optimization. Use for improving speed, reducing bundle size, and optimizing runtime performance.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/performance-optimizer.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "seo-specialist": {
       "description": "SEO and GEO (Generative Engine Optimization) expert. Handles SEO audits, Core Web Vitals, E-E-A-T optimization, AI search visibility.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/seo-specialist.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "write": true
-      },
       "permission": {
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "product-owner": {
       "description": "Strategic facilitator bridging business needs and technical execution. Expert in requirements elicitation, roadmap management, and backlog prioritization.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/product-owner.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true
-      },
       "permission": {
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow"
       }
     },
     "project-planner": {
       "description": "Smart project planning agent. Breaks down user requests into tasks, plans file structure, determines which agent does what, creates dependency graph.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/project-planner.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true
-      },
       "permission": {
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow"
       }
     },
     "penetration-tester": {
       "description": "Expert in offensive security, penetration testing, red team operations, and vulnerability exploitation. Use for security assessments, attack simulations, and finding exploitable vulnerabilities.",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/penetration-tester.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true,
-        "webfetch": true
-      },
       "permission": {
         "edit": "ask",
         "bash": "ask",
-        "webfetch": "ask"
+        "webfetch": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "documentation-writer": {
       "description": "Expert in technical documentation. Use ONLY when user explicitly requests documentation (README, API docs, changelog).",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/documentation-writer.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow"
       }
     },
     "docs-migration-specialist": {
       "description": "Specialist in migrating project docs to OpenKit Obsidian standard (wikilinks, hubs, canonical filenames).",
       "mode": "subagent",
       "prompt": "{file:.opencode/prompts/docs-migration-specialist.md}",
-      "tools": {
-        "read": true,
-        "grep": true,
-        "glob": true,
-        "edit": true,
-        "write": true,
-        "bash": true,
-        "question": true
-      },
       "permission": {
         "edit": "ask",
-        "bash": "ask"
+        "bash": "ask",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "write": "allow",
+        "question": "allow"
       }
     }
   }

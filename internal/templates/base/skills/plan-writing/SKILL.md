@@ -29,7 +29,7 @@ This skill provides a framework for breaking down work into clear, actionable ta
 - Critical path highlighted
  - **Phase 3: Verification is always LAST**
 
-### 4. Planning Lives in docs/
+### 4. Planning Lives in openkit-memory/
 
 ### 5. Question Tool Usage (MANDATORY)
 
@@ -53,10 +53,10 @@ question({
 ```
 
 See `.opencode/rules/MASTER.md` for complete Question Tool Protocol.
-- Planning artifacts live under `docs/requirements/` and `docs/sprint/`
-- **Discovery** outputs go to `docs/requirements/<feature>/`
-- **Sprint planning** outputs go to `docs/sprint/Sprint-XX/`
-- If `docs/` does not exist, create it before writing
+- Planning artifacts live under `openkit-memory/requirements/` and `openkit-memory/sprint/`
+- **Discovery** outputs go to `openkit-memory/requirements/<feature>/`
+- **Sprint planning** outputs go to `openkit-memory/sprint/Sprint-XX/`
+- If `openkit-memory/` does not exist, create it before writing
 
 ## Planning Principles (NOT Templates!)
 
@@ -163,7 +163,7 @@ One sentence: What are we building/fixing?
 1. **Start with goal** - What are we building/fixing?
 2. **Max 10 tasks** - If more, break into multiple plans
 3. **Each task verifiable** - Clear "done" criteria
-4. **Docs-first** - Requirements in `docs/requirements/`, sprint tasks in `docs/sprint/`
+4. **Docs-first** - Requirements in `openkit-memory/requirements/`, sprint tasks in `openkit-memory/sprint/`
 5. **Update as you go** - Mark `[x]` when complete in sprint Tasks
 
 ---
