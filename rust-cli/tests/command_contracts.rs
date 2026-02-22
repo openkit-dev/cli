@@ -251,18 +251,14 @@ fn init_command_creates_baseline_project_artifacts() {
     assert!(project_root.join("memory/HUB-DOCS.md").exists());
     assert!(project_root.join("memory/CONTEXT.md").exists());
     assert!(project_root.join("memory/SECURITY.md").exists());
-    assert!(project_root
-        .join("memory/QUALITY_GATES.md")
-        .exists());
+    assert!(project_root.join("memory/QUALITY_GATES.md").exists());
     assert!(project_root
         .join("memory/requirements/HUB-REQUIREMENTS.md")
         .exists());
     assert!(project_root
         .join("memory/requirements/bootstrap/HUB-BOOTSTRAP.md")
         .exists());
-    assert!(project_root
-        .join("memory/sprint/HUB-SPRINTS.md")
-        .exists());
+    assert!(project_root.join("memory/sprint/HUB-SPRINTS.md").exists());
     assert!(project_root
         .join("memory/sprint/Sprint-01/HUB-SPRINT-01.md")
         .exists());
@@ -374,10 +370,12 @@ fn sync_and_doctor_json_work() {
     )
     .expect("invalid sync state json");
     assert_eq!(sync_state["version"], 1);
-    assert!(sync_state["agents"]["opencode"]["managed_files"]
-        .as_u64()
-        .expect("managed_files must be numeric")
-        > 0);
+    assert!(
+        sync_state["agents"]["opencode"]["managed_files"]
+            .as_u64()
+            .expect("managed_files must be numeric")
+            > 0
+    );
 
     let doctor = Command::new(assert_cmd::cargo::cargo_bin!("openkit"))
         .current_dir(root)

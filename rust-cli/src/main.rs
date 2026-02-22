@@ -33,8 +33,7 @@ const OPENKIT_BANNER: &str = concat!(
 const OPENKIT_HELP_EXAMPLES: &str =
     "Examples:\n  openkit check --json\n  openkit init my-app --agent opencode\n  openkit sync --agent opencode --prune\n  openkit memory doctor --json --write\n  openkit upgrade --check\n";
 
-const CHECK_HELP: &str =
-    "Examples:\n  openkit check\n  openkit check --json\n";
+const CHECK_HELP: &str = "Examples:\n  openkit check\n  openkit check --json\n";
 
 const INIT_HELP: &str = "Examples:\n  openkit init my-app --agent opencode\n  openkit init --agent codex --overwrite --no-git\n";
 
@@ -55,7 +54,9 @@ const MEMORY_HELP: &str = "Examples:\n  openkit memory init\n  openkit memory do
 #[derive(Parser, Debug)]
 #[command(name = "openkit")]
 #[command(about = "OpenKit CLI for project bootstrap, agent sync, and memory operations")]
-#[command(long_about = "OpenKit is a Rust CLI that initializes agent-ready repositories, synchronizes managed agent packs, runs health diagnostics, performs self-upgrade/uninstall, and maintains a docs-first Memory Kernel under .openkit.")]
+#[command(
+    long_about = "OpenKit is a Rust CLI that initializes agent-ready repositories, synchronizes managed agent packs, runs health diagnostics, performs self-upgrade/uninstall, and maintains a docs-first Memory Kernel under .openkit."
+)]
 #[command(version)]
 #[command(before_help = OPENKIT_BANNER)]
 #[command(after_help = OPENKIT_HELP_EXAMPLES)]
@@ -772,11 +773,9 @@ fn run_agent_sync_at(project: &Path, agent: AgentName, args: AgentSyncArgs) -> R
     }
 
     if matches!(agent, AgentName::Claude) {
-        let claude_md = TEMPLATE_ROOT
-            .get_file("claude/CLAUDE.md")
-            .ok_or_else(|| {
-                "missing embedded template: internal/templates/claude/CLAUDE.md".to_string()
-            })?;
+        let claude_md = TEMPLATE_ROOT.get_file("claude/CLAUDE.md").ok_or_else(|| {
+            "missing embedded template: internal/templates/claude/CLAUDE.md".to_string()
+        })?;
         write_embedded_file(claude_md, &project.join("CLAUDE.md"), args.overwrite)?;
 
         let settings = TEMPLATE_ROOT
@@ -787,11 +786,9 @@ fn run_agent_sync_at(project: &Path, agent: AgentName, args: AgentSyncArgs) -> R
         write_embedded_file(settings, &target.join("settings.json"), args.overwrite)?;
         managed_files.insert(PathBuf::from("settings.json"));
 
-        let claude_cmds = TEMPLATE_ROOT
-            .get_dir("claude/commands")
-            .ok_or_else(|| {
-                "missing embedded templates: internal/templates/claude/commands".to_string()
-            })?;
+        let claude_cmds = TEMPLATE_ROOT.get_dir("claude/commands").ok_or_else(|| {
+            "missing embedded templates: internal/templates/claude/commands".to_string()
+        })?;
         copy_embedded_dir_with_prefix(
             claude_cmds,
             &target.join("commands"),
@@ -1634,12 +1631,17 @@ fn prune_unmanaged_files(target: &Path, managed: &HashSet<PathBuf>) -> Result<us
 
     let mut removed = 0usize;
     for file in all_files {
-        let rel = file
-            .strip_prefix(target)
-            .map_err(|e| format!("failed to compute relative path for {}: {}", file.display(), e))?;
+        let rel = file.strip_prefix(target).map_err(|e| {
+            format!(
+                "failed to compute relative path for {}: {}",
+                file.display(),
+                e
+            )
+        })?;
         if !managed.contains(rel) {
-            fs::remove_file(&file)
-                .map_err(|e| format!("failed to remove unmanaged file {}: {}", file.display(), e))?;
+            fs::remove_file(&file).map_err(|e| {
+                format!("failed to remove unmanaged file {}: {}", file.display(), e)
+            })?;
             removed += 1;
         }
     }
@@ -1661,8 +1663,9 @@ fn prune_unmanaged_files(target: &Path, managed: &HashSet<PathBuf>) -> Result<us
             .next()
             .is_none()
         {
-            fs::remove_dir(&dir)
-                .map_err(|e| format!("failed to remove empty directory {}: {}", dir.display(), e))?;
+            fs::remove_dir(&dir).map_err(|e| {
+                format!("failed to remove empty directory {}: {}", dir.display(), e)
+            })?;
         }
     }
 
@@ -1700,8 +1703,7 @@ fn load_agent_sync_state(project: &Path) -> Result<AgentSyncState, String> {
 
     let raw = fs::read_to_string(&path)
         .map_err(|e| format!("failed reading {}: {}", path.display(), e))?;
-    serde_json::from_str(&raw)
-        .map_err(|e| format!("failed parsing {}: {}", path.display(), e))
+    serde_json::from_str(&raw).map_err(|e| format!("failed parsing {}: {}", path.display(), e))
 }
 
 fn write_agent_sync_state(
